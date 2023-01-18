@@ -9,45 +9,53 @@ function Item({ item }) {
     console.log('item', item);
 
     if (playerCharacter.totalScore >= item.cost) {
+      let newItemName = item.name;
+
+      let newArray = playerCharacter.items.slice();
+      newArray.push(newItemName);
 
       if (item.type === 'ppc') {
         // get current values
         let currentPpc = playerCharacter.ppc;
-        let currentTotalScore = playerCharacter.totalScore
+        let currentTotalScore = playerCharacter.totalScore;
 
         let newPpcValue = currentPpc + item.effect;
         let newTotalScore = currentTotalScore - item.cost;
 
         let purchaseAmount = 1;
-        let newTotalItemsOwned = playerCharacter.totalItemsOwned + purchaseAmount;
+        let newTotalItemsOwned =
+          playerCharacter.totalItemsOwned + purchaseAmount;
 
         setPlayerCharacter({
           ...playerCharacter,
           ppc: newPpcValue,
           totalScore: newTotalScore,
           totalItemsOwned: newTotalItemsOwned,
+          items: newArray,
         });
       }
 
       if (item.type === 'pps') {
         let currentPps = playerCharacter.pps;
-        let currentTotalScore = playerCharacter.totalScore
-        
+        let currentTotalScore = playerCharacter.totalScore;
+
         let newPpsValue = currentPps + item.effect;
         let newTotalScore = currentTotalScore - item.cost;
 
         let purchaseAmount = 1;
-        let newTotalItemsOwned = playerCharacter.totalItemsOwned + purchaseAmount;
+        let newTotalItemsOwned =
+          playerCharacter.totalItemsOwned + purchaseAmount;
 
         setPlayerCharacter({
           ...playerCharacter,
           pps: newPpsValue,
           totalScore: newTotalScore,
           totalItemsOwned: newTotalItemsOwned,
+          items: newArray,
         });
       }
     } else {
-      alert('You cannot afford to purchase')
+      alert('You cannot afford to purchase');
     }
   };
 

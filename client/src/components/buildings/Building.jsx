@@ -6,9 +6,12 @@ function Building({ building }) {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const buyBuilding = (building) => {
-    console.log('building', building);
 
     if (playerCharacter.totalScore >= building.cost) {
+      let newBuildingName = building.name;
+      let newArray = playerCharacter.buildings.slice();
+      newArray.push(newBuildingName);
+
       if (building.type === 'ppc') {
         let currentPpc = playerCharacter.ppc;
         let currentTotalScore = playerCharacter.totalScore;
@@ -25,6 +28,7 @@ function Building({ building }) {
           ppc: newPpcValue,
           totalScore: newTotalScore,
           totalBuildingsOwned: newTotalBuildingsOwned,
+          buildings: newArray
         });
       }
 
@@ -44,6 +48,8 @@ function Building({ building }) {
           pps: newPpsValue,
           totalScore: newTotalScore,
           totalBuildingsOwned: newTotalBuildingsOwned,
+          buildings: newArray
+
         });
       }
     } else {
