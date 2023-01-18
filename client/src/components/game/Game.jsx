@@ -10,15 +10,12 @@ function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const [startTimer, setStartTimer] = useState(false);
-  const [buildingsOwned, setBuildingsOwned] = useState([]);
-  const [itemsOwned, setItemsOwned] = useState([]);
 
   console.log('loaded');
 
   useEffect(() => {
     if (playerCharacter.pps >= 1) {
       const interval = setInterval(() => {
-        console.log('pps', playerCharacter.pps);
         let newPPS = playerCharacter.pps;
         let currentTotalScore = playerCharacter.totalScore;
         let currentMultiplier = playerCharacter.bonusMultiplier;
@@ -41,25 +38,9 @@ function Game() {
     playerCharacter.ppc,
   ]);
 
-  const addToBuilding = () => {
-    console.log('add to building')
-
-    let newBuildingName = 'station'
-    let newArray = playerCharacter.buildings.slice();    
-    newArray.push(newBuildingName); 
-    
-    setPlayerCharacter({
-      ...playerCharacter,
-      buildings: newArray
-    })
-  };
-  const addToItems = () => {
-    console.log('add to items')
-  };
-
   return (
     <div className='game__container'>
-      <ItemMenu itemsOwned={itemsOwned} setItemsOwned={setItemsOwned} />
+      <ItemMenu />
 
       <section>
         <Clicker />
@@ -73,10 +54,19 @@ function Game() {
           <h3>total items {playerCharacter.totalItemsOwned}</h3>
           <h3>total buildings {playerCharacter.totalBuildingsOwned} </h3>
           <h3>Buildings Array {playerCharacter.buildings}</h3>
-          <h3>Items Array {playerCharacter.items}</h3>
+          <h3>
+            Items Array: {' '}
+            {playerCharacter.items.map((item, index) => {
+              return (
+                <div key={index}>
+                  name: {item.name}
+                  id:{item.id}
+                  quantity: {item.quantity}
+                </div>
+              );
+            })}
+          </h3>
           <BonusMultiplier />
-          <button onClick={addToBuilding}>Add to buildings</button>
-          <button onClick={addToItems}>Add to items</button>
         </div>
       </section>
 

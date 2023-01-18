@@ -9,10 +9,21 @@ function Item({ item }) {
     console.log('item', item);
 
     if (playerCharacter.totalScore >= item.cost) {
-      let newItemName = item.name;
+      let character = playerCharacter;
+      let newArray = character.items;
 
-      let newArray = playerCharacter.items.slice();
-      newArray.push(newItemName);
+      const itemIndex = newArray.findIndex((i) => i.id === item.id);
+
+      if (itemIndex !== -1) {
+        newArray[itemIndex].quantity++;
+      } else {
+        newArray.push({
+          ...item,
+          quantity: 1,
+        });
+      }
+
+      const pushArray = newArray;
 
       if (item.type === 'ppc') {
         // get current values
@@ -31,7 +42,7 @@ function Item({ item }) {
           ppc: newPpcValue,
           totalScore: newTotalScore,
           totalItemsOwned: newTotalItemsOwned,
-          items: newArray,
+          items: pushArray,
         });
       }
 
@@ -51,7 +62,7 @@ function Item({ item }) {
           pps: newPpsValue,
           totalScore: newTotalScore,
           totalItemsOwned: newTotalItemsOwned,
-          items: newArray,
+          items: pushArray,
         });
       }
     } else {
@@ -71,6 +82,7 @@ function Item({ item }) {
       </div>
 
       <div className='purchase__item'>
+        <div className="owned">Owned{}</div>
         <button onClick={() => buyItem(item)}>buy</button>
       </div>
     </li>
