@@ -35,8 +35,6 @@ function BonusMultiplier() {
     })
   };
 
-
-
   return (
     <div>
       BonusMultiplier:

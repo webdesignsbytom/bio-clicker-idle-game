@@ -22,7 +22,7 @@ function Game() {
         let newPPS = playerCharacter.pps;
         let currentTotalScore = playerCharacter.totalScore;
         let currentMultiplier = playerCharacter.bonusMultiplier;
-        let newTotalScore = (newPPS * currentMultiplier)  + currentTotalScore;
+        let newTotalScore = newPPS * currentMultiplier + currentTotalScore;
 
         setPlayerCharacter({
           ...playerCharacter,
@@ -41,13 +41,24 @@ function Game() {
     playerCharacter.ppc,
   ]);
 
-  setInterval(() => {
-    console.log('Player', playerCharacter);
-  }, 5000);
+  const addToBuilding = () => {
+    console.log('add to building')
+
+    let newBuildingName = 'station'
+    let newArray = playerCharacter.buildings.slice();    
+    newArray.push(newBuildingName); 
+    
+    setPlayerCharacter({
+      ...playerCharacter,
+      buildings: newArray
+    })
+  };
+  const addToItems = () => {
+    console.log('add to items')
+  };
 
   return (
     <div className='game__container'>
-
       <ItemMenu itemsOwned={itemsOwned} setItemsOwned={setItemsOwned} />
 
       <section>
@@ -61,7 +72,11 @@ function Game() {
         <div className='objects__container'>
           <h3>total items {playerCharacter.totalItemsOwned}</h3>
           <h3>total buildings {playerCharacter.totalBuildingsOwned} </h3>
+          <h3>Buildings Array {playerCharacter.buildings}</h3>
+          <h3>Items Array {playerCharacter.items}</h3>
           <BonusMultiplier />
+          <button onClick={addToBuilding}>Add to buildings</button>
+          <button onClick={addToItems}>Add to items</button>
         </div>
       </section>
 
