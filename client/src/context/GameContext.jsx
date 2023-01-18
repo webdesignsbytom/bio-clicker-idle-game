@@ -1,0 +1,28 @@
+import React from 'react';
+import { useState } from 'react';
+
+export const GameContext = React.createContext();
+
+const GameContextProvider = ({ children }) => {
+  // player
+  const [playerCharacter, setPlayerCharacter] = useState({
+    pps: 0,
+    ppc: 1,
+    totalScore: 1000,
+    totalBuildingsOwned: 0,
+    totalItemsOwned: 1,
+  });
+
+  return (
+    <GameContext.Provider
+      value={{
+        playerCharacter,
+        setPlayerCharacter,
+      }}
+    >
+      {children}
+    </GameContext.Provider>
+  );
+};
+
+export default GameContextProvider;
