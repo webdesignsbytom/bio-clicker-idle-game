@@ -3,6 +3,7 @@ import BuildingMenu from '../buildings/BuildingMenu';
 import ItemMenu from '../items/ItemMenu';
 import { GameContext } from '../../context/GameContext';
 import './game.css';
+import BonusMultiplier from '../bonusMultiplier/BonusMultiplier';
 
 function Game() {
   const {
@@ -13,7 +14,6 @@ function Game() {
   const [startTimer, setStartTimer] = useState(false);
   const [buildingsOwned, setBuildingsOwned] = useState([]);
   const [itemsOwned, setItemsOwned] = useState([]);
-  const [bonusMultiplier, setBonusMultiplier] = useState(1);
 
   console.log('loaded')
 
@@ -55,7 +55,7 @@ function Game() {
         <div className='objects__container'>
           <h3>total items {playerCharacter.totalItemsOwned}</h3>
           <h3>total buildings {playerCharacter.totalBuildingsOwned} </h3>
-          <h3>Bonus amount {bonusMultiplier}</h3>
+          <BonusMultiplier />
         </div>
       </section>
 
