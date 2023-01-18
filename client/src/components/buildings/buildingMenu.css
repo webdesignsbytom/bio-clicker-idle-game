@@ -1,0 +1,33 @@
+.buildingMenu__container {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+.building__title__container {
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+}
+.buildings__container {
+  display: grid;
+  gap: 10px;
+}
+
+.building {
+  background-color: lightgoldenrodyellow;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.2rem;
+}
+
+.building > * {
+  border: 2px solid black;
+  padding: 0.4rem;
+}
+
+.building__data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 0.8rem;
+}

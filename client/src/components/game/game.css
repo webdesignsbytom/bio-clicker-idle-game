@@ -1,0 +1,7 @@
+.game__container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: lightgreen;
+    height: 100vh;
+    gap: 1rem;
+}

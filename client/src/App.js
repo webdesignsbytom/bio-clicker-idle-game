@@ -1,9 +1,10 @@
 import './app.css';
+import Game from './components/game/Game';
 
 function App() {
   return (
     <>
-    Hello
+    <Game />
     </>
   );
 }
