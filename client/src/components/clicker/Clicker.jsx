@@ -4,11 +4,11 @@ import { GameContext } from '../../context/GameContext';
 function Clicker() {
     const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
-    const clickButton = (e) => {
+    const clickButton = () => {
         let newPPC = playerCharacter.ppc;
         let currentTotalScore = playerCharacter.totalScore;
         let currentMultiplier = playerCharacter.bonusMultiplier;
-        let newTotalScore = (newPPC + currentTotalScore) * currentMultiplier;
+        let newTotalScore = (newPPC * currentMultiplier)  + currentTotalScore;
 
         setPlayerCharacter({
           ...playerCharacter,

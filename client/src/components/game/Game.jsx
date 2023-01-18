@@ -22,7 +22,7 @@ function Game() {
         let newPPS = playerCharacter.pps;
         let currentTotalScore = playerCharacter.totalScore;
         let currentMultiplier = playerCharacter.bonusMultiplier;
-        let newTotalScore = (newPPS + currentTotalScore) * currentMultiplier;
+        let newTotalScore = (newPPS * currentMultiplier)  + currentTotalScore;
 
         setPlayerCharacter({
           ...playerCharacter,
@@ -47,6 +47,7 @@ function Game() {
 
   return (
     <div className='game__container'>
+
       <ItemMenu itemsOwned={itemsOwned} setItemsOwned={setItemsOwned} />
 
       <section>
