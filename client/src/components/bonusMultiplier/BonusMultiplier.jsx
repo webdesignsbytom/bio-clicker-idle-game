@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { GameContext } from '../../context/GameContext';
 
 function BonusMultiplier() {
-  const [bonusMultiplier, setBonusMultiplier] = useState(1);
-  const [baseLevelBonusMultiplier, setBaseLevelBonusMultiplier] = useState(1);
+  const {
+    playerCharacter,
+    setPlayerCharacter,
+  } = useContext(GameContext);
+
 
   const startBonusConditions = () => {
     let randomBonusMultiplier = getRandomBonusMultiplier()
-    setBonusMultiplier(randomBonusMultiplier);
+    console.log('randomBonusMultiplier', randomBonusMultiplier)
+    setPlayerCharacter({
+        ...playerCharacter,
+        bonusMultiplier: randomBonusMultiplier
+    })
+
     setTimeout(() => {
-      console.log('hi');
+      console.log('hi bonus reseting');
       resetBonusMultiplier();
-    }, 2000);
+    }, 30000);
   };
 
   function getRandomBonusMultiplier() {
@@ -19,8 +28,11 @@ function BonusMultiplier() {
   }
 
   const resetBonusMultiplier = () => {
-    console.log('RESETINGbonusMultiplier', bonusMultiplier);
-    setBonusMultiplier(baseLevelBonusMultiplier);
+    let resetStat = 1
+    setPlayerCharacter({
+        ...playerCharacter,
+        bonusMultiplier: resetStat
+    })
   };
 
 
@@ -28,7 +40,7 @@ function BonusMultiplier() {
   return (
     <div>
       BonusMultiplier:
-      {bonusMultiplier}
+      {playerCharacter.bonusMultiplier}
       <button onClick={startBonusConditions}>BONUS</button>
     </div>
   );
