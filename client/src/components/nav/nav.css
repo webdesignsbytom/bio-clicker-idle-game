@@ -1,0 +1,27 @@
+.nav__container {
+  background-color: gray;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.logo__container {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+}
+
+.logo__container img {
+  width: 30px;
+  height: 30px;
+}
+
+.links__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 100px));
+  align-items: center;
+  justify-content: end;
+}
+
+.links__container a {
+    color: white;
+    text-decoration: none;
+  } 
