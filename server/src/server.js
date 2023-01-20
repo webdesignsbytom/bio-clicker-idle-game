@@ -19,13 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 const userRouter = require('./routes/users');
 // const authRouter = require('./routes/auth');
 
-// app.use('/links', linkRouter);
-// app.use('/posts', postRouter);
-// app.use('/post', postRouter);
 app.use('/users', userRouter);
 app.use('/user', userRouter);
-// app.use('/events', eventRouter);
-// app.use('/', userRouter);
+app.use('/', userRouter);
 // app.use('/', authRouter) 
 
 
