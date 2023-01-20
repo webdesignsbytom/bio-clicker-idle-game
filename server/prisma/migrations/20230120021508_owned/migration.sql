@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Building" ADD COLUMN     "owned" INTEGER NOT NULL DEFAULT 0;
+
+-- AlterTable
+ALTER TABLE "Item" ADD COLUMN     "owned" INTEGER NOT NULL DEFAULT 0;
