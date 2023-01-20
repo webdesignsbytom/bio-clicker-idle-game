@@ -12,6 +12,8 @@ function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const [startTimer, setStartTimer] = useState(false);
+  const [pickedName, setPickedName] = useState(false);
+  const [playerName, setPlayerName] = useState('')
 
   console.log('loaded');
 
@@ -40,9 +42,21 @@ function Game() {
     playerCharacter.ppc,
   ]);
 
+  const handleChange = (event) => {
+      const { value } = event.target;
+
+      setPlayerName(value);
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setPickedName(!pickedName)
+  }
+
   return (
     <>
       <Nav />
+      {pickedName ? (
       <div className='game__container'>
         <ItemMenu />
 
@@ -78,6 +92,15 @@ function Game() {
 
         <BuildingMenu />
       </div>
+      ) : (
+        <div>
+          <label htmlFor="playerName">Player Name</label>
+          <input type="text" name='playerName' onChange={handleChange}/>
+          <span>Name: {playerName}</span>
+          <input type="submit" value="submit" onClick={handleSubmit}/>
+        </div>
+      )
+      }
     </>
   );
 }

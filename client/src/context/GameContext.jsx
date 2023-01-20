@@ -6,6 +6,7 @@ export const GameContext = React.createContext();
 const GameContextProvider = ({ children }) => {
   // player
   const [playerCharacter, setPlayerCharacter] = useState({
+    name: '',
     pps: 0,
     ppc: 1,
     totalScore: 1000,
