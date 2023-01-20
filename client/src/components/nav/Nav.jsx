@@ -12,8 +12,9 @@ function Nav() {
     </div>
     <div className="links__container">
         <Link to='/'>Home</Link>
-        <Link to='/'>Login</Link>
-        <Link to='/'>Register</Link>
+        <Link to='/login'>Login</Link>
+        <Link to='/register'>Register</Link>
+        <Link to='/account'>Account</Link>
     </div>
 </nav>
 </>
