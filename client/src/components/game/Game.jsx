@@ -5,6 +5,7 @@ import { GameContext } from '../../context/GameContext';
 import './game.css';
 import BonusMultiplier from '../bonusMultiplier/BonusMultiplier';
 import Clicker from '../clicker/Clicker';
+import { Link } from 'react-router-dom';
 
 function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -67,6 +68,8 @@ function Game() {
             })}
           </h3>
           <BonusMultiplier />
+          
+          <Link to='/admin' >ADMIN</Link>
         </div>
       </section>
 
