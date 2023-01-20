@@ -6,6 +6,7 @@ import './game.css';
 import BonusMultiplier from '../bonusMultiplier/BonusMultiplier';
 import Clicker from '../clicker/Clicker';
 import { Link } from 'react-router-dom';
+import Nav from '../nav/Nav';
 
 function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -41,6 +42,7 @@ function Game() {
 
   return (
     <>
+      <Nav />
       <div className='game__container'>
         <ItemMenu />
 
