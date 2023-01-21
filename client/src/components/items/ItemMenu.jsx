@@ -20,11 +20,11 @@ function ItemMenu() {
         <h2>Item Menu</h2>
       </div>
 
-      <ul className='items__container'>
+      <div className='items__container'>
         {items.map((item, index) => {
           return <Item item={item} key={index} />;
         })}
-      </ul>
+      </div>
     </section>
   );
 }

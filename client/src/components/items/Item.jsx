@@ -71,8 +71,11 @@ function Item({ item }) {
   };
 
   return (
-    <li className='item'>
-      <div className='item__image'>{item.image}</div>
+    <div className='item'>
+      
+      <div className='item__image'>
+        <div className='image__icon'>{item.image}</div>
+      </div>
 
       <div className='item__data'>
         <div className='name'>Name:{item.name}</div>
@@ -82,10 +85,10 @@ function Item({ item }) {
       </div>
 
       <div className='purchase__item'>
-        <div className="owned">Owned{}</div>
+        <div className='owned'>Owned{}</div>
         <button onClick={() => buyItem(item)}>buy</button>
       </div>
-    </li>
+    </div>
   );
 }
 
