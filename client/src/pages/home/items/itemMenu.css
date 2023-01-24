@@ -26,9 +26,12 @@
   gap: 0.2rem;
   padding: 0.2rem;
   background-color: yellow;
-  overflow: scroll;
-  overflow-x: hidden;
+
   padding-bottom: 3rem;
+}
+.items__container:hover {
+    overflow: scroll;
+  overflow-x: hidden;
 }
 
 .item {
