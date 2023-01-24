@@ -72,22 +72,24 @@ function Item({ item }) {
 
   return (
     <div className='item'>
-      
-      <div className='item__image'>
-        <div className='image__icon'>{item.image}</div>
-      </div>
+      <div className='inner__item'>
+        <div className='item__image'>
+          <div className='image__icon'>{item.image}</div>
+        </div>
 
-      <div className='item__data'>
-        <div className='name'>Name:{item.name}</div>
-        <div className='cost'>Cost £{item.cost}</div>
-        <div className='type'>Type:{item.type}</div>
-        <div className='effect'>Effect:{item.effect}</div>
-      </div>
+        <div className='item__data'>
+          <div className='name'>{item.name}</div>
+          <div className='cost'>£{item.cost}</div>
+          <div className='type'>{item.type}</div>
+          <div className='effect'>{item.effect}</div>
+        </div>
 
-      <div className='purchase__item'>
-        <div className='owned'>Owned{}</div>
-        <button onClick={() => buyItem(item)}>buy</button>
+        <div className='purchase__item'>
+          <div className='owned'>Owned{}</div>
+          <button onClick={() => buyItem(item)}>buy</button>
+        </div>
       </div>
+      <div className='desc'>{item.desc}</div>
     </div>
   );
 }
