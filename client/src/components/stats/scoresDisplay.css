@@ -7,15 +7,20 @@
 
 .scores__container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   gap: 1rem;
   place-content: center;
   border: 3px solid green;
+  width: 100%;
 }
 
 .scores__container > * {
   background-color: yellow;
+}
+
+.incomes__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .score__container {

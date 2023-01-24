@@ -1,0 +1,23 @@
+.playerData__container {
+    display: grid;
+    border: 3px solid black;
+    margin: 1rem;
+}
+
+.player__data__container {
+    background-color: gray;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.player__items__data {
+background-color: yellow;
+}
+
+.player__buildings__data {
+background-color: yellow;
+}
+
+.player__fuel__data {
+background-color: yellow;
+}
