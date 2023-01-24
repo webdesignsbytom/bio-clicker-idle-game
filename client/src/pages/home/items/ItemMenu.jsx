@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import ItemDB from '../../db/items.json';
+import ItemDB from '../../../db/items.json';
 import Item from './Item';
 import './itemMenu.css';
-import { GameContext } from '../../context/GameContext';
+import { GameContext } from '../../../context/GameContext';
 
 function ItemMenu() {
   const {} = useContext(GameContext);

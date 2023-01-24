@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import BuildingDB from '../../db/buildings.json';
+import BuildingDB from '../../../db/buildings.json';
 import Building from './Building';
 import './buildingMenu.css'
 

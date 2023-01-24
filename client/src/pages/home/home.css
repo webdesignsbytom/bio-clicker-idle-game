@@ -2,10 +2,12 @@
     background-color: lightpink;
     display: grid;
     height: 100vh;
-    grid-template-rows: 100px 1fr 100px;
+    max-height: 100vh;
+    grid-template-rows: 50px 1fr auto;
 }
 
 .game__container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    overflow: hidden;
 }

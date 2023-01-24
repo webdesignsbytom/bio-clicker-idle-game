@@ -1,7 +1,8 @@
 .itemMenu__container {
   display: grid;
   grid-template-rows: auto 1fr;
-  border: 2px solid whitesmoke;
+  border: 5px solid green;
+  overflow-y: hidden;
 }
 
 /* Titles */
@@ -26,6 +27,7 @@
   padding: 0.2rem;
   background-color: yellow;
   overflow: scroll;
+  padding-bottom: 3rem;
 }
 
 .item {

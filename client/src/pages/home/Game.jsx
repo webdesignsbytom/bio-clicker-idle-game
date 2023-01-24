@@ -1,10 +1,8 @@
 import React from 'react';
-import Clicker from '../../components/clicker/Clicker';
-import PlayerData from '../../components/stats/PlayerData';
-import StatsDisplay from '../../components/stats/StatsDisplay';
 import Main from './Main';
-import ItemMenu from '../../components/items/ItemMenu'
-import BuildingMenu from '../../components/buildings/BuildingMenu'
+import ItemMenu from './items/ItemMenu'
+import BuildingMenu from './buildings/BuildingMenu'
+
 
 function Game() {
   return (
