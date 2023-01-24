@@ -15,7 +15,7 @@ function Game() {
 
   const [startTimer, setStartTimer] = useState(false);
   const [pickedName, setPickedName] = useState(false);
-  const [playerName, setPlayerName] = useState('')
+  const [playerName, setPlayerName] = useState('');
 
   console.log('loaded');
 
@@ -45,30 +45,28 @@ function Game() {
   ]);
 
   const handleChange = (event) => {
-      const { value } = event.target;
+    const { value } = event.target;
 
-      setPlayerName(value);
-  }
+    setPlayerName(value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setPickedName(!pickedName)
-  }
+    setPickedName(!pickedName);
+  };
 
   return (
     <>
-      <Nav />
+      <div className='gamePage__container'>
+        {/* <Nav /> */}
 
-      <div className='game__container'>
-        <ItemMenu />
+        <div className='game__container'>
+          <ItemMenu />
 
-        <main className='dataMenu__container'>
-          <Clicker />
-          <StatsDisplay />
-          <PlayerData />
-        </main>
+          
 
-        <BuildingMenu />
+          <BuildingMenu />
+        </div>
       </div>
     </>
   );
