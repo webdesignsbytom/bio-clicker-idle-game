@@ -5,3 +5,8 @@
     gap: 1rem;
     overflow: hidden;
 }
+
+.dataMenu__container {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+}
