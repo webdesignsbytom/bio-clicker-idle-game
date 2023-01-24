@@ -58,20 +58,26 @@ function Building({ building }) {
   };
 
   return (
-    <li className='building'>
-      <div className='building__image'>{building.image}</div>
+    <div className='building'>
+      <div className='inner__building'>
+        <div className='building__image'>
+          <div className='image__icon'>{building.image}</div>
+        </div>
 
-      <div className='building__data'>
-        <div className='name'>Name:{building.name}</div>
-        <div className='cost'>Cost: £{building.cost}</div>
-        <div className='type'>Type:{building.type}</div>
-        <div className='effect'>Effect:{building.effect}</div>
-      </div>
+        <div className='building__data'>
+          <div className='name'>{building.name}</div>
+          <div className='cost'>£{building.cost}</div>
+          <div className='type'>{building.type}</div>
+          <div className='effect'>{building.effect}</div>
+        </div>
 
-      <div className='purchase__building'>
-        <button onClick={() => buyBuilding(building)}>buy</button>
+        <div className='purchase__building'>
+          <div className='owned'>Owned{}</div>
+          <button onClick={() => buyBuilding(building)}>buy</button>
+        </div>
       </div>
-    </li>
+      <div className='desc'>{building.desc}</div>
+    </div>
   );
 }
 

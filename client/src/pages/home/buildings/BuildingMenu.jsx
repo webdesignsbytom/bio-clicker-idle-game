@@ -18,11 +18,11 @@ function BuildingMenu() {
         <h2>BuildingMenu</h2>
       </div>
 
-      <ul className="buildings__container">
-            {buildings.map((building, index) => {
-                return <Building building={building} key={index} />
-            })}
-      </ul>
+      <div className='items__container'>
+        {buildings.map((building, index) => {
+          return <Building building={building} key={index} />;
+        })}
+      </div>
     </section>
   );
 }
