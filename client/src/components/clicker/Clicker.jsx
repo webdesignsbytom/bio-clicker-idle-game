@@ -1,28 +1,31 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { GameContext } from '../../context/GameContext';
+import BonusMultiplier from '../bonusMultiplier/BonusMultiplier';
+import './clicker.css';
 
 function Clicker() {
-    const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+  const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
-    const clickButton = () => {
-        let newPPC = playerCharacter.ppc;
-        let currentTotalScore = playerCharacter.totalScore;
-        let currentMultiplier = playerCharacter.bonusMultiplier;
-        let newTotalScore = (newPPC * currentMultiplier)  + currentTotalScore;
+  const clickButton = () => {
+    let newPPC = playerCharacter.ppc;
+    let currentTotalScore = playerCharacter.totalScore;
+    let currentMultiplier = playerCharacter.bonusMultiplier;
+    let newTotalScore = newPPC * currentMultiplier + currentTotalScore;
 
-        setPlayerCharacter({
-          ...playerCharacter,
-          totalScore: newTotalScore,
-        });
-    }
+    setPlayerCharacter({
+      ...playerCharacter,
+      totalScore: newTotalScore,
+    });
+  };
 
   return (
     <>
-    <section className="clicker__container">
+      <section className='clicker__container'>
         <button onClick={clickButton}>CLICK ME</button>
-    </section>
+        <BonusMultiplier />
+      </section>
     </>
-  )
+  );
 }
 
-export default Clicker
+export default Clicker;

@@ -19,21 +19,21 @@
   },
   {
     "id": 3,
-    "name": "magic",
-    "type": "pps",
-    "effect": 12,
-    "cost": 11,
+    "name": "Algae Tubes",
+    "type": "PPS",
+    "effect": 2,
+    "cost": 100,
     "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
+    "desc": "Growth tubes for research and fuel production"
   },
   {
     "id": 4,
-    "name": "booster4",
-    "type": "pps",
-    "effect": 12,
-    "cost": 11000,
+    "name": "Nutrients",
+    "type": "PPS",
+    "effect": 2.2,
+    "cost": 250,
     "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
+    "desc": "Barrels of growth medium and fertilizers to increase growth"
   },
   {
     "id": 5,

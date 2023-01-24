@@ -25,7 +25,7 @@ function Item({ item }) {
 
       const pushArray = newArray;
 
-      if (item.type === 'ppc') {
+      if (item.type === 'ppc' || 'PPC') {
         // get current values
         let currentPpc = playerCharacter.ppc;
         let currentTotalScore = playerCharacter.totalScore;
@@ -46,7 +46,7 @@ function Item({ item }) {
         });
       }
 
-      if (item.type === 'pps') {
+      if (item.type === 'pps' || 'PPS') {
         let currentPps = playerCharacter.pps;
         let currentTotalScore = playerCharacter.totalScore;
 

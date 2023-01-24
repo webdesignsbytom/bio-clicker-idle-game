@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { GameContext } from '../../context/GameContext';
+import './bonusMultiplier.css'
 
 function BonusMultiplier() {
   const {
@@ -36,7 +37,7 @@ function BonusMultiplier() {
   };
 
   return (
-    <div>
+    <div className='bonusMultiplier__container'>
       BonusMultiplier:
       {playerCharacter.bonusMultiplier}
       <button onClick={startBonusConditions}>BONUS</button>

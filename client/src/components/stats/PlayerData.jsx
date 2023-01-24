@@ -24,8 +24,6 @@ function PlayerData() {
                 );
               })}
             </h3>
-            <BonusMultiplier />
-
           </div>
     </section>
   )
