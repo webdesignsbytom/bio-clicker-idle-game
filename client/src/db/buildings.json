@@ -1,34 +1,34 @@
 [
     {
       "id": "1",
-      "name": "finger",
-      "type": "ppc",
-      "effect": 14,
-      "cost": 9,
+      "name": "Small Processing Factory",
+      "type": "PPC",
+      "effect": 1,
+      "cost": 500,
       "image": "🚀"
     },
     {
       "id": "2",
-      "name": "solar",
-      "type": "pps",
-      "effect": 13,
-      "cost": 80000,
+      "name": "Solar Farm",
+      "type": "PPS",
+      "effect": 1.5,
+      "cost": 1000,
       "image": "🚀"
     },
     {
       "id": "3",
-      "name": "magic",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
+      "name": "Small Eco Shop",
+      "type": "PPS",
+      "effect": 2,
+      "cost": 5000,
       "image": "🚀"
     },
     {
       "id": "4",
-      "name": "booster4",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
+      "name": "Charging station",
+      "type": "PPC",
+      "effect": 2,
+      "cost": 100000,
       "image": "🚀"
     },
     {
@@ -42,6 +42,46 @@
     {
       "id": "6",
       "name": "booster6",
+      "type": "pps",
+      "effect": 12,
+      "cost": 11,
+      "image": "🚀"
+    },
+    {
+      "id": "7",
+      "name": "booster7",
+      "type": "pps",
+      "effect": 12,
+      "cost": 11,
+      "image": "🚀"
+    },
+    {
+      "id": "8",
+      "name": "booster8",
+      "type": "pps",
+      "effect": 12,
+      "cost": 11,
+      "image": "🚀"
+    },
+    {
+      "id": "9",
+      "name": "booster9",
+      "type": "pps",
+      "effect": 12,
+      "cost": 11,
+      "image": "🚀"
+    },
+    {
+      "id": "10",
+      "name": "booster10",
+      "type": "pps",
+      "effect": 12,
+      "cost": 11,
+      "image": "🚀"
+    },
+    {
+      "id": "11",
+      "name": "booster11",
       "type": "pps",
       "effect": 12,
       "cost": 11,

@@ -1,23 +1,29 @@
 .playerData__container {
-    display: grid;
-    border: 3px solid black;
-    margin: 1rem;
+  display: grid;
+  border: 3px solid black;
+  margin: 1rem;
 }
 
 .player__data__container {
-    background-color: gray;
-    display: grid;
-    gap: 5px;
-    grid-template-columns: 1fr 1fr 1fr;
+  background-color: gray;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
+
+.player__data__container h6 {
+  padding: 0;
+  margin: 0;
+}
+
 .player__items__data {
-background-color: yellow;
+  background-color: yellow;
 }
 
 .player__buildings__data {
-background-color: yellow;
+  background-color: yellow;
 }
 
 .player__fuel__data {
-background-color: yellow;
+  background-color: yellow;
 }
