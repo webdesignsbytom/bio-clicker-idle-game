@@ -11,3 +11,22 @@
     grid-template-columns: 1fr 2fr 1fr;
     overflow: hidden;
 }
+
+.main__game {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    overflow: hidden;
+    border: 5px solid black;
+}
+
+.clicker__container {
+    background-color: yellow;
+}
+
+.scoresDisplay__container {
+    background-color: red;
+}
+
+.playerData__container {
+    background-color: pink;
+}

@@ -1,0 +1,30 @@
+.scoresDisplay__container {
+  display: grid;
+  place-content: center;
+  background-color: white;
+  padding: 0.4rem;
+}
+
+.scores__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  gap: 1rem;
+  place-content: center;
+  border: 3px solid green;
+}
+
+.scores__container > * {
+  background-color: yellow;
+}
+
+.score__container {
+  display: grid;
+  place-content: center;
+  height: auto;
+}
+
+.score__container h3 {
+    padding: 0;
+    margin: 0;
+}

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function PlayerData() {
     const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   return (
-    <div>
+    <section className='playerData__container'>
         <div className='objects__container'>
             <h3>total items {playerCharacter.totalItemsOwned}</h3>
             <h3>total buildings {playerCharacter.totalBuildingsOwned} </h3>
@@ -27,7 +27,7 @@ function PlayerData() {
             <BonusMultiplier />
 
           </div>
-    </div>
+    </section>
   )
 }
 

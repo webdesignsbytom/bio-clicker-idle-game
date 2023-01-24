@@ -18,9 +18,9 @@ function Clicker() {
 
   return (
     <>
-    <div className="clicker__container">
+    <section className="clicker__container">
         <button onClick={clickButton}>CLICK ME</button>
-    </div>
+    </section>
     </>
   )
 }
