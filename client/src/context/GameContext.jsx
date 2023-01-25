@@ -9,7 +9,7 @@ const GameContextProvider = ({ children }) => {
     name: '',
     pps: 0,
     ppc: 1,
-    totalScore: 1000,
+    totalScore: 10000000,
     totalBuildingsOwned: 0,
     totalItemsOwned: 1,
     bonusMultiplier: 1,

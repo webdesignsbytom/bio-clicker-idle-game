@@ -11,7 +11,6 @@ function Nav() {
         <div className='logo__container'>
           <Link to='/'>
             <img src={Logo} alt='logo' />
-            <BonusMultiplier />
           </Link>
         </div>
         <div className='links__container'>

@@ -2,11 +2,19 @@
   background-color: var(--secondary-bg);
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding: 0.2rem;
 }
+
 .logo__container {
-  display: flex;
+  display: grid;
+}
+
+.logo__container a {
+  display: grid;
   align-items: center;
-  padding: 0.4rem;
+
+  padding: 0;
+  margin: 0;
 }
 
 .logo__container img {
@@ -22,9 +30,9 @@
 }
 
 .links__container a {
-    color: var(--font-color-secondary);
-    text-decoration: none;
-  } 
-  .links__container a:hover {
-    color: var(--nav-hover);
-  } 
+  color: var(--font-color-secondary);
+  text-decoration: none;
+}
+.links__container a:hover {
+  color: var(--nav-hover);
+}

@@ -5,10 +5,11 @@ import { GameContext } from '../../../context/GameContext';
 import '../menu.css'
 
 function ItemMenu() {
-  const {} = useContext(GameContext);
+  const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [items, setItems] = useState([]);
 
   console.log('Items loaded')
+  console.log('zzzz playerCharacter ', playerCharacter.items)
 
   useEffect(() => {
     setItems(ItemDB);
