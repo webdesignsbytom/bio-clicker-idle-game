@@ -9,7 +9,6 @@ function ItemMenu() {
   const [items, setItems] = useState([]);
 
   console.log('Items loaded')
-  console.log('zzzz playerCharacter ', playerCharacter.items)
 
   useEffect(() => {
     setItems(ItemDB);

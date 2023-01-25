@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
 
 function Item({ item }) {
   // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+  const [itemQuantity, setItemQuantity] = useState(0)
 
   const buyItem = (item) => {
     console.log('item', item);
@@ -73,6 +74,8 @@ function Item({ item }) {
           items: pushArray,
         });
       }
+
+      setItemQuantity(prev => prev + 1)
     } else {
       alert('You cannot afford to purchase');
     }
@@ -106,7 +109,7 @@ function Item({ item }) {
 
         <div className='purchase__product'>
           <div className='product__owned'>
-            <h6>Owned: <span>0</span></h6>
+            <h6>Owned: <span>{itemQuantity}</span></h6>
           </div>
           <button onClick={() => buyItem(item)}>buy</button>
         </div>
