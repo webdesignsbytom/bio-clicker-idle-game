@@ -22,7 +22,6 @@
   display: grid;
   gap: 0.2rem;
   padding: 0.2rem;
-  padding-bottom: 3rem;
   overflow: scroll;
   overflow-x: hidden;
   scrollbar-width: thin;
@@ -30,7 +29,7 @@
 
 .item {
   border: 2px solid #172121;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 0.2rem;
   background-color: #7F7B82;
   display: grid;
