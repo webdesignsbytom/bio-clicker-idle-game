@@ -3,7 +3,7 @@
     display: grid;
     height: 100vh;
     max-height: 100vh;
-    grid-template-rows: 50px 1fr auto;
+    grid-template-rows: auto 1fr auto;
 }
 
 .game__container {

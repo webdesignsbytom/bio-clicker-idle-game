@@ -1,90 +1,101 @@
 [
-    {
-      "id": "1",
-      "name": "Small Processing Factory",
-      "type": "PPC",
-      "effect": 1,
-      "cost": 500,
-      "image": "🚀"
-    },
-    {
-      "id": "2",
-      "name": "Solar Farm",
-      "type": "PPS",
-      "effect": 1.5,
-      "cost": 1000,
-      "image": "🚀"
-    },
-    {
-      "id": "3",
-      "name": "Small Eco Shop",
-      "type": "PPS",
-      "effect": 2,
-      "cost": 5000,
-      "image": "🚀"
-    },
-    {
-      "id": "4",
-      "name": "Charging station",
-      "type": "PPC",
-      "effect": 2,
-      "cost": 100000,
-      "image": "🚀"
-    },
-    {
-      "id": "5",
-      "name": "booster5",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
-      "image": "🚀"
-    },
-    {
-      "id": "6",
-      "name": "booster6",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
-      "image": "🚀"
-    },
-    {
-      "id": "7",
-      "name": "booster7",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
-      "image": "🚀"
-    },
-    {
-      "id": "8",
-      "name": "booster8",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
-      "image": "🚀"
-    },
-    {
-      "id": "9",
-      "name": "booster9",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
-      "image": "🚀"
-    },
-    {
-      "id": "10",
-      "name": "booster10",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
-      "image": "🚀"
-    },
-    {
-      "id": "11",
-      "name": "booster11",
-      "type": "pps",
-      "effect": 12,
-      "cost": 11,
-      "image": "🚀"
-    }
+  {
+    "id": 1,
+    "name": "Finger",
+    "type": "PPC",
+    "effect": 1,
+    "cost": 10,
+    "image": "🚀",
+    "desc": "Each finger doubles the amount of points earned per click on the screen"
+  },
+  {
+    "id": 2,
+    "name": "Solar Panel",
+    "type": "PPS",
+    "effect": 1.15,
+    "cost": 25,
+    "image": "🚀",
+    "desc": "The panels earn for you all day once installed"
+  },
+  {
+    "id": 3,
+    "name": "Algae Tubes",
+    "type": "PPS",
+    "effect": 2,
+    "cost": 100,
+    "image": "🚀",
+    "desc": "Growth tubes for research and fuel production"
+  },
+  {
+    "id": 4,
+    "name": "Nutrients",
+    "type": "PPS",
+    "effect": 2.2,
+    "cost": 250,
+    "image": "🚀",
+    "desc": "Barrels of growth medium and fertilizers to increase growth"
+  },
+  {
+    "id": 5,
+    "name": "booster5",
+    "type": "PPC",
+    "effect": 25,
+    "cost": 25,
+    "image": "🚀",
+    "desc": "Each finger doubles the amount of points earned per click on the screen"
+  },
+  {
+    "id": 6,
+    "name": "booster6",
+    "type": "PPS",
+    "effect": 12,
+    "cost": 11,
+    "image": "🚀",
+    "desc": "Each finger doubles the amount of points earned per click on the screen"
+  },
+  {
+    "id": 7,
+    "name": "booster7",
+    "type": "PPS",
+    "effect": 12,
+    "cost": 11,
+    "image": "🚀",
+    "desc": "Each finger doubles the amount of points earned per click on the screen"
+  },
+  {
+    "id": 8,
+    "name": "booster8",
+    "type": "PPS",
+    "effect": 12,
+    "cost": 11,
+    "image": "🚀",
+    "desc": "Each finger doubles the amount of points earned per click on the screen"
+  },
+  {
+    "id": 9,
+    "name": "booster9",
+    "type": "PPS",
+    "effect": 12,
+    "cost": 11,
+    "image": "🚀",
+    "desc": "Each finger doubles the amount of points earned per click on the screen"
+  },
+  {
+    "id": 10,
+    "name": "booster10",
+    "type": "PPC",
+    "effect": 12,
+    "cost": 11,
+    "image": "🚀",
+    "desc": "Each finger doubles the amount of points earned per click on the screen"
+  },
+  {
+    "id": 11,
+    "name": "booster11",
+    "type": "PPC",
+    "effect": 12,
+    "cost": 11,
+    "image": "🚀",
+    "desc": "Each finger doubles the amount of points earned per click on the screen"
+  }
 ]

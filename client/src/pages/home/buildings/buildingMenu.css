@@ -28,16 +28,16 @@
 }
 
 .building {
-  border: 2px solid green;
+  border: 2px solid #172121;
   border-radius: 10px;
   padding: 0.2rem;
-  background-color: white;
+  background-color: #7F7B82;
   display: grid;
   gap: 2px;
 }
 
 .inner__building {
-  border: 2px solid red;
+  border: 2px solid #172121;
   border-radius: 4px;
   padding: 0.1rem;
   display: grid;
@@ -48,7 +48,7 @@
 .image__icon {
   width: 50px;
   height: 50px;
-  border: 2px solid black;
+  border: 2px solid #172121;
   border-radius: 4px;
   display: grid;
   place-content: center;
@@ -76,7 +76,7 @@ font-size: 0.5rem;
 
 .desc {
   font-size: 0.5rem;
-  border: 2px solid red;
+  border: 2px solid #172121;
   border-radius: 4px;
   padding: 0.1rem;
 }
@@ -99,10 +99,6 @@ font-size: 0.5rem;
   padding: 0;
   margin: 0;
   font-size: 0.6rem;
-}
-
-.buy__btn {
-  background-color: red;
 }
 
 .purchase__building button {
