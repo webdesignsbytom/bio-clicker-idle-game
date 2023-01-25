@@ -78,14 +78,28 @@ function Item({ item }) {
         </div>
 
         <div className='item__data'>
-          <div className='name'>{item.name}</div>
-          <div className='cost'>£{item.cost}</div>
-          <div className='type'>{item.type}</div>
-          <div className='effect'>{item.effect}</div>
+          <div className='name'>
+            <h6>Name: </h6>
+            <span>{item.name}</span>
+          </div>
+          <div className='cost'>
+            <h6>Cost: </h6>
+            <span>£ {item.cost}</span>
+          </div>
+          <div className='type'>
+            <h6>Type: </h6>
+            <span>{item.type}</span>
+          </div>
+          <div className='effect'>
+            <h6>Effect: </h6>
+            <span>x {item.effect}</span>
+          </div>
         </div>
 
         <div className='purchase__item'>
-          <div className='owned'>Owned{}</div>
+          <div className='owned'>
+            <h6>Owned: <span>0</span></h6>
+          </div>
           <button onClick={() => buyItem(item)}>buy</button>
         </div>
       </div>

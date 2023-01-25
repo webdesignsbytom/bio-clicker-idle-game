@@ -1,5 +1,4 @@
 .level__data__container {
-    background-color: rgb(125, 125, 227);
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 5px;

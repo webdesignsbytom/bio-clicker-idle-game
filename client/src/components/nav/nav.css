@@ -1,5 +1,5 @@
 .nav__container {
-  background-color: gray;
+  background-color: #7F7B82;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }

@@ -1,22 +1,19 @@
 .buildingMenu__container {
   display: grid;
   grid-template-rows: auto 1fr;
-  border: 5px solid green;
   overflow-y: hidden;
 }
 
 /* Titles */
 .building__title__container {
   color: white;
-  background-color: black;
-  border: 2px solid black;
   display: grid;
   place-content: center;
 }
+
 .building__title__container h2 {
   padding: 0;
   margin: 0;
-  background-color: red;
   width: fit-content;
 }
 
@@ -25,12 +22,8 @@
   display: grid;
   gap: 0.2rem;
   padding: 0.2rem;
-  background-color: yellow;
-
   padding-bottom: 3rem;
-}
-.buildings__container:hover {
-    overflow: scroll;
+  overflow: scroll;
   overflow-x: hidden;
 }
 
@@ -63,14 +56,22 @@
 }
 
 .building__data {
-  font-size: 0.8rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .building__data > * {
   display: grid;
-  place-content: center;
-  justify-content: center;
+}
+
+.building__data > * h6 {
+padding: 0;
+margin: 0;
+font-size: 0.5rem;
+}
+
+.building__data > * span {
+font-size: 0.5rem;
 }
 
 .desc {
@@ -80,3 +81,31 @@
   padding: 0.1rem;
 }
 
+.purchase__building {
+  display: grid;
+  height: auto;
+}
+.owned {
+  height: auto;
+  display: grid;
+}
+.owned h6 {
+  padding: 0;
+  margin: 0;
+  font-size: 0.6rem;
+}
+
+.owned span {
+  padding: 0;
+  margin: 0;
+  font-size: 0.6rem;
+}
+
+.buy__btn {
+  background-color: red;
+}
+
+.purchase__building button {
+  width: 100%;
+  text-transform: uppercase;
+}

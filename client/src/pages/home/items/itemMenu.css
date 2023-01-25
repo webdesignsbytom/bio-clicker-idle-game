@@ -1,22 +1,19 @@
 .itemMenu__container {
   display: grid;
   grid-template-rows: auto 1fr;
-  border: 5px solid green;
   overflow-y: hidden;
 }
 
 /* Titles */
 .item__title__container {
   color: white;
-  background-color: black;
-  border: 2px solid black;
   display: grid;
   place-content: center;
 }
+
 .item__title__container h2 {
   padding: 0;
   margin: 0;
-  background-color: red;
   width: fit-content;
 }
 
@@ -25,12 +22,9 @@
   display: grid;
   gap: 0.2rem;
   padding: 0.2rem;
-  background-color: yellow;
-
   padding-bottom: 3rem;
   overflow: scroll;
   overflow-x: hidden;
-  
 }
 
 .item {
@@ -62,14 +56,22 @@
 }
 
 .item__data {
-  font-size: 0.8rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .item__data > * {
   display: grid;
-  place-content: center;
-  justify-content: center;
+}
+
+.item__data > * h6 {
+padding: 0;
+margin: 0;
+font-size: 0.5rem;
+}
+
+.item__data > * span {
+font-size: 0.5rem;
 }
 
 .desc {
@@ -77,4 +79,33 @@
   border: 2px solid red;
   border-radius: 4px;
   padding: 0.1rem;
+}
+
+.purchase__item {
+  display: grid;
+  height: auto;
+}
+.owned {
+  height: auto;
+  display: grid;
+}
+.owned h6 {
+  padding: 0;
+  margin: 0;
+  font-size: 0.6rem;
+}
+
+.owned span {
+  padding: 0;
+  margin: 0;
+  font-size: 0.6rem;
+}
+
+.buy__btn {
+  background-color: red;
+}
+
+.purchase__item button {
+  width: 100%;
+  text-transform: uppercase;
 }

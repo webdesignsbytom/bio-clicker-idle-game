@@ -1,5 +1,5 @@
 .homepage__container {
-    background-color: lightpink;
+    background-color: #172121;
     display: grid;
     height: 100vh;
     max-height: 100vh;
@@ -8,8 +8,10 @@
 
 .game__container {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 0.8fr 2fr 0.8fr;
     overflow: hidden;
+    border-top: 2px solid #172121;
+    border-bottom: 2px solid #172121;
 }
 
 .main__game {
@@ -20,13 +22,10 @@
 }
 
 .clicker__container {
-    background-color: yellow;
 }
 
 .scoresDisplay__container {
-    background-color: orange;
 }
 
 .playerData__container {
-    background-color: pink;
 }

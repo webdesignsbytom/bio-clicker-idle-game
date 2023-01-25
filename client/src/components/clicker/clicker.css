@@ -1,6 +1,5 @@
 .clicker__container {
     position: relative;
-    background-color: red;
     display: grid;
     place-content: center;
 }
