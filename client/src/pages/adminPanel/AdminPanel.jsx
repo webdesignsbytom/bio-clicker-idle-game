@@ -1,8 +1,10 @@
 import React from 'react';
+import Nav from '../../components/nav/Nav';
 
 function AdminPanel() {
   return (
     <>
+    <Nav />
       <div>
         <div className='adminPanel__title'>
           <h1>Admin Panel</h1>
