@@ -1,5 +1,6 @@
 .scroll__container {
-    background-color: #BFACB5;
+    background-color: var(--alt-bg);
+    color: var(--font-color-main);
     padding: 0;
     margin: 0;
     font-size: 0.6rem;
