@@ -1,7 +1,13 @@
 .level__data__container {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
+    background-color: red;
+}
+
+.level__data__container h6 {
+    padding: 0;
+    margin: 0;
 }
 
 .levelImg__container img {
