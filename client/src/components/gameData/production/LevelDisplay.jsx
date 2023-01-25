@@ -4,9 +4,7 @@ import './levelDisplay.css';
 function LevelDisplay() {
   return (
     <section className='gameProduction__data__container'>
-
       <div className='gameProduction__data fuel__data__container'>
-
         <div className='data__image'>
           <div className='gameProduction__image'>
             <p className='gameProduction__icon'>🔥</p>
@@ -44,7 +42,7 @@ function LevelDisplay() {
 
       <div className='gameProduction__data level__data__container'>
         <div className='data__image'>
-            <p className='gameProduction__icon'>🔥</p>
+          <p className='gameProduction__icon'>🔥</p>
         </div>
         <div className='data__info'>
           <div className='level__name'>
@@ -54,10 +52,6 @@ function LevelDisplay() {
           <div className='gameProduction__targetScore'>
             <span>Target Score</span>
             <h6>1,000,000</h6>
-          </div>
-          <div className='gameProduction__scoreDifference'>
-            <span>Score Needed</span>
-            <h6>300,000</h6>
           </div>
         </div>
       </div>

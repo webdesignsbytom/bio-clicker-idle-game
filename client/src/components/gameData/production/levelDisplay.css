@@ -33,3 +33,10 @@
     padding: 0;
     margin: 0;
 }
+
+.data__info > * {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    height: auto;
+}

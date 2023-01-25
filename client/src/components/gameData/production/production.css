@@ -3,7 +3,6 @@
   display: grid;
   gap: 5px;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
 }
 
 .player__data__container h6 {
