@@ -66,20 +66,20 @@ function Building({ building }) {
 
         <div className='product__data'>
           <div className='product__name'>
-            <h6>Name: </h6>
-            <span>{building.name}</span>
+            <span>Name: </span>
+            <h6>{building.name}</h6>
           </div>
           <div className='product__cost'>
-            <h6>Cost: </h6>
-            <span>£ {building.cost}</span>
+            <span>Cost: </span>
+            <h6>£ {building.cost}</h6>
           </div>
           <div className='product__type'>
-            <h6>Type: </h6>
-            <span>{building.type}</span>
+            <span>Type: </span>
+            <h6>{building.type}</h6>
           </div>
           <div className='product__effect'>
-            <h6>Effect: </h6>
-            <span>x {building.effect}</span>
+            <span>Effect: </span>
+            <h6>x {building.effect}</h6>
           </div>
         </div>
 

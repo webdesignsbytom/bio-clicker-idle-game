@@ -1,31 +1,25 @@
 .scoresDisplay__container {
   display: grid;
-  place-content: center;
-  background-color: white;
-  padding: 0.4rem;
+  background-color: var(--secondary-bg);
+  padding: 0.2rem;
+  line-height: 1;
 }
 
 .scores__container {
   display: grid;
   justify-content: space-between;
   gap: 1rem;
-  place-content: center;
-  border: 3px solid green;
   width: 100%;
-}
-
-.incomes__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
 }
 
 .score__container {
-  display: grid;
-  place-content: center;
-  height: auto;
+  border: 2px solid var(--product-border-color);
+  display: grid; 
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.2rem;
 }
 
-.score__container h3 {
-    padding: 0;
-    margin: 0;
-}
+ 

@@ -3,10 +3,12 @@
   --product-border-color: #172121;
   --main-bg: #172121;
   --secondary-bg: #7f7b82;
-  --alt-bg: #BFACB5;
+  --color-1: #444554;
+  --color-2: #e5d0cc;
+  --alt-bg: #bfacb5;
   --font-color-main: #000;
   --font-color-secondary: #ffffff;
-  --nav-hover: #BFACB5;
+  --nav-hover: #bfacb5;
 }
 
 body {
@@ -25,4 +27,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
 }

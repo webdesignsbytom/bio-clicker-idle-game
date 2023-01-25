@@ -7,18 +7,18 @@ function ScoresDisplay() {
   return (
     <section className='scoresDisplay__container'>
       <div className='scores__container'>
-        <div>
-          <div className='score__container'>
-            <h3> Total Score {Math.trunc(playerCharacter.totalScore)}</h3>
-          </div>
+        
+        <div className='score__container'>
+          <h5> PPS </h5>
+          <span>{Math.trunc(playerCharacter.pps)}</span>
         </div>
-        <div className='incomes__container'>
-          <div className='score__container'>
-            <h3> PPS {Math.trunc(playerCharacter.pps)}</h3>
-          </div>
-          <div className='score__container'>
-            <h3> PPC {Math.trunc(playerCharacter.ppc)}</h3>
-          </div>
+        <div className='score__container'>
+          <h5> Total Score </h5>
+          <span>{Math.trunc(playerCharacter.totalScore)}</span>
+        </div>
+        <div className='score__container'>
+          <h5> PPC </h5>
+          <span>{Math.trunc(playerCharacter.ppc)}</span>
         </div>
       </div>
     </section>
