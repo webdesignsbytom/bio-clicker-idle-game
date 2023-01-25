@@ -1,19 +1,25 @@
-.playerData__container {
-  display: grid;
-  border: 3px solid var(--alt-border-color);
-  margin: 1rem;
-}
-
 .player__data__container {
   background-color: gray;
   display: grid;
   gap: 5px;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
 }
 
 .player__data__container h6 {
   padding: 0;
   margin: 0;
+}
+
+.production__data__container {
+  display: grid;
+  place-content: center;
+}
+
+.production__data__container h5 {
+  display: grid;
+  place-content: center;
+  border: 2px solid var(--product-border-color);
 }
 
 .player__items__data {

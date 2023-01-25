@@ -1,6 +1,5 @@
 import React from 'react';
 import './levelDisplay.css';
-import Logo from '../../assets/images/algae.png';
 
 function LevelDisplay() {
   return (
