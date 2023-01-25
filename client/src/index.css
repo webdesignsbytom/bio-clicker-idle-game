@@ -1,3 +1,14 @@
+:root {
+  --border-radius-sm: 4px;
+  --product-border-color: #172121;
+  --main-bg: #172121;
+  --secondary-bg: #7f7b82;
+  --alt-bg: #BFACB5;
+  --font-color-main: #000;
+  --font-color-secondary: #ffffff;
+  --nav-hover: #BFACB5;
+}
+
 body {
   margin: 0;
   padding: 0;

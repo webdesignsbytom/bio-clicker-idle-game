@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Main from './Main';
-import ItemMenu from './items/ItemMenu';
-import BuildingMenu from './buildings/BuildingMenu';
-
+import BuildingMenu from '../../components/menus/buildings/BuildingMenu';
+import ItemMenu from '../../components/menus/items/ItemMenu';
 import { GameContext } from '../../context/GameContext';
 
 function Game() {

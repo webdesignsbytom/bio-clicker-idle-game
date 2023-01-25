@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ItemDB from '../../../db/items.json';
 import Item from './Item';
-import './itemMenu.css';
 import { GameContext } from '../../../context/GameContext';
+import '../menu.css'
 
 function ItemMenu() {
   const {} = useContext(GameContext);
@@ -15,12 +15,12 @@ function ItemMenu() {
   }, []);
 
   return (
-    <section className='itemMenu__container'>
-      <div className='item__title__container'>
+    <section className='menu__container'>
+      <div className='menu__title__container'>
         <h2>Item Menu</h2>
       </div>
 
-      <div className='items__container'>
+      <div className='menu__container'>
         {items.map((item, index) => {
           return <Item item={item} key={index} />;
         })}

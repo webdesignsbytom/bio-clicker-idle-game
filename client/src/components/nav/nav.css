@@ -1,5 +1,5 @@
 .nav__container {
-  background-color: #7F7B82;
+  background-color: var(--secondary-bg);
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -22,9 +22,9 @@
 }
 
 .links__container a {
-    color: white;
+    color: var(--font-color-secondary);
     text-decoration: none;
   } 
   .links__container a:hover {
-    color: #BFACB5;
+    color: var(--nav-hover);
   } 
