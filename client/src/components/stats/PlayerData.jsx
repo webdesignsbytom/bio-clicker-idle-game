@@ -10,15 +10,14 @@ function PlayerData() {
   
   return (
     <section className='playerData__container'>
+
       <div className='player__data__container'>
         <div className='player__items__data'>
           <h6>Total buildings: {playerCharacter.totalBuildingsOwned}</h6>
-          <h6>Buildings Array {playerCharacter.buildings}</h6>
           <h6>Total % increase: 402%</h6>
         </div>
         <div className='player__buildings__data'>
           <h6>Total items: {playerCharacter.totalItemsOwned}</h6>
-          <h6>Items Array {playerCharacter.items}</h6>
           <h6>Total % increase: 1003%</h6>
         </div>
         <div className="player__fuel__data">
@@ -26,6 +25,7 @@ function PlayerData() {
           <h6>Fuel production: 2t per day</h6>
         </div>
       </div>
+      
       <LevelDisplay />
     </section>
   );
