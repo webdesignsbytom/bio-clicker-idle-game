@@ -7,28 +7,54 @@ import { GameContext } from '../../context/GameContext';
 function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
-  const [startTimer, setStartTimer] = useState(false);
-
-  console.log('loaded');
-
   useEffect(() => {
-    if (playerCharacter.pps >= 1) {
-      const interval = setInterval(() => {
-        let newPPS = playerCharacter.pps;
-        let currentTotalScore = playerCharacter.totalScore;
-        let currentMultiplier = playerCharacter.bonusMultiplier;
-        let newTotalScore = newPPS * currentMultiplier + currentTotalScore;
+    console.log('usig effect in game');
+    console.log('effect player', playerCharacter.pps);
 
+    if (playerCharacter.pps >= 1) {
+      console.log('timer set');
+
+      const interval = setInterval(() => {
+        console.log('interva');
+        console.log('xxx player', playerCharacter.pps);
+        console.log('xxx player', playerCharacter.totalScore);
+
+        let ppsscore = playerCharacter.pps
+        let totalscore = playerCharacter.totalScore
+        let newScore = ppsscore + totalscore
+        
+        console.log('newscore', newScore);
         setPlayerCharacter({
           ...playerCharacter,
-          totalScore: newTotalScore,
+          totalScore: newScore,
         });
       }, 1000);
+      //
       return () => {
+        console.log('clearing interval');
         clearInterval(interval);
       };
     }
-  }, [startTimer, playerCharacter.pps]);
+  }, [playerCharacter.timer, playerCharacter.pps, playerCharacter.totalScore, playerCharacter.ppc]);
+
+  // useEffect(() => {
+  //   if (playerCharacter.pps >= 1) {
+  //     const interval = setInterval(() => {
+  //       let newPPS = playerCharacter.pps;
+  //       let currentTotalScore = playerCharacter.totalScore;
+  //       let currentMultiplier = playerCharacter.bonusMultiplier;
+  //       let newTotalScore = newPPS * currentMultiplier + currentTotalScore;
+
+  //       setPlayerCharacter({
+  //         ...playerCharacter,
+  //         totalScore: newTotalScore,
+  //       });
+  //     }, 1000);
+  //     return () => {
+  //       clearInterval(interval);
+  //     };
+  //   }
+  // }, [startTimer, playerCharacter.pps]);
   return (
     <section className='game__container'>
       <ItemMenu />

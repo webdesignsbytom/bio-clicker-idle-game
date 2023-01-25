@@ -14,8 +14,9 @@ const GameContextProvider = ({ children }) => {
     totalItemsOwned: 1,
     bonusMultiplier: 1,
     baseLevelBonusMultiplier: 1,
+    timer: false,
     items: [],
-    buildings: []
+    buildings: [],
   });
 
   return (

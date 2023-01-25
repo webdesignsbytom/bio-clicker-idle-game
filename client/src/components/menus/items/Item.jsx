@@ -9,10 +9,15 @@ function Item({ item }) {
     console.log('item', item);
 
     if (playerCharacter.totalScore >= item.cost) {
+      console.log('totalscore', playerCharacter.totalScore)
+      console.log('cost', item.cost);
       let character = playerCharacter;
+      console.log('char', character);
       let newArray = character.items;
+      console.log('newArray', newArray);
 
       const itemIndex = newArray.findIndex((i) => i.id === item.id);
+      console.log('itemIndex', itemIndex);
 
       if (itemIndex !== -1) {
         newArray[itemIndex].quantity++;
@@ -25,7 +30,7 @@ function Item({ item }) {
 
       const pushArray = newArray;
 
-      if (item.type === 'ppc' || 'PPC') {
+      if (item.type === 'PPC') {
         // get current values
         let currentPpc = playerCharacter.ppc;
         let currentTotalScore = playerCharacter.totalScore;
@@ -46,8 +51,10 @@ function Item({ item }) {
         });
       }
 
-      if (item.type === 'pps' || 'PPS') {
+      if (item.type === 'PPS') {
+        let timerValue = true
         let currentPps = playerCharacter.pps;
+        console.log('currentPps', currentPps)
         let currentTotalScore = playerCharacter.totalScore;
 
         let newPpsValue = currentPps + item.effect;
@@ -61,6 +68,7 @@ function Item({ item }) {
           ...playerCharacter,
           pps: newPpsValue,
           totalScore: newTotalScore,
+          timer: timerValue,
           totalItemsOwned: newTotalItemsOwned,
           items: pushArray,
         });

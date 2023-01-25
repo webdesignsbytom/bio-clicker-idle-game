@@ -33,4 +33,15 @@ Server database to store game data
 3. TotalScore
 4. Current Fuel Total
 5. FPS fuel per second
-6. 
+6. Time since join
+7. EnergyPerSecond EPS
+8. TotalEnergy
+9. Total of each building
+10. Total buildins owned
+11. Total of each item
+12. Total items Owned
+13. Total boost percentage
+14. Current Level
+15. Time on level
+16. Prestige Level
+17. 

@@ -1,25 +1,35 @@
-.level__data__container {
+.gameProduction__data__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
     background-color: red;
 }
 
-.level__data__container h6 {
+.gameProduction__data {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.data__image {
+    padding: 0.2rem;
+}
+
+.gameProduction__icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-content: center;
+    border: 2px solid var(--product-border-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.data__info h6 {
     padding: 0;
     margin: 0;
 }
 
-.levelImg__container img {
-    width: 40px;
-    height: 40px;
-}
-
-.level__data span {
+.data__info span {
     font-size: 0.5rem;
-}
-
-.level__data h6 {
     padding: 0;
     margin: 0;
 }

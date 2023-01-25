@@ -22,7 +22,7 @@ function Clicker() {
     <>
       <section className='clicker__container'>
         <button onClick={clickButton}>CLICK ME</button>
-        <BonusMultiplier />
+        {/* <BonusMultiplier /> */}
       </section>
     </>
   );
