@@ -92,7 +92,7 @@ function Item({ item }) {
           </div>
           <div className='effect'>
             <h6>Effect: </h6>
-            <span>x {item.effect}</span>
+            <span>+ {item.effect}</span>
           </div>
         </div>
 

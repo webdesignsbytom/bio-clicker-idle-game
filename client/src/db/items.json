@@ -12,7 +12,7 @@
     "id": 2,
     "name": "Solar Panel",
     "type": "PPS",
-    "effect": 1.15,
+    "effect": 1,
     "cost": 25,
     "image": "🚀",
     "desc": "The panels earn for you all day once installed"

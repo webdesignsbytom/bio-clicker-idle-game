@@ -7,6 +7,7 @@ import LevelDisplay from '../level/LevelDisplay';
 
 function PlayerData() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+  
   return (
     <section className='playerData__container'>
       <div className='player__data__container'>
