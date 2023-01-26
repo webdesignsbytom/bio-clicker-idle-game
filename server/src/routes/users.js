@@ -1,15 +1,14 @@
-const express = require("express");
-// const { authorization } = require('../middleware/auth')
+const express = require('express')
 
 const router = express.Router();
 const {
     getAllUsers,
-    registerNewUser
-} = require('../controllers/users');
+    registerNewUser,
+    deleteUser
+} = require('../controllers/users')
 
-router.get('/', getAllUsers);
-router.post('/', registerNewUser);
+router.get('/', getAllUsers)
+router.post('/register', registerNewUser)
+router.delete('/:id', deleteUser)
 
-
-module.exports = router;
-
+module.exports = router

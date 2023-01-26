@@ -20,8 +20,24 @@ const findUserByEmail = (email) =>
     },
   });
 
+const findUserById = (userId) =>
+  prisma.user.findFirst({
+    where: {
+      id: userId,
+    },
+  });
+
+const deleteUserById = (userId) =>
+  prisma.user.delete({
+    where: {
+      id: userId,
+    },
+  });
+
 module.exports = {
   createUser,
   findAllUsers,
   findUserByEmail,
+  findUserById,
+  deleteUserById,
 };
