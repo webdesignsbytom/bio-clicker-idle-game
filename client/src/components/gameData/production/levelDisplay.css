@@ -9,9 +9,11 @@
     display: grid;
     grid-template-columns: auto 1fr;
 }
-
+.data__info {
+}
 .data__image {
     padding: 0.2rem;
+    height: auto;
 }
 
 .gameProduction__icon {
@@ -32,4 +34,11 @@
     font-size: 0.5rem;
     padding: 0;
     margin: 0;
+}
+
+.data__info > * {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    height: auto;
 }
