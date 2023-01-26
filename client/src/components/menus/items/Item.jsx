@@ -6,16 +6,6 @@ function Item({ item }) {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [itemQuantity, setItemQuantity] = useState(0);
 
-  const newTotalsArray = playerCharacter.items;
-  console.log('newTotalsArray', newTotalsArray);
-  const itemIdIndex = item.id - 1
-  console.log('itemIdIndex', itemIdIndex);
-
-  if (newTotalsArray.length >= 1) {
-    let thisItem = newTotalsArray[itemIdIndex];
-    console.log('thisItem', thisItem);
-  }
-
   const buyItem = (item) => {
     console.log('item', item);
 
@@ -41,12 +31,12 @@ function Item({ item }) {
 
       const pushArray = newArray;
 
-      if (item.type === 'PPC') {
+      if (item.type === 'pointsPerClick') {
         // get current values
-        let currentPpc = playerCharacter.ppc;
+        let currentpointsPerClick = playerCharacter.pointsPerClick;
         let currentTotalScore = playerCharacter.totalScore;
 
-        let newPpcValue = currentPpc + item.effect;
+        let newpointsPerClickValue = currentpointsPerClick + item.effect;
         let newTotalScore = currentTotalScore - item.cost;
 
         let purchaseAmount = 1;
@@ -55,20 +45,20 @@ function Item({ item }) {
 
         setPlayerCharacter({
           ...playerCharacter,
-          ppc: newPpcValue,
+          pointsPerClick: newpointsPerClickValue,
           totalScore: newTotalScore,
           totalItemsOwned: newTotalItemsOwned,
           items: pushArray,
         });
       }
 
-      if (item.type === 'PPS') {
+      if (item.type === 'pointsPerSecond') {
         let timerValue = true;
-        let currentPps = playerCharacter.pps;
-        console.log('currentPps', currentPps);
+        let currentpointsPerSecond = playerCharacter.pointsPerSecond;
+        console.log('currentpointsPerSecond', currentpointsPerSecond);
         let currentTotalScore = playerCharacter.totalScore;
 
-        let newPpsValue = currentPps + item.effect;
+        let newpointsPerSecondValue = currentpointsPerSecond + item.effect;
         let newTotalScore = currentTotalScore - item.cost;
 
         let purchaseAmount = 1;
@@ -77,12 +67,23 @@ function Item({ item }) {
 
         setPlayerCharacter({
           ...playerCharacter,
-          pps: newPpsValue,
+          pointsPerSecond: newpointsPerSecondValue,
           totalScore: newTotalScore,
           timer: timerValue,
           totalItemsOwned: newTotalItemsOwned,
           items: pushArray,
         });
+      }
+      const newTotalsArray = playerCharacter.items;
+      console.log('newTotalsArray', newTotalsArray);
+      const itemIdIndex = item.id - 1
+      console.log('itemIdIndex', itemIdIndex);
+    
+      if (newTotalsArray.length >= 1) {
+        let thisItem = newTotalsArray[itemIdIndex];
+        console.log('thisItem', thisItem.name);
+        let quantity = thisItem.quantity
+        
       }
 
       setItemQuantity((prev) => prev + 1);

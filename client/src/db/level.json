@@ -1,12 +1,10 @@
 [
   {
     "id": 1,
-    "name": "Finger",
-    "type": "pointsPerClick",
-    "effect": 1,
-    "cost": 10,
+    "name": "Training Level",
+    "targetScore": 10000000,
     "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
+    "desc": "A world of sandbox where you learn the game"
   },
   {
     "id": 2,

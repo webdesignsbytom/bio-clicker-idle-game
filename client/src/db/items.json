@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Finger",
-    "type": "PPC",
+    "type": "pointsPerClick",
     "effect": 1,
     "cost": 10,
     "image": "🚀",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "Solar Panel",
-    "type": "PPS",
+    "type": "pointsPerSecond",
     "effect": 1,
     "cost": 25,
     "image": "🚀",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Algae Tubes",
-    "type": "PPS",
+    "type": "pointsPerSecond",
     "effect": 2,
     "cost": 100,
     "image": "🚀",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Nutrients",
-    "type": "PPS",
+    "type": "pointsPerSecond",
     "effect": 2.2,
     "cost": 250,
     "image": "🚀",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "booster5",
-    "type": "PPC",
+    "type": "pointsPerClick",
     "effect": 25,
     "cost": 25,
     "image": "🚀",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "booster6",
-    "type": "PPS",
+    "type": "pointsPerSecond",
     "effect": 12,
     "cost": 11,
     "image": "🚀",
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "name": "booster7",
-    "type": "PPS",
+    "type": "pointsPerSecond",
     "effect": 12,
     "cost": 11,
     "image": "🚀",
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "name": "booster8",
-    "type": "PPS",
+    "type": "pointsPerSecond",
     "effect": 12,
     "cost": 11,
     "image": "🚀",
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "name": "booster9",
-    "type": "PPS",
+    "type": "pointsPerSecond",
     "effect": 12,
     "cost": 11,
     "image": "🚀",
@@ -83,7 +83,7 @@
   {
     "id": 10,
     "name": "booster10",
-    "type": "PPC",
+    "type": "pointsPerClick",
     "effect": 12,
     "cost": 11,
     "image": "🚀",
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "name": "booster11",
-    "type": "PPC",
+    "type": "pointsPerClick",
     "effect": 12,
     "cost": 11,
     "image": "🚀",

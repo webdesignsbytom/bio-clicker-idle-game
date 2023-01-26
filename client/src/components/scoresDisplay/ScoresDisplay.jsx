@@ -10,7 +10,7 @@ function ScoresDisplay() {
         
         <div className='score__container'>
           <h5> PPS </h5>
-          <span>{Math.trunc(playerCharacter.pps)}</span>
+          <span>{Math.trunc(playerCharacter.pointsPerSecond)}</span>
         </div>
         <div className='score__container'>
           <h5> Total Score </h5>
@@ -18,7 +18,7 @@ function ScoresDisplay() {
         </div>
         <div className='score__container'>
           <h5> PPC </h5>
-          <span>{Math.trunc(playerCharacter.ppc)}</span>
+          <span>{Math.trunc(playerCharacter.pointsPerClick)}</span>
         </div>
       </div>
     </section>
