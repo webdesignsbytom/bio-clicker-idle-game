@@ -1,11 +1,12 @@
-const express = require('express')
+const express = require('express');
 
 const router = express.Router();
 const {
-    getAllBuildings,
-} = require('../controllers/buildings')
+  getAllBuildings,
+  createNewBuilding,
+} = require('../controllers/buildings');
 
-router.get('/', getAllBuildings)
+router.get('/', getAllBuildings);
+router.post('/', createNewBuilding);
 
-
-module.exports = router
+module.exports = router;
