@@ -32,15 +32,18 @@ model GameProfile {
   ppc       Int       @default(1)
   userId    Int       @unique
   user      User      @relation(fields: [userId], references: [id])
+  items     Item[]
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
 }
 
 model Item {
-  id        Int       @id @default(autoincrement())
-  name      String    @unique
-  createdAt DateTime  @default(now())
-  updatedAt DateTime? @updatedAt
+  id            Int         @id @default(autoincrement())
+  name          String      @unique
+  gameProfileId Int
+  gameProfile   GameProfile @relation(fields: [gameProfileId], references: [id])
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime?   @updatedAt
 }
 
 model Building {
@@ -49,4 +52,3 @@ model Building {
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
 }
-

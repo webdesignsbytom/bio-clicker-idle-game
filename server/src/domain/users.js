@@ -11,13 +11,20 @@ const createUser = (email, password) =>
     },
   });
 
-const findAllUsers = () => prisma.user.findMany({});
+const findAllUsers = () => prisma.user.findMany({
+  include: {
+    gameProfile: true,
+  }
+});
 
 const findUserByEmail = (email) =>
   prisma.user.findFirst({
     where: {
       email: email,
     },
+    include: {
+      gameProfile: true,
+    }
   });
 
 const findUserById = (userId) =>
@@ -25,6 +32,9 @@ const findUserById = (userId) =>
     where: {
       id: userId,
     },
+    include: {
+      gameProfile: true,
+    }
   });
 
 const deleteUserById = (userId) =>

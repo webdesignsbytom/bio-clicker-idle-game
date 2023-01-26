@@ -19,6 +19,13 @@ async function seed() {
     }
   })
 
+  const createItemOne = await prisma.item.create({
+  data: {
+      gameProfileId: createGameProfile.id,
+      name: 'Large Pillow'
+    }
+  })
+
   const adminUser = await prisma.user.create({
     data: {
       email: 'deandangerous@admin.com',
@@ -27,37 +34,37 @@ async function seed() {
     }
   })
 
-  const itemOne = await prisma.item.create({
-    data: {
-      name: 'Cool item'
-    }
-  })
-  const itemTwo = await prisma.item.create({
-    data: {
-      name: 'Wool item'
-    }
-  })
-  const itemThree = await prisma.item.create({
-    data: {
-      name: 'Sad item'
-    }
-  })
+  // const itemOne = await prisma.item.create({
+  //   data: {
+  //     name: 'Cool item'
+  //   }
+  // })
+  // const itemTwo = await prisma.item.create({
+  //   data: {
+  //     name: 'Wool item'
+  //   }
+  // })
+  // const itemThree = await prisma.item.create({
+  //   data: {
+  //     name: 'Sad item'
+  //   }
+  // })
 
-  const buildingOne = await prisma.building.create({
-    data: {
-      name: 'Cool building'
-    }
-  })
-  const buildingTwo = await prisma.building.create({
-    data: {
-      name: 'Wool building'
-    }
-  })
-  const buildingThree = await prisma.building.create({
-    data: {
-      name: 'Sad building'
-    }
-  })
+  // const buildingOne = await prisma.building.create({
+  //   data: {
+  //     name: 'Cool building'
+  //   }
+  // })
+  // const buildingTwo = await prisma.building.create({
+  //   data: {
+  //     name: 'Wool building'
+  //   }
+  // })
+  // const buildingThree = await prisma.building.create({
+  //   data: {
+  //     name: 'Sad building'
+  //   }
+  // })
 }
 
 seed().catch(async (error) => {

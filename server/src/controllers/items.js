@@ -44,13 +44,12 @@ const getAllItems = async (req, res) => {
 
 const createNewItem = async (req, res) => {
   console.log('creating new item');
-  const { name } = req.body
+  const { name } = req.body;
   console.log('name: ', name);
 
   try {
-
-    const foundItem = await findItemByName(name)
-    console.log('found item: ', foundItem)
+    const foundItem = await findItemByName(name);
+    console.log('found item: ', foundItem);
 
     if (foundItem) {
       return res.status(401).json({
@@ -58,8 +57,8 @@ const createNewItem = async (req, res) => {
       });
     }
 
-    const newItem = await createItem(name)
-    console.log('new item', newItem)
+    const newItem = await createItem(name);
+    console.log('new item', newItem);
 
     if (!newItem) {
       return res.status(401).json({
@@ -72,7 +71,6 @@ const createNewItem = async (req, res) => {
       code: `201`,
       data: newItem,
     });
-
   } catch (error) {
     //
     return res.status(500).json({
@@ -83,4 +81,31 @@ const createNewItem = async (req, res) => {
   }
 };
 
-module.exports = { getAllItems, createNewItem };
+const buyItemFromStore = async (req, res) => {
+  console.log('item xxx');
+  const { name } = req.body;
+  console.log('name: ', name);
+  const userId = 2;
+  console.log('userId: ', userId);
+
+  try {
+    
+    const foundItem = await findItemByName(name);
+    console.log('found item: ', foundItem);
+
+    if (foundItem) {
+      return res.status(401).json({
+        message: `Item already exists in database with name ${name}`,
+      });
+    }
+  } catch (error) {
+    //
+    return res.status(500).json({
+      code: `500`,
+      error: error.message,
+      message: `Internal server error: ${error.message}, code: 500`,
+    });
+  }
+};
+
+module.exports = { getAllItems, createNewItem, buyItemFromStore };
