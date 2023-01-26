@@ -4,13 +4,23 @@ import { GameContext } from '../../../context/GameContext';
 function Item({ item }) {
   // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
-  const [itemQuantity, setItemQuantity] = useState(0)
+  const [itemQuantity, setItemQuantity] = useState(0);
+
+  const newTotalsArray = playerCharacter.items;
+  console.log('newTotalsArray', newTotalsArray);
+  const itemIdIndex = item.id - 1
+  console.log('itemIdIndex', itemIdIndex);
+
+  if (newTotalsArray.length >= 1) {
+    let thisItem = newTotalsArray[itemIdIndex];
+    console.log('thisItem', thisItem);
+  }
 
   const buyItem = (item) => {
     console.log('item', item);
 
     if (playerCharacter.totalScore >= item.cost) {
-      console.log('totalscore', playerCharacter.totalScore)
+      console.log('totalscore', playerCharacter.totalScore);
       console.log('cost', item.cost);
       let character = playerCharacter;
       console.log('char', character);
@@ -53,9 +63,9 @@ function Item({ item }) {
       }
 
       if (item.type === 'PPS') {
-        let timerValue = true
+        let timerValue = true;
         let currentPps = playerCharacter.pps;
-        console.log('currentPps', currentPps)
+        console.log('currentPps', currentPps);
         let currentTotalScore = playerCharacter.totalScore;
 
         let newPpsValue = currentPps + item.effect;
@@ -75,7 +85,7 @@ function Item({ item }) {
         });
       }
 
-      setItemQuantity(prev => prev + 1)
+      setItemQuantity((prev) => prev + 1);
     } else {
       alert('You cannot afford to purchase');
     }
@@ -109,7 +119,9 @@ function Item({ item }) {
 
         <div className='purchase__product'>
           <div className='product__owned'>
-            <h6>Owned: <span>{itemQuantity}</span></h6>
+            <h6>
+              Owned: <span>{itemQuantity}</span>
+            </h6>
           </div>
           <button onClick={() => buyItem(item)}>buy</button>
         </div>

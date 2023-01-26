@@ -44,4 +44,3 @@ Server database to store game data
 14. Current Level
 15. Time on level
 16. Prestige Level
-17. 

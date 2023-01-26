@@ -7,8 +7,8 @@ import ScoresDisplay from '../../components/scoresDisplay/ScoresDisplay';
 function Main() {
   return (
     <main className='main__game'>
-      <Clicker />
       <ScoresDisplay />
+      <Clicker />
       <GameData />
       <LevelAnimation />
     </main>
