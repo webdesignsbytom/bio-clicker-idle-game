@@ -17,7 +17,11 @@ app.use(express.urlencoded({ extended: true }));
 // Tell express to use your routers here
 const userRouter = require('./routes/users')
 const authRouter = require('./routes/auth')
+const itemsRouter = require('./routes/items')
+const buildingsRouter = require('./routes/buildings')
 
+app.use('/buildings', buildingsRouter)
+app.use('/items', itemsRouter)
 app.use('/user', userRouter) // user data
 app.use('/users', userRouter) // users data lists and search
 app.use('/', userRouter) // register

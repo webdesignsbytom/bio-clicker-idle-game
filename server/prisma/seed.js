@@ -13,10 +13,49 @@ async function seed() {
     }
   })
 
+  const createGameProfile = await prisma.gameProfile.create({
+    data: {
+        userId: createdUser.id,
+    }
+  })
+
   const adminUser = await prisma.user.create({
     data: {
       email: 'deandangerous@admin.com',
-      password: password
+      password: password,
+      role: 'ADMIN'
+    }
+  })
+
+  const itemOne = await prisma.item.create({
+    data: {
+      name: 'Cool item'
+    }
+  })
+  const itemTwo = await prisma.item.create({
+    data: {
+      name: 'Wool item'
+    }
+  })
+  const itemThree = await prisma.item.create({
+    data: {
+      name: 'Sad item'
+    }
+  })
+
+  const buildingOne = await prisma.building.create({
+    data: {
+      name: 'Cool building'
+    }
+  })
+  const buildingTwo = await prisma.building.create({
+    data: {
+      name: 'Wool building'
+    }
+  })
+  const buildingThree = await prisma.building.create({
+    data: {
+      name: 'Sad building'
     }
   })
 }
