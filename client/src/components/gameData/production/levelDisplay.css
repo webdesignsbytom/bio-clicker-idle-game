@@ -9,9 +9,11 @@
     display: grid;
     grid-template-columns: auto 1fr;
 }
-
+.data__info {
+}
 .data__image {
     padding: 0.2rem;
+    height: auto;
 }
 
 .gameProduction__icon {
