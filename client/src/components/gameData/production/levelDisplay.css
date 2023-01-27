@@ -25,6 +25,7 @@
     place-content: center;
     border: 3px solid var(--container-border-color);
     border-radius: var(--border-radius-sm);
+    background-color: var(--secondary-bg);
 }
 
 .data__info h6 {

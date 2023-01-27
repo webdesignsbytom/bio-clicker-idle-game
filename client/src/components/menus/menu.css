@@ -20,8 +20,10 @@
   margin: 0;
   width: fit-content;
 }
+
 .product__deltaV {
   display: grid;
+  color: var(--font-color-secondary);
 }
 .product__deltaV h6 {
   padding: 0;
@@ -41,7 +43,7 @@
   border: 3px solid var(--product-border-color);
   border-radius: 8px;
   padding: 0.2rem;
-  background-color: var(--secondary-bg);
+  background-color: var(--product-bg);
   color: var(--font-color-main);
   display: grid;
   gap: 2px;
@@ -115,4 +117,5 @@
 .purchase__product button {
   width: 100%;
   text-transform: uppercase;
+  cursor: pointer;
 }
