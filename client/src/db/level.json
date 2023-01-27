@@ -8,92 +8,16 @@
   },
   {
     "id": 2,
-    "name": "Solar Panel",
-    "type": "pointsPerSecond",
-    "effect": 1.15,
-    "cost": 25,
+    "name": "Training Level",
+    "targetScore": 10000000,
     "image": "🚀",
-    "desc": "The panels earn for you all day once installed"
+    "desc": "A world of sandbox where you learn the game"
   },
   {
     "id": 3,
-    "name": "Algae Tubes",
-    "type": "pointsPerSecond",
-    "effect": 2,
-    "cost": 100,
+    "name": "Training Level",
+    "targetScore": 10000000,
     "image": "🚀",
-    "desc": "Growth tubes for research and fuel production"
-  },
-  {
-    "id": 4,
-    "name": "Nutrients",
-    "type": "pointsPerSecond",
-    "effect": 2.2,
-    "cost": 250,
-    "image": "🚀",
-    "desc": "Barrels of growth medium and fertilizers to increase growth"
-  },
-  {
-    "id": 5,
-    "name": "booster5",
-    "type": "pointsPerClick",
-    "effect": 25,
-    "cost": 25,
-    "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
-  },
-  {
-    "id": 6,
-    "name": "booster6",
-    "type": "pointsPerSecond",
-    "effect": 12,
-    "cost": 11,
-    "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
-  },
-  {
-    "id": 7,
-    "name": "booster7",
-    "type": "pointsPerSecond",
-    "effect": 12,
-    "cost": 11,
-    "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
-  },
-  {
-    "id": 8,
-    "name": "booster8",
-    "type": "pointsPerSecond",
-    "effect": 12,
-    "cost": 11,
-    "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
-  },
-  {
-    "id": 9,
-    "name": "booster9",
-    "type": "pointsPerSecond",
-    "effect": 12,
-    "cost": 11,
-    "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
-  },
-  {
-    "id": 10,
-    "name": "booster10",
-    "type": "pointsPerClick",
-    "effect": 12,
-    "cost": 11,
-    "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
-  },
-  {
-    "id": 11,
-    "name": "booster11",
-    "type": "pointsPerClick",
-    "effect": 12,
-    "cost": 11,
-    "image": "🚀",
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
+    "desc": "A world of sandbox where you learn the game"
   }
 ]

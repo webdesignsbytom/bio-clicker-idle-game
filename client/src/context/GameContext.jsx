@@ -10,24 +10,26 @@ const GameContextProvider = ({ children }) => {
     // Points
     pointsPerSecond: 0,
     pointsPerClick: 1,
+    totalTimesClicked: 0,
     totalScore: 10000000,
     timer: false,
     // Items
-    totalItemsOwned: 1,
+    totalItemsOwned: 0,
     items: [], // db model
     // Buildings
     totalBuildingsOwned: 0,
     buildings: [], // db model
     // Fuel
+    fuelPerSecond: 0,
     totalFuelProducedCurrentLevel: 0,
     totalFuelProducedOverGame: 0,
-    fuelPerSecond: 0,
     // Power
+    wattsProduced: 0,
     totalPowerProducedCurrentLevel: 0,
     totalPowerProducedOverGame: 0,
-    wattsProduced: 0,
     // Level
     currentLevel: 1,
+    percentageCompleted: 0,
     unlockedFuelProducors: false,
     unlockedPowerProducors: false,
     // Bonus
@@ -38,7 +40,8 @@ const GameContextProvider = ({ children }) => {
     startedDateTime: null,
     lastLoggedInDateTime: null,
     latestLogoutDateTime: null,
-    prestigeScore: 0
+    prestigeScore: 0,
+    achievements: []
   });
 
   return (

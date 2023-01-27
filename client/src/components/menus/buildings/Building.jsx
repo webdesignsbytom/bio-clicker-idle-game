@@ -75,7 +75,7 @@ function Building({ building }) {
           </div>
           <div className='product__type'>
             <span>Type: </span>
-            <h6>{building.type}</h6>
+            <h6>{building.typetitle}</h6>
           </div>
           <div className='product__effect'>
             <span>Effect: </span>
