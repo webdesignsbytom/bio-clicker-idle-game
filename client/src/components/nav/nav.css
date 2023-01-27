@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0.4rem;
-  border-bottom: 2px solid var(--alt-border-color);
+  border-bottom: var(--border-thickness-sm) solid var(--container-border-color);
 }
 
 .logo__container {

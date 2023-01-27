@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
     border: 3px solid var(--container-border-color);
-    color: white;
+    color: var(--font-color-secondary);
     align-items: center;
 }
 .data__info {
