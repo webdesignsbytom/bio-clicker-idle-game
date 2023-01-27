@@ -1,4 +1,4 @@
 .levelAnimation__container {
     display: grid;
-    border: 2px solid yellow;
+    border: 3px solid var(--container-border-color);
 }

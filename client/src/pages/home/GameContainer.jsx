@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Main from './Main';
+import Main from './MainGame';
 import BuildingMenu from '../../components/menus/buildings/BuildingMenu';
 import ItemMenu from '../../components/menus/items/ItemMenu';
 import { GameContext } from '../../context/GameContext';

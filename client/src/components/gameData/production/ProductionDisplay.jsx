@@ -10,6 +10,7 @@ function LevelDisplay() {
             <p className='gameProduction__icon'>🔥</p>
           </div>
         </div>
+        
         <div className='data__info'>
           <div className='fuel__production'>
             <span>Fuel Production</span>

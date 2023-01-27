@@ -2,7 +2,8 @@
   background-color: var(--secondary-bg);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0.2rem;
+  padding: 0.4rem;
+  border-bottom: var(--border-thickness-sm) solid var(--container-border-color);
 }
 
 .logo__container {
