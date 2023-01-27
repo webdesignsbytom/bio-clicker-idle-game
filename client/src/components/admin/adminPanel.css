@@ -1,0 +1,7 @@
+.admin__panel__container {
+    background-color: white;
+    height: 400px;
+    width: 200px;
+    position: fixed;
+    bottom: 0;
+}

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './nav.css';
 import Logo from '../../assets/images/algae.png';
-import BonusMultiplier from '../bonusMultiplier/BonusMultiplier';
+import { OptionContext } from '../../context/OptionContext';
 
 function Nav() {
+  const { isAdminPanelOpen, setIsAdminPanelOpen } = useContext(OptionContext);
+
+  const openAdminPanel = () => {
+    console.log('click');
+    setIsAdminPanelOpen(!isAdminPanelOpen);
+  };
   return (
     <>
       <nav className='nav__container'>
@@ -19,6 +25,7 @@ function Nav() {
           <Link to='/register'>Register</Link>
           <Link to='/account'>Account</Link>
           <Link to='/admin'>Admin</Link>
+          <button onClick={openAdminPanel}>AdminPanel</button>
         </div>
       </nav>
     </>
