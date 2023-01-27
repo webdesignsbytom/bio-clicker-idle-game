@@ -9,19 +9,19 @@ function Game() {
 
   useEffect(() => {
     console.log('usig effect in game');
-    console.log('effect player', playerCharacter.pps);
+    console.log('effect player', playerCharacter.pointsPerSecond);
 
-    if (playerCharacter.pps >= 1) {
+    if (playerCharacter.pointsPerSecond >= 1) {
       console.log('timer set');
 
       const interval = setInterval(() => {
         console.log('interva');
-        console.log('xxx player', playerCharacter.pps);
+        console.log('xxx player', playerCharacter.pointsPerSecond);
         console.log('xxx player', playerCharacter.totalScore);
 
-        let ppsscore = playerCharacter.pps
+        let pointsPerSecondscore = playerCharacter.pointsPerSecond
         let totalscore = playerCharacter.totalScore
-        let newScore = ppsscore + totalscore
+        let newScore = pointsPerSecondscore + totalscore
         
         console.log('newscore', newScore);
         setPlayerCharacter({
@@ -35,7 +35,7 @@ function Game() {
         clearInterval(interval);
       };
     }
-  }, [playerCharacter.timer, playerCharacter.pps, playerCharacter.totalScore, playerCharacter.ppc]);
+  }, [playerCharacter.timer, playerCharacter.pointsPerSecond, playerCharacter.totalScore, playerCharacter.pointsPerClick]);
 
   return (
     <section className='game__container'>

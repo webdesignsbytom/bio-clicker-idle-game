@@ -12,11 +12,11 @@ function Building({ building }) {
       let newArray = playerCharacter.buildings.slice();
       newArray.push(newBuildingName);
 
-      if (building.type === 'ppc') {
-        let currentPpc = playerCharacter.ppc;
+      if (building.type === 'pointsPerClick') {
+        let currentpointsPerClick = playerCharacter.pointsPerClick;
         let currentTotalScore = playerCharacter.totalScore;
 
-        let newPpcValue = currentPpc + building.effect;
+        let newpointsPerClickValue = currentpointsPerClick + building.effect;
         let newTotalScore = currentTotalScore - building.cost;
 
         let purchaseAmount = 1;
@@ -25,18 +25,18 @@ function Building({ building }) {
 
         setPlayerCharacter({
           ...playerCharacter,
-          ppc: newPpcValue,
+          pointsPerClick: newpointsPerClickValue,
           totalScore: newTotalScore,
           totalBuildingsOwned: newTotalBuildingsOwned,
           buildings: newArray
         });
       }
 
-      if (building.type === 'pps') {
-        let currentPps = playerCharacter.pps;
+      if (building.type === 'pointsPerSecond') {
+        let currentpointsPerSecond = playerCharacter.pointsPerSecond;
         let currentTotalScore = playerCharacter.totalScore;
 
-        let newPpsValue = currentPps + building.effect;
+        let newpointsPerSecondValue = currentpointsPerSecond + building.effect;
         let newTotalScore = currentTotalScore - building.cost;
 
         let purchaseAmount = 1;
@@ -45,7 +45,7 @@ function Building({ building }) {
 
         setPlayerCharacter({
           ...playerCharacter,
-          pps: newPpsValue,
+          pointsPerSecond: newpointsPerSecondValue,
           totalScore: newTotalScore,
           totalBuildingsOwned: newTotalBuildingsOwned,
           buildings: newArray
@@ -75,7 +75,7 @@ function Building({ building }) {
           </div>
           <div className='product__type'>
             <span>Type: </span>
-            <h6>{building.type}</h6>
+            <h6>{building.typetitle}</h6>
           </div>
           <div className='product__effect'>
             <span>Effect: </span>

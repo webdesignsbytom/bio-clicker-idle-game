@@ -7,10 +7,10 @@ function Clicker() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const clickButton = () => {
-    let newPPC = playerCharacter.ppc;
+    let newpointsPerClick = playerCharacter.pointsPerClick;
     let currentTotalScore = playerCharacter.totalScore;
     let currentMultiplier = playerCharacter.bonusMultiplier;
-    let newTotalScore = newPPC * currentMultiplier + currentTotalScore;
+    let newTotalScore = newpointsPerClick * currentMultiplier + currentTotalScore;
 
     setPlayerCharacter({
       ...playerCharacter,
