@@ -11,6 +11,8 @@ const GameContextProvider = ({ children }) => {
     pointsPerSecond: 0,
     pointsPerClick: 1,
     totalTimesClicked: 0,
+    baseIncome: 0,
+    multiplierIncome: 0,
     totalScore: 10000000,
     timer: false,
     // Items

@@ -1,7 +1,9 @@
 .admin__panel__container {
     background-color: white;
-    height: 400px;
-    width: 200px;
+    /* height: 400px;
+    width: 200px; */
     position: fixed;
     bottom: 0;
+    padding: 1rem;
+    font-size: 0.8rem;
 }
