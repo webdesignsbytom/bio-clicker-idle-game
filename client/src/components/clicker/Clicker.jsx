@@ -21,8 +21,14 @@ function Clicker() {
   return (
     <>
       <section className='clicker__container'>
-        <button onClick={clickButton}>CLICK ME</button>
-        {/* <BonusMultiplier /> */}
+        <div className='clicker__section'>
+          <button onClick={clickButton}>CLICK ME</button>
+        </div>
+        <article className='special__container'>
+          <div className="special__link bonus">Bonus</div>
+          <div className="special__link achievements">Achievements</div>
+          <div className="special__link quest">Quests</div>
+        </article>
       </section>
     </>
   );
