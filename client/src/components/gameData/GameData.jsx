@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { GameContext } from '../../context/GameContext';
 import LevelDisplay from './production/LevelDisplay';
-import Production from './production/Production';
 import './gameData.css';
 
 function GameData() {
@@ -9,7 +8,6 @@ function GameData() {
 
   return (
     <section className='playerData__container'>
-      <Production />
       <LevelDisplay />
     </section>
   );

@@ -2,18 +2,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
-    background-color: red;
+    
 }
 
 .gameProduction__data {
     display: grid;
     grid-template-columns: auto 1fr;
+    border: 3px solid var(--container-border-color);
+    color: white;
+    align-items: center;
 }
 .data__info {
 }
 .data__image {
     padding: 0.2rem;
-    height: auto;
 }
 
 .gameProduction__icon {
@@ -21,7 +23,7 @@
     height: 40px;
     display: grid;
     place-content: center;
-    border: 2px solid var(--product-border-color);
+    border: 3px solid var(--container-border-color);
     border-radius: var(--border-radius-sm);
 }
 

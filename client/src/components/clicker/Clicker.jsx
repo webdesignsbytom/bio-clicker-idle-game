@@ -10,7 +10,8 @@ function Clicker() {
     let newpointsPerClick = playerCharacter.pointsPerClick;
     let currentTotalScore = playerCharacter.totalScore;
     let currentMultiplier = playerCharacter.bonusMultiplier;
-    let newTotalScore = newpointsPerClick * currentMultiplier + currentTotalScore;
+    let newTotalScore =
+      newpointsPerClick * currentMultiplier + currentTotalScore;
 
     setPlayerCharacter({
       ...playerCharacter,
@@ -25,9 +26,10 @@ function Clicker() {
           <button onClick={clickButton}>CLICK ME</button>
         </div>
         <article className='special__container'>
-          <div className="special__link bonus">Bonus</div>
-          <div className="special__link achievements">Achievements</div>
-          <div className="special__link quest">Quests</div>
+          <div className='special__link achievements'>Achievements</div>
+          <div className='special__link quest'>Tech Tree</div>
+          <div className='special__link quest'>Quests</div>
+          <div className='special__link bonus'>Bonus</div>
         </article>
       </section>
     </>

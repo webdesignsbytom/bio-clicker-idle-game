@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import AdminPanel from './pages/adminPanel/AdminPanel';
-import Home from './pages/home/Home';
+import Home from './pages/home/HomePage';
 import Login from './users/login/Login'
 import Register from './users/register/Register'
 import Account from './users/account/Account'

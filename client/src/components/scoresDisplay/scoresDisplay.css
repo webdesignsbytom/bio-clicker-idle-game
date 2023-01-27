@@ -1,6 +1,7 @@
 .scoresDisplay__container {
   display: grid;
-  background-color: var(--secondary-bg);
+  background-color: var(--main-bg);
+  border: 3px solid var(--container-border-color);
   padding: 0.2rem;
   line-height: 1;
 }
@@ -14,12 +15,13 @@
 }
 
 .score__container {
-  border: 2px solid var(--product-border-color);
+  border: 2px solid var(--container-border-color);
   display: grid; 
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
   padding: 0.2rem;
+  color: var(--font-color-secondary);
 }
 
  

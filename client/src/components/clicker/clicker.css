@@ -1,12 +1,11 @@
 .clicker__container {
-  border: 3px solid red;
-  background-color: lightblue;
+  border: 3px solid var(--container-border-color);
+  background-color: var(--color-2);
   position: relative;
   display: grid;
 }
 
 .clicker__section {
-  border: 2px solid white;
   display: grid;
   place-content: center;
 }
@@ -20,11 +19,15 @@
 }
 
 .special__link {
-    border: 2px solid yellow;
+  border-top: 3px solid var(--alt-border-color);
+  border-left: 3px solid var(--alt-border-color);
+  border-bottom: 3px solid var(--alt-border-color);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-    padding: 0.4rem 1.6rem;
-    font-size: 1.4rem;
+    padding: 0.2rem 0.2rem 0.2rem 1rem;
+    font-size: 1.1rem;
+    display: grid;
+    justify-content: flex-end;
 }
 
 .special__link:hover {
