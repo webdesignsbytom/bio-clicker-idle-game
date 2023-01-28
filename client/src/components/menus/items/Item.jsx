@@ -1,13 +1,31 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import ItemHTML from './ItemHTML';
 
 function Item({ item }) {
-  // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [itemQuantity, setItemQuantity] = useState(0);
+  const [toggleBuy, setToggleBuy] = useState(false);
 
+  useEffect(() => {
+    const newArray = playerCharacter.items;
+    console.log('NEW', newArray);
+    const itemId = item.id;
+    const foundItem = newArray.find((item) => item.id === itemId);
+    console.log('found item', foundItem);
+    if (foundItem) {
+      const quantity = foundItem.quantity;
+      setItemQuantity(quantity);
+    }
+    //   console.log('found item q', foundItem.quantity);
+  }, []);
+
+  const toggleBuySwitch = () => {
+    setToggleBuy(true);
+    setToggleBuy(false);
+  };
   const buyItem = (item) => {
+    toggleBuySwitch();
 
     if (playerCharacter.totalScore >= item.cost) {
       let character = playerCharacter;
@@ -70,13 +88,12 @@ function Item({ item }) {
         });
       }
 
-
       const newTotalsArray = playerCharacter.items;
-      const itemIdIndex = item.id - 1
-    
+      const itemIdIndex = item.id - 1;
+
       if (newTotalsArray.length >= 1) {
         let thisItem = newTotalsArray[itemIdIndex];
-        let quantity = thisItem.quantity
+        let quantity = thisItem.quantity;
       }
 
       setItemQuantity((prev) => prev + 1);
@@ -85,9 +102,7 @@ function Item({ item }) {
     }
   };
 
-  return (
-    <ItemHTML item={item} itemQuantity={itemQuantity} buyItem={buyItem} />
-  );
+  return <ItemHTML item={item} itemQuantity={itemQuantity} buyItem={buyItem} />;
 }
 
 export default Item;

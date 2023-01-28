@@ -7,6 +7,7 @@ import '../menu.css';
 function ItemMenu() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [items, setItems] = useState([]);
+  const [ownedItems, setOwnedItems] = useState([]);
 
   console.log('Items loaded');
 
