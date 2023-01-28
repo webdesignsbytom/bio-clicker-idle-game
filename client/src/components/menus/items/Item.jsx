@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import ItemHTML from './ItemHTML';
-import { updateItemCost } from '../PurchaseFunctions';
 
 function Item({ item, setItemsArray }) {
+    // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const buyItem = (item) => {
@@ -28,10 +28,7 @@ function Item({ item, setItemsArray }) {
       // newArray[itemIndex].effect = newEffect.toFixed(2) 
 
       const pushArray = newArray;
-
       setItemsArray(pushArray);
-
-
 
       // PPC Item
       if (item.type === 'pointsPerClick') {
