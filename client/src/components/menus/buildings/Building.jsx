@@ -2,31 +2,28 @@ import React, { useContext } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import BuildingHTML from './BuildingHTML';
 
-
 function Building({ building, setBuildingsArray }) {
   // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const buyBuilding = (building) => {
-
     // Check if it can be afforded
     if (playerCharacter.totalScore >= building.cost) {
       // Find the item in players state and add to quantity
       let character = playerCharacter;
       let newArray = character.buildings;
 
-      const buildingIndex = newArray.findIndex((i) => i.id === building.id);
+      const buildingIndex = newArray.findIndex((b) => b.id === building.id);
       console.log('building INDEX', buildingIndex);
-// Increment the quantity
-newArray[buildingIndex].quantity++;
+      // Increment the quantity
+      newArray[buildingIndex].quantity++;
 
-// Increase item cost
-const newCost = building.cost * 1.1
-newArray[buildingIndex].cost = newCost.toFixed(2)
+      // Increase item cost
+      const newCost = building.cost * 1.1;
+      newArray[buildingIndex].cost = newCost.toFixed(2);
 
-const pushArray = newArray;
+      const pushArray = newArray;
       setBuildingsArray(pushArray);
-
 
       if (building.type === 'pointsPerClick') {
         let currentpointsPerClick = playerCharacter.pointsPerClick;
@@ -65,15 +62,12 @@ const pushArray = newArray;
           totalBuildingsOwned: newTotalBuildingsOwned,
         });
       }
-      
     } else {
       alert('You cannot afford to purchase');
     }
   };
 
-  return (
-    <BuildingHTML building={building} buyBuilding={buyBuilding} />
-   )
+  return <BuildingHTML building={building} buyBuilding={buyBuilding} />;
 }
 
 export default Building;

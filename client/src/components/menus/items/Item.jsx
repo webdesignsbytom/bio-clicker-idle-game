@@ -1,18 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import ItemHTML from './ItemHTML';
 
 function Item({ item, setItemsArray }) {
-    // Player data from context
+  // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const buyItem = (item) => {
+    console.log('click xxx')
     // Check if it can be afforded
     if (playerCharacter.totalScore >= item.cost) {
       // Find the item in players state and add to quantity
       let character = playerCharacter;
+      console.log('character', character)
       let newArray = character.items;
-
+      console.log('new array', newArray);
       const itemIndex = newArray.findIndex((i) => i.id === item.id);
       console.log('ITEM INDEX', itemIndex);
 
@@ -20,12 +22,8 @@ function Item({ item, setItemsArray }) {
       newArray[itemIndex].quantity++;
 
       // Increase item cost
-      const newCost = item.cost * 1.1
-      newArray[itemIndex].cost = newCost.toFixed(2) 
-
-      // // Increase effect cost
-      // const newEffect = item.effect * 1.1
-      // newArray[itemIndex].effect = newEffect.toFixed(2) 
+      const newCost = item.cost * 1.1;
+      newArray[itemIndex].cost = newCost.toFixed(2);
 
       const pushArray = newArray;
       setItemsArray(pushArray);
@@ -40,7 +38,8 @@ function Item({ item, setItemsArray }) {
         let newTotalScore = currentTotalScore - item.cost;
 
         let purchaseAmount = 1;
-        let newTotalItemsOwned = playerCharacter.totalItemsOwned + purchaseAmount;
+        let newTotalItemsOwned =
+          playerCharacter.totalItemsOwned + purchaseAmount;
 
         setPlayerCharacter({
           ...playerCharacter,
@@ -52,7 +51,6 @@ function Item({ item, setItemsArray }) {
 
       // PPS Item
       if (item.type === 'pointsPerSecond') {
-
         let currentpointsPerSecond = playerCharacter.pointsPerSecond;
         let currentTotalScore = playerCharacter.totalScore;
 
@@ -60,8 +58,9 @@ function Item({ item, setItemsArray }) {
         let newTotalScore = currentTotalScore - item.cost;
 
         let purchaseAmount = 1;
-        let newTotalItemsOwned = playerCharacter.totalItemsOwned + purchaseAmount;
-        console.log('AAAAAAAAAAAAA', playerCharacter.totalitemsOwned)
+        let newTotalItemsOwned =
+          playerCharacter.totalItemsOwned + purchaseAmount;
+        console.log('AAAAAAAAAAAAA', playerCharacter.totalitemsOwned);
 
         setPlayerCharacter({
           ...playerCharacter,
@@ -70,7 +69,6 @@ function Item({ item, setItemsArray }) {
           totalItemsOwned: newTotalItemsOwned,
         });
       }
-
     } else {
       alert('You cannot afford to purchase');
     }

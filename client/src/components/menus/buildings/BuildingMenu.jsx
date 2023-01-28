@@ -8,16 +8,12 @@ function BuildingMenu() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [buildingsArray, setBuildingsArray] = useState(BuildingDB);
 
-  console.log('Buildings loaded');
-
-  useEffect(() => {
-    console.log('BUILDINS USE EFFECT')
-    setPlayerCharacter({
-      ...playerCharacter,
-      buildings: buildingsArray
-    })
-
-  }, [buildingsArray]);
+//  useEffect(() => {
+//   setPlayerCharacter({
+//     ...playerCharacter,
+//     buildings: buildingsArray
+//   })
+//  }, [buildingsArray])   
 
   return (
     <section className='menu__container'>

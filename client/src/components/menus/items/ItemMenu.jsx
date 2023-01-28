@@ -10,11 +10,11 @@ function ItemMenu() {
 
   useEffect(() => {
     console.log('ITEMS USE EFFECT')
+    
     setPlayerCharacter({
       ...playerCharacter,
       items: itemsArray
     })
-
   }, [itemsArray]);
 
   return (
