@@ -1,31 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import ItemHTML from './ItemHTML';
+import {getHi} from '../PurchaseFunctions'
 
 function Item({ item }) {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [itemQuantity, setItemQuantity] = useState(0);
-  const [toggleBuy, setToggleBuy] = useState(false);
+  // const [toggleBuy, setToggleBuy] = useState(false);
 
   useEffect(() => {
     const newArray = playerCharacter.items;
-    console.log('NEW', newArray);
     const itemId = item.id;
     const foundItem = newArray.find((item) => item.id === itemId);
-    console.log('found item', foundItem);
     if (foundItem) {
       const quantity = foundItem.quantity;
       setItemQuantity(quantity);
     }
-    //   console.log('found item q', foundItem.quantity);
   }, []);
 
-  const toggleBuySwitch = () => {
-    setToggleBuy(true);
-    setToggleBuy(false);
-  };
+  // const toggleBuySwitch = () => {
+  //   setToggleBuy(true);
+  //   setToggleBuy(false);
+  // };
   const buyItem = (item) => {
-    toggleBuySwitch();
+    // toggleBuySwitch();
 
     if (playerCharacter.totalScore >= item.cost) {
       let character = playerCharacter;
