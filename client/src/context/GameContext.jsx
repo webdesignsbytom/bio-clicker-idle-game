@@ -17,7 +17,7 @@ const GameContextProvider = ({ children }) => {
     timer: false,
     // Items
     totalItemsOwned: 0,
-    items: [{ id: 1, name: "Finger", type: "pointsPerClick", typetitle: "PPC", effect: 1, cost: 10, image: "🚀", income: 0, desc: "Each finger doubles the amount of points earned per click on the screen", quantity: 1 }], // db model
+    items: [], // db model
     // Buildings
     totalBuildingsOwned: 0,
     buildings: [], // db model

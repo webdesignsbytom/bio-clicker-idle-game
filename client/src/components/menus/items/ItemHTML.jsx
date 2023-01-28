@@ -15,7 +15,7 @@ function ItemHTML({ item, itemQuantity, buyItem }) {
           </div>
           <div className='product__cost'>
             <h6>Cost: </h6>
-            <span>£ {item.cost}</span>
+            <span>£ {Math.trunc(item.cost)}</span>
           </div>
           <div className='product__type'>
             <h6>Type: </h6>
