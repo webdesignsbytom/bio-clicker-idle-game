@@ -4,6 +4,7 @@
     "name": "Finger",
     "type": "pointsPerClick",
     "typetitle": "PPC",
+    "quantity": 0,
     "effect": 1,
     "cost": 10,
     "image": "🚀",
@@ -14,12 +15,12 @@
     "id": 2,
     "name": "Solar Panel",
     "type": "pointsPerSecond",
+    "quantity": 0,
     "typetitle": "PPS",
     "effect": 1,
     "cost": 25,
     "image": "🚀",
     "income": 0,
-
     "desc": "The panels earn for you all day once installed"
   },
   {
@@ -27,11 +28,11 @@
     "name": "Algae Tubes",
     "type": "pointsPerSecond",
     "typetitle": "PPS",
+    "quantity": 0,
     "effect": 2,
     "cost": 100,
     "image": "🚀",
     "income": 0,
-
     "desc": "Growth tubes for research and fuel production"
   },
   {
@@ -39,11 +40,11 @@
     "name": "Nutrients",
     "type": "pointsPerSecond",
     "typetitle": "PPS",
+    "quantity": 0,
     "effect": 2.2,
     "cost": 250,
     "image": "🚀",
     "income": 0,
-
     "desc": "Barrels of growth medium and fertilizers to increase growth"
   },
   {
@@ -51,11 +52,11 @@
     "name": "booster5",
     "type": "pointsPerClick",
     "typetitle": "PPC",
+    "quantity": 0,
     "effect": 25,
     "cost": 25,
     "image": "🚀",
     "income": 0,
-
     "desc": "Each finger doubles the amount of points earned per click on the screen"
   },
   {
@@ -63,11 +64,11 @@
     "name": "booster6",
     "type": "pointsPerSecond",
     "typetitle": "PPS",
+    "quantity": 0,
     "effect": 12,
     "cost": 11,
     "image": "🚀",
     "income": 0,
-
     "desc": "Each finger doubles the amount of points earned per click on the screen"
   },
   {
@@ -75,11 +76,11 @@
     "name": "booster7",
     "type": "pointsPerSecond",
     "typetitle": "PPS",
+    "quantity": 0,
     "effect": 12,
     "cost": 11,
     "image": "🚀",
     "income": 0,
-
     "desc": "Each finger doubles the amount of points earned per click on the screen"
   },
   {
@@ -87,11 +88,11 @@
     "name": "booster8",
     "type": "pointsPerSecond",
     "typetitle": "PPS",
+    "quantity": 0,
     "effect": 12,
     "cost": 11,
     "image": "🚀",
     "income": 0,
-
     "desc": "Each finger doubles the amount of points earned per click on the screen"
   },
   {
@@ -99,6 +100,7 @@
     "name": "booster9",
     "type": "pointsPerSecond",
     "typetitle": "PPS",
+    "quantity": 0,
     "effect": 12,
     "cost": 11,
     "image": "🚀",
@@ -111,6 +113,7 @@
     "name": "booster10",
     "type": "pointsPerClick",
     "typetitle": "PPC",
+    "quantity": 0,
     "effect": 12,
     "cost": 11,
     "image": "🚀",
@@ -122,11 +125,11 @@
     "name": "booster11",
     "type": "pointsPerClick",
     "typetitle": "PPC",
+    "quantity": 0,
     "effect": 12,
     "cost": 11,
     "image": "🚀",
     "income": 0,
-
     "desc": "Each finger doubles the amount of points earned per click on the screen"
   }
 ]
