@@ -7,16 +7,12 @@ function Item({ item, setItemsArray }) {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const buyItem = (item) => {
-    console.log('click xxx')
     // Check if it can be afforded
     if (playerCharacter.totalScore >= item.cost) {
       // Find the item in players state and add to quantity
       let character = playerCharacter;
-      console.log('character', character)
       let newArray = character.items;
-      console.log('new array', newArray);
       const itemIndex = newArray.findIndex((i) => i.id === item.id);
-      console.log('ITEM INDEX', itemIndex);
 
       // Increment the quantity
       newArray[itemIndex].quantity++;

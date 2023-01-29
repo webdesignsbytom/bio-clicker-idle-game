@@ -1,10 +1,18 @@
 [
     {
         "id": 1,
-        "name": "Robot Slaves liberated"
+        "name": "Clicked 10 times"
     },
     {
         "id": 2,
         "name": "Clicked 100 times"
+    },
+    {
+        "id": 3,
+        "name": "Robot Slaves liberated"
+    },
+    {
+        "id": 4,
+        "name": "Clicked 1000 times"
     }
 ]
