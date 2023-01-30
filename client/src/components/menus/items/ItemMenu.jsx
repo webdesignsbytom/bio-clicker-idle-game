@@ -6,13 +6,16 @@ import '../menu.css';
 
 function ItemMenu() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
-  const [items, setItems] = useState([]);
-
-  console.log('Items loaded');
+  const [itemsArray, setItemsArray] = useState(ItemDB);
 
   useEffect(() => {
-    setItems(ItemDB);
-  }, []);
+    console.log('ITEMS USE EFFECT')
+    
+    setPlayerCharacter({
+      ...playerCharacter,
+      items: itemsArray
+    })
+  }, [itemsArray]);
 
   return (
     <section className='menu__container'>
@@ -30,8 +33,8 @@ function ItemMenu() {
       </div>
 
       <div className='menu__container'>
-        {items.map((item, index) => {
-          return <Item item={item} key={index} />;
+        {itemsArray.map((item, index) => {
+          return <Item item={item} setItemsArray={setItemsArray} key={index} />;
         })}
       </div>
     </section>

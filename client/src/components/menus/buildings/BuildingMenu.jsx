@@ -6,13 +6,14 @@ import '../menu.css';
 
 function BuildingMenu() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
-  const [buildings, setbuildings] = useState([]);
+  const [buildingsArray, setBuildingsArray] = useState(BuildingDB);
 
-  console.log('Buildings loaded');
-
-  useEffect(() => {
-    setbuildings(BuildingDB);
-  }, []);
+//  useEffect(() => {
+//   setPlayerCharacter({
+//     ...playerCharacter,
+//     buildings: buildingsArray
+//   })
+//  }, [buildingsArray])   
 
   return (
     <section className='menu__container'>
@@ -28,8 +29,8 @@ function BuildingMenu() {
         </h6>
       </div>
       <div className='menu__container'>
-        {buildings.map((building, index) => {
-          return <Building building={building} key={index} />;
+        {buildingsArray.map((building, index) => {
+          return <Building building={building} setBuildingsArray={setBuildingsArray} key={index} />;
         })}
       </div>
     </section>

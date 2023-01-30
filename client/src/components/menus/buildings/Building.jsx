@@ -1,16 +1,29 @@
 import React, { useContext } from 'react';
 import { GameContext } from '../../../context/GameContext';
+import BuildingHTML from './BuildingHTML';
 
-function Building({ building }) {
+function Building({ building, setBuildingsArray }) {
   // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const buyBuilding = (building) => {
-
+    // Check if it can be afforded
     if (playerCharacter.totalScore >= building.cost) {
-      let newBuildingName = building.name;
-      let newArray = playerCharacter.buildings.slice();
-      newArray.push(newBuildingName);
+      // Find the item in players state and add to quantity
+      let character = playerCharacter;
+      let newArray = character.buildings;
+
+      const buildingIndex = newArray.findIndex((b) => b.id === building.id);
+      console.log('building INDEX', buildingIndex);
+      // Increment the quantity
+      newArray[buildingIndex].quantity++;
+
+      // Increase item cost
+      const newCost = building.cost * 1.1;
+      newArray[buildingIndex].cost = newCost.toFixed(2);
+
+      const pushArray = newArray;
+      setBuildingsArray(pushArray);
 
       if (building.type === 'pointsPerClick') {
         let currentpointsPerClick = playerCharacter.pointsPerClick;
@@ -28,7 +41,6 @@ function Building({ building }) {
           pointsPerClick: newpointsPerClickValue,
           totalScore: newTotalScore,
           totalBuildingsOwned: newTotalBuildingsOwned,
-          buildings: newArray
         });
       }
 
@@ -48,8 +60,6 @@ function Building({ building }) {
           pointsPerSecond: newpointsPerSecondValue,
           totalScore: newTotalScore,
           totalBuildingsOwned: newTotalBuildingsOwned,
-          buildings: newArray
-
         });
       }
     } else {
@@ -57,42 +67,7 @@ function Building({ building }) {
     }
   };
 
-  return (
-    <div className='product'>
-      <div className='inner__product'>
-        <div className='product__image'>
-          <div className='image__icon'>{building.image}</div>
-        </div>
-
-        <div className='product__data'>
-          <div className='product__name'>
-            <span>Name: </span>
-            <h6>{building.name}</h6>
-          </div>
-          <div className='product__cost'>
-            <span>Cost: </span>
-            <h6>£ {building.cost}</h6>
-          </div>
-          <div className='product__type'>
-            <span>Type: </span>
-            <h6>{building.typetitle}</h6>
-          </div>
-          <div className='product__effect'>
-            <span>Effect: </span>
-            <h6>x {building.effect}</h6>
-          </div>
-        </div>
-
-        <div className='purchase__product'>
-          <div className='product__owned'>
-            <h6>Owned: <span>0</span></h6>
-          </div>
-          <button onClick={() => buyBuilding(building)}>buy</button>
-        </div>
-      </div>
-      <div className='product__desc'>{building.desc}</div>
-    </div>
-  );
+  return <BuildingHTML building={building} buyBuilding={buyBuilding} />;
 }
 
 export default Building;

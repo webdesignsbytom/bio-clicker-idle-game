@@ -13,7 +13,7 @@ const GameContextProvider = ({ children }) => {
     totalTimesClicked: 0,
     baseIncome: 0,
     multiplierIncome: 0,
-    totalScore: 10000000,
+    totalScore: 1000,
     timer: false,
     // Items
     totalItemsOwned: 0,

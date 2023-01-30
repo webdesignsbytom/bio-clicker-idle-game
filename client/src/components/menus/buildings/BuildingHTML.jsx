@@ -1,44 +1,44 @@
 import React from 'react';
 
-function ItemHTML({ item, buyItem }) {
+function BuildingHTML({ building, buyBuilding }) {
   return (
     <div className='product'>
       <div className='inner__product'>
         <div className='product__image'>
-          <div className='image__icon'>{item.image}</div>
+          <div className='image__icon'>{building.image}</div>
         </div>
 
         <div className='product__data'>
           <div className='product__name'>
             <h6>Name: </h6>
-            <span>{item.name}</span>
+            <span>{building.name}</span>
           </div>
           <div className='product__cost'>
             <h6>Cost: </h6>
-            <span>£ {Math.trunc(item.cost)}</span>
+            <span>£ {Math.trunc(building.cost)}</span>
           </div>
           <div className='product__type'>
             <h6>Type: </h6>
-            <span>{item.typetitle}</span>
+            <span>{building.typetitle}</span>
           </div>
           <div className='product__effect'>
             <h6>Effect: </h6>
-            <span>+ {item.effect}</span>
+            <span>+ {building.effect}</span>
           </div>
         </div>
 
         <div className='purchase__product'>
           <div className='product__owned'>
             <h6>
-              Owned: <span>{item.quantity}</span>
+              Owned: <span>{building.quantity}</span>
             </h6>
           </div>
-          <button onClick={() => buyItem(item)}>buy</button>
+          <button onClick={() => buyBuilding(building)}>buy</button>
         </div>
       </div>
-      <div className='product__desc'>{item.desc}</div>
+      <div className='product__desc'>{building.desc}</div>
     </div>
   );
 }
 
-export default ItemHTML;
+export default BuildingHTML;
