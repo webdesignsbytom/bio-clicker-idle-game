@@ -6,12 +6,9 @@ const jwt = require('jsonwebtoken');
 const { findUserByEmail } = require('../domain/users');
 
 const login = async (req, res) => {
-  console.log('logging in...');
   const { email, password } = req.body;
-  console.log('req.body', req.body);
 
   const lowerCaseEmail = email.toLowerCase();
-  console.log('lower case email', lowerCaseEmail);
 
   if (!email || !password) {
     return res.status(400).json({

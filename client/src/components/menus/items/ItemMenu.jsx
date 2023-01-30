@@ -9,7 +9,6 @@ function ItemMenu() {
   const [itemsArray, setItemsArray] = useState(ItemDB);
 
   useEffect(() => {
-    console.log('ITEMS USE EFFECT')
     
     setPlayerCharacter({
       ...playerCharacter,

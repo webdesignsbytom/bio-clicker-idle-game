@@ -1,0 +1,23 @@
+.achievements__container {
+    border: 3px solid black;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr;
+    z-index: 2;
+    position: fixed;
+    padding: 0.5rem;
+}
+
+.achievement {
+    border-bottom: 1px solid #000;
+}
+
+.completed__container {
+    border: 3px solid black;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr;
+    z-index: 3;
+    position: fixed;
+    padding: 0.5rem;
+}

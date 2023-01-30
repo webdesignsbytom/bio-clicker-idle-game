@@ -8,22 +8,14 @@ function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   useEffect(() => {
-    console.log('usig effect in game');
-    console.log('effect player', playerCharacter.pointsPerSecond);
 
     if (playerCharacter.pointsPerSecond >= 1) {
-      console.log('timer set');
 
       const interval = setInterval(() => {
-        console.log('interva');
-        console.log('xxx player', playerCharacter.pointsPerSecond);
-        console.log('xxx player', playerCharacter.totalScore);
-
         let pointsPerSecondscore = playerCharacter.pointsPerSecond
         let totalscore = playerCharacter.totalScore
         let newScore = pointsPerSecondscore + totalscore
         
-        console.log('newscore', newScore);
         setPlayerCharacter({
           ...playerCharacter,
           totalScore: newScore,
@@ -31,7 +23,6 @@ function Game() {
       }, 1000);
       //
       return () => {
-        console.log('clearing interval');
         clearInterval(interval);
       };
     }

@@ -8,7 +8,6 @@ function AdminPanel() {
   const { isAdminPanelOpen, setIsAdminPanelOpen } = useContext(OptionContext);
 
   let gameArray = playerCharacter
-  console.log('gameArray', gameArray)
 
 //   const headers = Object.keys(gameArray)
 //   console.log('headers', headers)

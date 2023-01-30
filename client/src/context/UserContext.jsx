@@ -11,15 +11,12 @@ const initUserState = userSampleData
 
 const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(initUserState)  
-  console.log('CONTEXT USER', user); 
 
   useEffect(() => {
     const decodedUserData = LoggedInUser()
-    console.log('decodedUserData', decodedUserData);
     
     if (decodedUserData) {
       const id = decodedUserData.id
-      console.log('id', id);
 
       fetch(`http://localhost:4000/user/${id}`)
         .then((res) => res.json())

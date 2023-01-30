@@ -1,18 +1,22 @@
 [
     {
         "id": 1,
-        "name": "Clicked 10 times"
+        "name": "Clicked 10 times",
+        "completed": false
     },
     {
         "id": 2,
-        "name": "Clicked 100 times"
+        "name": "Clicked 100 times",
+        "completed": false
     },
     {
         "id": 3,
-        "name": "Robot Slaves liberated"
+        "name": "Robot Slaves liberated",
+        "completed": false
     },
     {
         "id": 4,
-        "name": "Clicked 1000 times"
+        "name": "Clicked 1000 times",
+        "completed": false
     }
 ]
