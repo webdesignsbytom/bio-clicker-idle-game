@@ -8,7 +8,11 @@ function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   useEffect(() => {
-
+    console.log('CLICK', playerCharacter.totalTimesClicked)
+    if(playerCharacter.totalTimesClicked === 10) {
+      const achievementsArray = playerCharacter.achievements
+      console.log('achievements', achievementsArray)
+    }
     if (playerCharacter.pointsPerSecond >= 1) {
 
       const interval = setInterval(() => {

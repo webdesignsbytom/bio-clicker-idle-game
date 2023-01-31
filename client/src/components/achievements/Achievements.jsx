@@ -8,37 +8,22 @@ function Achievements() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const {
     toggleAchievementsOpen,
-    setToggleAchievementsOpen,
-    toggleAchievementComplete,
-    setToggleAchievementComplete,
+    setToggleAchievementsOpen
   } = useContext(OptionContext);
 
   const [achievementsArray, setAchievementsArray] = useState(AchievementsDB);
 
-  const openAchievements = () => {
-    setToggleAchievementsOpen(!toggleAchievementsOpen);
-  };
-
   useEffect(() => {
-    console.log('AAAAAAAAAAAAAAAA');
-    console.log(
-      'playerCharacter.totalTimesClicked',
-      playerCharacter.totalTimesClicked
-    );
+    
+    setPlayerCharacter({
+      ...playerCharacter,
+      achievements: achievementsArray
+    })
+  }, [achievementsArray]);
 
-    // if(playerCharacter.totalTimesClicked === 10) {
-    //   setToggleAchievementComplete(true)
-    // }
-  }, [playerCharacter.totalTimesClicked]);
-
-  // useEffect(() => {
-  //   console.log('achievements USE EFFECT')
-
-  //   setPlayerCharacter({
-  //     ...playerCharacter,
-  //     achievements: achievementsArray
-  //   })
-  // }, [achievementsArray]);
+  const openAchievements = () => {
+    setToggleAchievementsOpen(false);
+  };
 
   return (
     <div className='achievements__container'>
@@ -49,7 +34,7 @@ function Achievements() {
             <article className='article'>
               <div className='achievement'>
                 {achievement.name}
-                <input type='checkbox' name='' id='' />
+                {achievement.completed && <span>✔️</span>}
               </div>
             </article>
           );

@@ -43,7 +43,9 @@ const GameContextProvider = ({ children }) => {
     lastLoggedInDateTime: null,
     latestLogoutDateTime: null,
     prestigeScore: 0,
-    achievements: []
+    achievements: [],
+    // Gems and paid items
+    gems: 50,
   });
 
   return (
