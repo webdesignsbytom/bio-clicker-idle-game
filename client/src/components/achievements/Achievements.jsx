@@ -6,18 +6,18 @@ import './achievements.css';
 
 function Achievements() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
-  const {
-    toggleAchievementsOpen,
-    setToggleAchievementsOpen
-  } = useContext(OptionContext);
+  const { toggleAchievementsOpen, setToggleAchievementsOpen } =
+    useContext(OptionContext);
 
-  const [achievementsArray, setAchievementsArray] = useState(playerCharacter.achievements);
+  const [achievementsArray, setAchievementsArray] = useState(
+    playerCharacter.achievements
+  );
 
   useEffect(() => {
     setPlayerCharacter({
       ...playerCharacter,
-      achievements: achievementsArray
-    })
+      achievements: achievementsArray,
+    });
   }, [achievementsArray]);
 
   const openAchievements = () => {
@@ -32,8 +32,9 @@ function Achievements() {
           return (
             <article key={index} className='article'>
               <div className='achievement'>
-                {achievement.name}
+                {achievement.title}
                 {achievement.completed && <span>✔️</span>}
+                {achievement.desc}
               </div>
             </article>
           );

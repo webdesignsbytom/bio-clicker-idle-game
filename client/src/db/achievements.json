@@ -1,30 +1,50 @@
 [
     {
         "id": 1,
-        "name": "Clicked 10 times",
+        "title": "Finger warmed up",
+        "desc": "Clicked 10 times",
         "completed": false,
         "type": "clicks",
         "goal": 10
     },
     {
         "id": 2,
-        "name": "Clicked 100 times",
+        "title": "Apprentice clicker",
+        "desc": "Clicked 100 times",
         "completed": false,
         "type": "clicks",
         "goal": 100
     },
     {
         "id": 3,
-        "name": "Robot Slaves liberated",
+        "title": "Robot overlord",
+        "desc": "Robot Slaves liberated",
         "completed": false,
         "type": "purchase",
         "goal": 10
     },
     {
         "id": 4,
-        "name": "Clicked 1000 times",
+        "title": "Local clicking legend",
+        "desc": "Clicked 1000 times",
         "completed": false,
         "type": "clicks",
         "goal": 1000
+    },
+    {
+        "id": 5,
+        "title": "First roll of monopoly",
+        "desc": "Own 10 buildings",
+        "completed": false,
+        "type": "clicks",
+        "goal": 10
+    },
+    {
+        "id": 5,
+        "title": "Condo King",
+        "desc": "Own 100 buildings",
+        "completed": false,
+        "type": "clicks",
+        "goal": 10
     }
 ]

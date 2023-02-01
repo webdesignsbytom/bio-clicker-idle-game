@@ -3,6 +3,7 @@ import Main from './MainGame';
 import BuildingMenu from '../../components/menus/buildings/BuildingMenu';
 import ItemMenu from '../../components/menus/items/ItemMenu';
 import { GameContext } from '../../context/GameContext';
+import { listenForClicks } from '../../utils/Achievements' 
 
 function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -31,35 +32,13 @@ function Game() {
     playerCharacter.pointsPerClick,
   ]);
 
+  // Try and move to util if posible 
   const detectAchievements = () => {
     const playerCurrentAchievements = playerCharacter.achievements;
-
-    const listenForClicks = () => {
-      // find all incompleted click achievements
-      const clickAchievementsArray = playerCurrentAchievements.filter(e => e.type === 'clicks' && e.completed === false);
-      console.log('clicls', clickAchievementsArray);
-
-      // Use the 0 index of array and goal result for value checked
-      const currentValue = clickAchievementsArray[0].goal
-      if (playerCharacter.totalTimesClicked === currentValue) {
-        console.log('10 XXXy', playerCharacter.achievements);
-
-        // find ache in array that has matching score
-        const foundAchievement = playerCurrentAchievements.find((e) => e.goal === currentValue);
-        console.log('foundAchievement', foundAchievement);
-
-        if (foundAchievement.completed) {
-          return;
-        }
-        // set item to completed
-        foundAchievement.completed = true;
-        console.log('Completed', foundAchievement);
-      }
-    };
-
-    listenForClicks()
+    listenForClicks(playerCurrentAchievements, playerCharacter)
   };
 
+  // Run Detect functions
   detectAchievements();
 
   console.log('XXXXXXX', playerCharacter.achievements);
