@@ -32,30 +32,37 @@ function Game() {
   ]);
 
   const detectAchievements = () => {
-    const playerCurrentAchievements = playerCharacter.achievements
-    console.log('playerCurrentAchievements', playerCurrentAchievements);
-    let xGoal = 10
+    const playerCurrentAchievements = playerCharacter.achievements;
 
-    if (playerCharacter.totalTimesClicked === xGoal) {
-      console.log('10 XXXy', playerCharacter.achievements);
+    const listenForClicks = () => {
+      // find all incompleted click achievements
+      const clickAchievementsArray = playerCurrentAchievements.filter(e => e.type === 'clicks' && e.completed === false);
+      console.log('clicls', clickAchievementsArray);
 
-      // find ache in array that has matching score
-      const foundAchievement = playerCurrentAchievements.find(e => e.goal === xGoal)
-      console.log('foundAchievement', foundAchievement);
+      // Use the 0 index of array and goal result for value checked
+      const currentValue = clickAchievementsArray[0].goal
+      if (playerCharacter.totalTimesClicked === currentValue) {
+        console.log('10 XXXy', playerCharacter.achievements);
 
-      if (foundAchievement.completed) {
-        return
+        // find ache in array that has matching score
+        const foundAchievement = playerCurrentAchievements.find((e) => e.goal === currentValue);
+        console.log('foundAchievement', foundAchievement);
+
+        if (foundAchievement.completed) {
+          return;
+        }
+        // set item to completed
+        foundAchievement.completed = true;
+        console.log('Completed', foundAchievement);
       }
-      // set item to completed 
-      foundAchievement.completed = true; 
-      console.log('Completed', foundAchievement) 
-      let indexId = foundAchievement.id -1 
+    };
 
-    }
+    listenForClicks()
   };
 
-  detectAchievements()
-console.log('XXXXXXX', playerCharacter.achievements);
+  detectAchievements();
+
+  console.log('XXXXXXX', playerCharacter.achievements);
   return (
     <section className='game__container'>
       <ItemMenu />
