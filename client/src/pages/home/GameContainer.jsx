@@ -8,18 +8,12 @@ function Game() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   useEffect(() => {
-    console.log('CLICK', playerCharacter.totalTimesClicked)
-    if(playerCharacter.totalTimesClicked === 10) {
-      const achievementsArray = playerCharacter.achievements
-      console.log('achievements', achievementsArray)
-    }
     if (playerCharacter.pointsPerSecond >= 1) {
-
       const interval = setInterval(() => {
-        let pointsPerSecondscore = playerCharacter.pointsPerSecond
-        let totalscore = playerCharacter.totalScore
-        let newScore = pointsPerSecondscore + totalscore
-        
+        let pointsPerSecondscore = playerCharacter.pointsPerSecond;
+        let totalscore = playerCharacter.totalScore;
+        let newScore = pointsPerSecondscore + totalscore;
+
         setPlayerCharacter({
           ...playerCharacter,
           totalScore: newScore,
@@ -30,7 +24,20 @@ function Game() {
         clearInterval(interval);
       };
     }
-  }, [playerCharacter.timer, playerCharacter.pointsPerSecond, playerCharacter.totalScore, playerCharacter.pointsPerClick]);
+  }, [
+    playerCharacter.timer,
+    playerCharacter.pointsPerSecond,
+    playerCharacter.totalScore,
+    playerCharacter.pointsPerClick,
+  ]);
+
+  const detectAchievements = () => {
+    if (playerCharacter.totalTimesClicked === 10) {
+      console.log('10 XXXy', playerCharacter);
+    }
+  };
+
+  detectAchievements()
 
   return (
     <section className='game__container'>

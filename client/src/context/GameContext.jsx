@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import AchievementsDB from './../db/achievements.json';
 
 export const GameContext = React.createContext();
 
@@ -43,7 +44,7 @@ const GameContextProvider = ({ children }) => {
     lastLoggedInDateTime: null,
     latestLogoutDateTime: null,
     prestigeScore: 0,
-    achievements: [],
+    achievements: AchievementsDB,
     // Gems and paid items
     gems: 50,
   });

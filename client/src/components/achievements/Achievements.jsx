@@ -11,10 +11,9 @@ function Achievements() {
     setToggleAchievementsOpen
   } = useContext(OptionContext);
 
-  const [achievementsArray, setAchievementsArray] = useState(AchievementsDB);
+  const [achievementsArray, setAchievementsArray] = useState(playerCharacter.achievements);
 
   useEffect(() => {
-    
     setPlayerCharacter({
       ...playerCharacter,
       achievements: achievementsArray
@@ -31,7 +30,7 @@ function Achievements() {
       <div className='achievements__list'>
         {achievementsArray.map((achievement, index) => {
           return (
-            <article className='article'>
+            <article key={index} className='article'>
               <div className='achievement'>
                 {achievement.name}
                 {achievement.completed && <span>✔️</span>}
