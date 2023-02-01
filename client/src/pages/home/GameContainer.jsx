@@ -32,13 +32,30 @@ function Game() {
   ]);
 
   const detectAchievements = () => {
-    if (playerCharacter.totalTimesClicked === 10) {
-      console.log('10 XXXy', playerCharacter);
+    const playerCurrentAchievements = playerCharacter.achievements
+    console.log('playerCurrentAchievements', playerCurrentAchievements);
+    let xGoal = 10
+
+    if (playerCharacter.totalTimesClicked === xGoal) {
+      console.log('10 XXXy', playerCharacter.achievements);
+
+      // find ache in array that has matching score
+      const foundAchievement = playerCurrentAchievements.find(e => e.goal === xGoal)
+      console.log('foundAchievement', foundAchievement);
+
+      if (foundAchievement.completed) {
+        return
+      }
+      // set item to completed 
+      foundAchievement.completed = true; 
+      console.log('Completed', foundAchievement) 
+      let indexId = foundAchievement.id -1 
+
     }
   };
 
   detectAchievements()
-
+console.log('XXXXXXX', playerCharacter.achievements);
   return (
     <section className='game__container'>
       <ItemMenu />
