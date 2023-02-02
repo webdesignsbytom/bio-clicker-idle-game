@@ -44,13 +44,13 @@ function ItemMenu() {
               <label htmlFor='one'>1</label>
               <input type="checkbox" name="one" id="one" value={1} onChange={handleChange}/>
               <label htmlFor='ten'>10</label>
-              <input type="checkbox" name="ten" id="ten" value={10} onChange={handleChange}/>
+              <input type="checkbox" name="ten" id="ten" value={10} onChange={handleChange} />
               <label htmlFor='twentyFive'>25</label>
               <input type="checkbox" name="twentyFive" id="twentyFive" onChange={handleChange}/>
               <label htmlFor='oneHundred'>100</label>
               <input type="checkbox" name="oneHundred" id="oneHundred" onChange={handleChange}/>
               <label htmlFor='max'>Max</label>
-              <input type="checkbox" name="max" id="max" onChange={handleChange}/>
+              <input type="checkbox" name="max" id="max" onChange={handleChange} checked />
             </form>
         </section>
       </div>

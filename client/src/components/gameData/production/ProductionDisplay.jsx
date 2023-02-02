@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useState } from 'react';
 import './levelDisplay.css';
+import LevelState from './../../../db/levels.json'
+import { GameContext } from '../../../context/GameContext';
+import { useEffect } from 'react';
 
 function LevelDisplay() {
+  const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+
+  const [levelsArray, setLevelsArray] = useState(LevelState)
+  console.log('levels array', levelsArray);
+  const [currentLevel, setCurrentLevel] = useState({})
+
+  useEffect(() => {
+    const currentLevel = playerCharacter.currentLevel
+    console.log('current level', currentLevel);
+    const levelIndex = currentLevel - 1
+    setCurrentLevel(levelsArray[levelIndex])
+  }, [])
+
   return (
     <section className='gameProduction__data__container'>
       <div className='gameProduction__data fuel__data__container'>
@@ -48,11 +65,11 @@ function LevelDisplay() {
         <div className='data__info'>
           <div className='level__name'>
             <span>Level Name</span>
-            <h6>Yoda Planet</h6>
+            <h6>{currentLevel.name}</h6>
           </div>
           <div className='gameProduction__targetScore'>
             <span>Target Score</span>
-            <h6>1,000,000</h6>
+            <h6>{currentLevel.targetScore}</h6>
           </div>
         </div>
       </div>

@@ -48,21 +48,54 @@
         "title": "First roll of monopoly",
         "desc": "Own 10 buildings",
         "completed": false,
-        "type": "clicks",
+        "type": "owned",
         "goal": 10,
         "reward": "PPS doubles",
         "rewardType": "pointsPerSecond",
         "rewardEffect": 2
     },
     {
-        "id": 5,
+        "id": 6,
         "title": "Condo King",
         "desc": "Own 100 buildings",
         "completed": false,
-        "type": "clicks",
+        "type": "owned",
+        "goal": 100,
+        "reward": "PPS triples",
+        "rewardType": "pointsPerSecond",
+        "rewardEffect": 3
+    },
+    {
+        "id": 7,
+        "title": "Big Bling",
+        "desc": "Own 10 items",
+        "completed": false,
+        "type": "owned",
         "goal": 10,
         "reward": "PPS doubles",
         "rewardType": "pointsPerSecond",
         "rewardEffect": 2
+    },
+    {
+        "id": 8,
+        "title": "Spare Room is Full",
+        "desc": "Own 100 items",
+        "completed": false,
+        "type": "owned",
+        "goal": 100,
+        "reward": "PPS triples",
+        "rewardType": "pointsPerSecond",
+        "rewardEffect": 3
+    },
+    {
+        "id": 9,
+        "title": "Played For 24Hours",
+        "desc": "Been a member for 24 hours",
+        "completed": false,
+        "type": "timed",
+        "goal": 100,
+        "reward": "PPS triples",
+        "rewardType": "pointsPerSecond",
+        "rewardEffect": 3
     }
 ]
