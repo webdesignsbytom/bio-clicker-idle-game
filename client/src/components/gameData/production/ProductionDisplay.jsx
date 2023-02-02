@@ -6,7 +6,9 @@ import { GameContext } from '../../../context/GameContext';
 import { OptionContext } from '../../../context/OptionContext';
 import { useEffect } from 'react';
 import Completed from './Completed';
-import ItemsMenu from '../../menus/items/ItemsMenu';
+import LevelData from './LevelData';
+import PowerProduction from './power/PowerProduction';
+import FuelProduction from './fuel/FuelProduction';
 
 function LevelDisplay() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -41,60 +43,10 @@ function LevelDisplay() {
 
   return (
     <section className='gameProduction__data__container'>
-      <div className='gameProduction__data fuel__data__container'>
-        <div className='data__image'>
-          <div className='gameProduction__image'>
-            <p className='gameProduction__icon'>🔥</p>
-          </div>
-        </div>
-
-        <div className='data__info'>
-          <div className='fuel__production'>
-            <span>Fuel Production</span>
-            <h6>10,000 gallons</h6>
-          </div>
-          <div className='total__fuel'>
-            <span>Total Fuel</span>
-            <h6>1 million gallons</h6>
-          </div>
-        </div>
-      </div>
-
-      <div className='gameProduction__data power__data__container'>
-        <div className='data__image'>
-          <div className='gameProduction__image'>
-            <p className='gameProduction__icon'>🔥</p>
-          </div>
-        </div>
-        <div className='data__info'>
-          <div className='power__production'>
-            <span>Power Production</span>
-            <h6>10 TW</h6>
-          </div>
-          <div className='power__coverage'>
-            <span>Power Supply</span>
-            <h6>50 Cities</h6>
-          </div>
-        </div>
-      </div>
-
-      <div className='gameProduction__data level__data__container'>
-        <div className='data__image'>
-          <p className='gameProduction__icon'>🔥</p>
-        </div>
-        <div className='data__info'>
-          <div className='level__name'>
-            <span>Level Name</span>
-            <h6>
-              {currentLevel.name} {currentLevel.id}
-            </h6>
-          </div>
-          <div className='gameProduction__targetScore'>
-            <span>Target Score</span>
-            <h6>{currentLevel.targetScore}</h6>
-          </div>
-        </div>
-      </div>
+     
+      <FuelProduction />
+      <PowerProduction />
+      <LevelData currentLevel={currentLevel} />
     </section>
   );
 }

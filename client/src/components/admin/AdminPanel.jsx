@@ -9,11 +9,6 @@ function AdminPanel() {
 
   let gameArray = playerCharacter
 
-//   const headers = Object.keys(gameArray)
-//   console.log('headers', headers)
-
-//   const gameValues = Object.values(gameArray)
-
   const gameStateItem = Object.entries(gameArray)
   return (
     <>

@@ -6,7 +6,7 @@ import LevelAnimation from '../../components/levelAnimation/LevelAnimation';
 import ScoresDisplay from '../../components/scoresDisplay/ScoresDisplay';
 import { OptionContext } from '../../context/OptionContext';
 
-function Main() {
+function Game() {
   const { toggleLevelComplete, setToggleLevelComplete } =
     useContext(OptionContext);
 
@@ -20,4 +20,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Game;
