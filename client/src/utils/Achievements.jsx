@@ -1,5 +1,3 @@
-import Completed from '../components/gameData/production/Completed';
-
 export const listenForClicks = (playerCurrentAchievements, playerCharacter) => {
   // find all incompleted click achievements
   const clickAchievementsArray = playerCurrentAchievements.filter(

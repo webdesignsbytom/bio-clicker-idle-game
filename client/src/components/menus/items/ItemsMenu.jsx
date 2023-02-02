@@ -4,7 +4,7 @@ import Item from './Item';
 import { GameContext } from '../../../context/GameContext';
 import '../menu.css';
 
-function ItemMenu() {
+function ItemsMenu() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [itemsArray, setItemsArray] = useState(ItemDB);
   const [purchaseAmount, setPurchaseAmount] = useState(1);
@@ -64,4 +64,4 @@ function ItemMenu() {
   );
 }
 
-export default ItemMenu;
+export default ItemsMenu;

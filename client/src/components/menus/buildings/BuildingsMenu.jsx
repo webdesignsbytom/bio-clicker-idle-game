@@ -4,7 +4,7 @@ import Building from './Building';
 import { GameContext } from '../../../context/GameContext';
 import '../menu.css';
 
-function BuildingMenu() {
+function BuildingsMenu() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [buildingsArray, setBuildingsArray] = useState(BuildingDB);
 
@@ -18,7 +18,7 @@ function BuildingMenu() {
   return (
     <section className='menu__container'>
       <div className='menu__title__container'>
-        <h2>BuildingMenu</h2>
+        <h2>BuildingsMenu</h2>
       </div>
       <div className='product__deltaV'>
         <h6>
@@ -37,4 +37,4 @@ function BuildingMenu() {
   );
 }
 
-export default BuildingMenu;
+export default BuildingsMenu;

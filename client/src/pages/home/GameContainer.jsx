@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Main from './MainGame';
-import BuildingMenu from '../../components/menus/buildings/BuildingMenu';
-import ItemMenu from '../../components/menus/items/ItemMenu';
+import BuildingsMenu from '../../components/menus/buildings/BuildingsMenu';
+import ItemsMenu from '../../components/menus/items/ItemsMenu';
 import { GameContext } from '../../context/GameContext';
 import { listenForClicks } from '../../utils/Achievements' 
 
@@ -57,9 +57,9 @@ function Game() {
 
   return (
     <section className='game__container'>
-      <ItemMenu />
+      <ItemsMenu />
       <Main />
-      <BuildingMenu />
+      <BuildingsMenu />
     </section>
   );
 }

@@ -6,7 +6,7 @@ import { GameContext } from '../../../context/GameContext';
 import { OptionContext } from '../../../context/OptionContext';
 import { useEffect } from 'react';
 import Completed from './Completed';
-import ItemMenu from '../../menus/items/ItemMenu';
+import ItemsMenu from '../../menus/items/ItemsMenu';
 
 function LevelDisplay() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
