@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ItemHTML({ item, buyItem }) {
+function ItemHTML({ item, buyItem, purchaseAmount }) {
   return (
     <div className='product'>
       <div className='inner__product'>
@@ -28,12 +28,12 @@ function ItemHTML({ item, buyItem }) {
         </div>
 
         <div className='purchase__product'>
-          <div className='product__owned'>
+          {/* <div className='product__owned'>
             <h6>
               Owned: <span>{item.quantity}</span>
             </h6>
-          </div>
-          <button onClick={() => buyItem(item)}>buy</button>
+          </div> */}
+          <button className='buy__btn' onClick={() => buyItem(item)}>buy {purchaseAmount}</button>
         </div>
       </div>
       <div className='product__desc'>{item.desc}</div>

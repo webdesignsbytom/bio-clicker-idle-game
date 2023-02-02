@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import ItemHTML from './ItemHTML';
 
-function Item({ item, setItemsArray }) {
+function Item({ item, setItemsArray, purchaseAmount }) {
   // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
@@ -69,7 +69,7 @@ function Item({ item, setItemsArray }) {
       alert('You cannot afford to purchase');
     }
   };
-  return <ItemHTML item={item} buyItem={buyItem} />;
+  return <ItemHTML item={item} purchaseAmount={purchaseAmount} buyItem={buyItem} />;
 }
 
 export default Item;
