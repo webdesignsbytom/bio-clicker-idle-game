@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import AchievementsDB from './../db/achievements.json';
+import ItemsDB from './../db/items.json';
+import BuildingsDB from './../db/buildings.json';
 
 export const GameContext = React.createContext();
 
@@ -19,10 +21,10 @@ const GameContextProvider = ({ children }) => {
     timer: false,
     // Items
     totalItemsOwned: 0,
-    items: [], // db model
+    items: ItemsDB, // db model
     // Buildings
     totalBuildingsOwned: 0,
-    buildings: [], // db model
+    buildings: BuildingsDB, // db model
     // Fuel
     fuelPerSecond: 0,
     totalFuelProducedCurrentLevel: 0,
