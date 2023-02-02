@@ -29,9 +29,6 @@ function LevelDisplay() {
     
   }, [playerCharacter.currentLevel]);
 
-  console.log('x', playerCharacter.totalScore);
-  console.log('y', currentLevel.targetScore);
-
   if (playerCharacter.totalScore >= currentLevel.targetScore) {
     setCompletedLevelData(currentLevel)
     setToggleLevelComplete(true);
