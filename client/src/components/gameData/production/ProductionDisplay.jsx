@@ -5,7 +5,7 @@ import LevelState from './../../../db/levels.json';
 import { GameContext } from '../../../context/GameContext';
 import { OptionContext } from '../../../context/OptionContext';
 import { useEffect } from 'react';
-import Completed from '../../achievements/Completed';
+import Completed from './Completed';
 import ItemMenu from '../../menus/items/ItemMenu';
 
 function LevelDisplay() {

@@ -49,13 +49,8 @@ function Game() {
   const detectAchievements = () => {
     const playerCurrentAchievements = playerCharacter.achievements;
     listenForClicks(playerCurrentAchievements, playerCharacter)
-
-    
   };
 
-  if (playerCharacter.totalScore === 1005) {
-    
-  }
   // Run Detect functions
   detectAchievements();
   setPerSecondIncome()

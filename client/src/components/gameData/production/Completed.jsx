@@ -1,19 +1,31 @@
 import React, { useContext } from 'react';
-import { OptionContext } from '../../context/OptionContext';
-import { GameContext } from '../../context/GameContext';
+import { OptionContext } from '../../../context/OptionContext';
+import { GameContext } from '../../../context/GameContext';
+import { useEffect } from 'react';
 
 function Completed() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const {
-    toggleLevelComplete,
     setToggleLevelComplete,
     completedLevelData,
-    setCompletedLevelData,
   } = useContext(OptionContext);
 
   const closeLevel = () => {
     setToggleLevelComplete(false);
   };
+
+  useEffect(() => {
+
+    if (completedLevelData.rewardType === 'pointsPerSecond') {
+      const currentMultiplier = playerCharacter.perminentMultiplier
+      const levelReward = completedLevelData.rewardEffect
+      const newNum = currentMultiplier + levelReward
+      setPlayerCharacter({
+        ...playerCharacter,
+        perminentMultiplier: newNum 
+      })
+    }
+  }, [])
 
   return (
     <div className='completed__container'>

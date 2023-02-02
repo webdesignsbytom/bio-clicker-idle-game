@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { GameContext } from '../../context/GameContext';
 import { OptionContext } from '../../context/OptionContext';
 import Achievements from '../achievements/Achievements';
-import Completed from '../achievements/Completed';
+import Completed from '../gameData/production/Completed';
 import BonusMultiplier from '../bonusMultiplier/BonusMultiplier';
 import './clicker.css';
 

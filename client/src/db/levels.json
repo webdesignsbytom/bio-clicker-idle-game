@@ -4,8 +4,8 @@
     "name": "Training Level",
     "targetScore": 1009,
     "image": "🚀",
-    "reward": "PPS doubles",
-    "rewardEffect": 2,
+    "reward": "Base PPS doubles",
+    "rewardEffect": 1,
     "rewardType": "pointsPerSecond",
     "desc": "A world of sandbox where you learn the game"
   },
@@ -15,7 +15,7 @@
     "targetScore": 10000000,
     "image": "🚀",
     "reward": "PPS doubles",
-    "rewardEffect": 2,
+    "rewardEffect": 1,
     "rewardType": "pointsPerSecond",
     "desc": "A world of sandbox where you learn the game"
   },
@@ -24,7 +24,7 @@
     "name": "Scuba Level",
     "image": "🚀",
     "reward": "PPS doubles",
-    "rewardEffect": 2,
+    "rewardEffect": 1,
     "rewardType": "pointsPerSecond",
     "desc": "A world of sandbox where you learn the game"
   }

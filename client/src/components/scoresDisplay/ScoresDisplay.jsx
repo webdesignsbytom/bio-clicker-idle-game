@@ -4,13 +4,17 @@ import './scoresDisplay.css';
 
 function ScoresDisplay() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+
+  const newPPS = (playerCharacter.pointsPerSecond * playerCharacter.basePointsPerSecond) * playerCharacter.perminentMultiplier
+  console.log('newpps', newPPS);
+
   return (
     <section className='scoresDisplay__container'>
       <div className='scores__container'>
         
         <div className='score__container'>
           <h5> PPS </h5>
-          <span>{Math.trunc(playerCharacter.pointsPerSecond)}</span>
+          <span>{Math.trunc(newPPS)}</span>
         </div>
         <div className='score__container'>
           <h5> Total Score </h5>
