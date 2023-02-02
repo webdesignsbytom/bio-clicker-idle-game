@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Training Level",
-    "targetScore": 10000000,
+    "targetScore": 1009,
     "image": "🚀",
     "reward": "PPS doubles",
     "rewardEffect": 2,

@@ -20,7 +20,6 @@
     display: grid;
     grid-template-rows: 1fr;
     z-index: 3;
-    position: fixed;
     padding: 0.5rem;
 }
 

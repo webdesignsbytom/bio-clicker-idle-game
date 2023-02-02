@@ -53,6 +53,9 @@ function Game() {
     
   };
 
+  if (playerCharacter.totalScore === 1005) {
+    
+  }
   // Run Detect functions
   detectAchievements();
   setPerSecondIncome()

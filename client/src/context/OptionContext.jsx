@@ -5,7 +5,10 @@ export const OptionContext = React.createContext();
 const OptionContextProvider = ({ children }) => {
   const [isAdminPanelOpen, setIsAdminPanelOpen] = useState(false);
   const [toggleAchievementsOpen, setToggleAchievementsOpen] = useState(false);
-  const [toggleAchievementComplete, setToggleAchievementComplete] = useState(false);
+  const [toggleAchievementComplete, setToggleAchievementComplete] =
+    useState(false);
+  const [toggleLevelComplete, setToggleLevelComplete] = useState(false);
+  const [completedLevelData, setCompletedLevelData] = useState({});
 
   return (
     <OptionContext.Provider
@@ -16,6 +19,10 @@ const OptionContextProvider = ({ children }) => {
         setToggleAchievementsOpen,
         toggleAchievementComplete,
         setToggleAchievementComplete,
+        toggleLevelComplete,
+        setToggleLevelComplete,
+        completedLevelData,
+        setCompletedLevelData,
       }}
     >
       {children}

@@ -1,23 +1,43 @@
 import React, { useContext } from 'react';
 import { useState } from 'react';
 import './levelDisplay.css';
-import LevelState from './../../../db/levels.json'
+import LevelState from './../../../db/levels.json';
 import { GameContext } from '../../../context/GameContext';
+import { OptionContext } from '../../../context/OptionContext';
 import { useEffect } from 'react';
+import Completed from '../../achievements/Completed';
+import ItemMenu from '../../menus/items/ItemMenu';
 
 function LevelDisplay() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+  const {
+    toggleLevelComplete,
+    setToggleLevelComplete,
+    completedLevelData,
+    setCompletedLevelData,
+  } = useContext(OptionContext);
 
-  const [levelsArray, setLevelsArray] = useState(LevelState)
-  console.log('levels array', levelsArray);
-  const [currentLevel, setCurrentLevel] = useState({})
+  const [levelsArray, setLevelsArray] = useState(LevelState);
+  const [currentLevel, setCurrentLevel] = useState({});
 
   useEffect(() => {
-    const currentLevel = playerCharacter.currentLevel
-    console.log('current level', currentLevel);
-    const levelIndex = currentLevel - 1
-    setCurrentLevel(levelsArray[levelIndex])
-  }, [])
+    const currentLevel = playerCharacter.currentLevel;
+    const levelIndex = currentLevel - 1;
+    setCurrentLevel(levelsArray[levelIndex]);
+    
+  }, [playerCharacter.currentLevel]);
+
+  if (playerCharacter.totalScore === currentLevel.targetScore) {
+    setCompletedLevelData(currentLevel)
+    setToggleLevelComplete(true);
+    const newLevel = playerCharacter.currentLevel + 1;
+
+    setPlayerCharacter({
+      ...playerCharacter,
+      totalScore: 0,
+      currentLevel: newLevel,
+    });
+  }
 
   return (
     <section className='gameProduction__data__container'>
@@ -27,7 +47,7 @@ function LevelDisplay() {
             <p className='gameProduction__icon'>🔥</p>
           </div>
         </div>
-        
+
         <div className='data__info'>
           <div className='fuel__production'>
             <span>Fuel Production</span>
@@ -65,7 +85,9 @@ function LevelDisplay() {
         <div className='data__info'>
           <div className='level__name'>
             <span>Level Name</span>
-            <h6>{currentLevel.name}</h6>
+            <h6>
+              {currentLevel.name} {currentLevel.id}
+            </h6>
           </div>
           <div className='gameProduction__targetScore'>
             <span>Target Score</span>
