@@ -2,8 +2,6 @@ import React, { useContext, useState } from 'react';
 import { GameContext } from '../../context/GameContext';
 import { OptionContext } from '../../context/OptionContext';
 import Achievements from '../achievements/Achievements';
-import Completed from '../gameData/production/Completed';
-import BonusMultiplier from '../bonusMultiplier/BonusMultiplier';
 import './clicker.css';
 
 function Clicker() {
@@ -13,11 +11,10 @@ function Clicker() {
     toggleAchievementsOpen,
     toggleAchievementComplete,
     setToggleAchievementComplete,
+    achievementReady,
     setAchievementReady
   } = useContext(OptionContext);
 
-  // const [glowing, setGlowing] = useState('glowing__container')
-  const [glowing, setGlowing] = useState('special__link achievements')
 
 
   const clickButton = () => {
@@ -39,6 +36,7 @@ function Clicker() {
 
   const openAchievements = () => {
     setToggleAchievementsOpen(!toggleAchievementsOpen);
+    setAchievementReady(false)
   };
 
   return (
@@ -50,19 +48,23 @@ function Clicker() {
           </button>
         </div>
         <article className='special__container'>
-          <div
-            className={glowing}
+          {achievementReady ? <div
+            className='completeAcheive__link quest'
             onClick={openAchievements}
           >
             Achievements
-          </div>
+          </div> : <div
+            className='special__link quest'
+            onClick={openAchievements}
+          >
+            Achievements
+          </div>}
           <div className='special__link quest'>Tech Tree</div>
           <div className='special__link quest'>Quests</div>
           <div className='special__link bonus'>Bonus</div>
         </article>
       </section>
       {toggleAchievementsOpen && <Achievements />}
-      {toggleAchievementComplete && <Completed />}
     </>
   );
 }

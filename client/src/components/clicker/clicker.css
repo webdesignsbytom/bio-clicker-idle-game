@@ -28,6 +28,30 @@
   font-size: 1.1rem;
   display: grid;
   justify-content: flex-end;
+  cursor: pointer;
+
+}
+
+/* Alt link */
+.completeAcheive__link {
+  border-top: 3px solid var(--glowing-border-color);
+  border-left: 3px solid var(--glowing-border-color);
+  border-bottom: 3px solid var(--glowing-border-color);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding: 0.2rem 0.2rem 0.2rem 1rem;
+  font-size: 1.1rem;
+  display: grid;
+  justify-content: flex-end;
+  background-color: var(--glowing-bg);
+  animation: swell 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes swell {
+  50% {
+    scale: 1.2;
+  }
 }
 
 .special__link:hover {

@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import './levelDisplay.css';
 import LevelState from './../../../db/levels.json';
-import { GameContext } from '../../../context/GameContext';
+import { GameContext } from './../../../context/GameContext';
 import { OptionContext } from '../../../context/OptionContext';
 import { useEffect } from 'react';
-import Completed from './Completed';
-import LevelData from './LevelData';
+import Completed from './level/Completed';
+import LevelData from './level/LevelData';
 import PowerProduction from './power/PowerProduction';
 import FuelProduction from './fuel/FuelProduction';
 

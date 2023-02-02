@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Completed from '../../components/gameData/production/Completed';
+import Completed from '../../components/gameData/production/level/Completed';
 import Clicker from '../../components/clicker/Clicker';
 import GameData from '../../components/gameData/GameData';
 import LevelAnimation from '../../components/levelAnimation/LevelAnimation';

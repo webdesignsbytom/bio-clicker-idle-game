@@ -3,9 +3,11 @@ import Main from './Game';
 import BuildingsMenu from '../../components/menus/buildings/BuildingsMenu';
 import ItemsMenu from '../../components/menus/items/ItemsMenu';
 import { GameContext } from '../../context/GameContext';
-import { listenForClicks } from '../../utils/Achievements' 
+import { listenForClicks } from '../../utils/Achievements';
+import { OptionContext } from '../../context/OptionContext';
 
 function Game() {
+  const { achievementReady, setAchievementReady } = useContext(OptionContext);
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   useEffect(() => {
@@ -35,25 +37,25 @@ function Game() {
   const setPerSecondIncome = () => {
     console.log('score');
     console.log('playerCharacter', playerCharacter.items);
-    const currentBasePPS = playerCharacter.basePointsPerSecond
-    const currentPerminentMultiplier = playerCharacter.perminentMultiplier
-    const currentBonusMultiplier = playerCharacter.bonusMultiplier
-    
-    const newTotalPPS = (currentBasePPS * currentPerminentMultiplier) * currentBonusMultiplier 
-    // const ownedArray = currentArray.filter(e => e.quantity > 0) 
-    // console.log('owned', ownedArray);
- 
-  }
+    const currentBasePPS = playerCharacter.basePointsPerSecond;
+    const currentPerminentMultiplier = playerCharacter.perminentMultiplier;
+    const currentBonusMultiplier = playerCharacter.bonusMultiplier;
 
-  // Try and move to util if posible 
+    const newTotalPPS =
+      currentBasePPS * currentPerminentMultiplier * currentBonusMultiplier;
+    // const ownedArray = currentArray.filter(e => e.quantity > 0)
+    // console.log('owned', ownedArray);
+  };
+
+  // Try and move to util if posible
   const detectAchievements = () => {
     const playerCurrentAchievements = playerCharacter.achievements;
-    listenForClicks(playerCurrentAchievements, playerCharacter)
+    listenForClicks(playerCurrentAchievements, playerCharacter, setAchievementReady);
   };
 
   // Run Detect functions
   detectAchievements();
-  setPerSecondIncome()
+  setPerSecondIncome();
 
   return (
     <section className='game__container'>

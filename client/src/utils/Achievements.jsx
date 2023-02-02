@@ -1,4 +1,4 @@
-export const listenForClicks = (playerCurrentAchievements, playerCharacter) => {
+export const listenForClicks = (playerCurrentAchievements, playerCharacter, setAchievementReady) => {
   // find all incompleted click achievements
   const clickAchievementsArray = playerCurrentAchievements.filter(
     (e) => e.type === 'clicks' && e.completed === false
@@ -17,5 +17,7 @@ export const listenForClicks = (playerCurrentAchievements, playerCharacter) => {
     }
     // set item to completed
     foundAchievement.completed = true;
+    // let icon know to glow completed
+    setAchievementReady(true)
   }
 };
