@@ -29,7 +29,10 @@ function LevelDisplay() {
     
   }, [playerCharacter.currentLevel]);
 
-  if (playerCharacter.totalScore === currentLevel.targetScore) {
+  console.log('x', playerCharacter.totalScore);
+  console.log('y', currentLevel.targetScore);
+
+  if (playerCharacter.totalScore >= currentLevel.targetScore) {
     setCompletedLevelData(currentLevel)
     setToggleLevelComplete(true);
     const newLevel = playerCharacter.currentLevel + 1;
@@ -38,6 +41,8 @@ function LevelDisplay() {
       ...playerCharacter,
       totalScore: 0,
       currentLevel: newLevel,
+      pointsPerSecond: 0,
+      pointsPerClick: 0
     });
   }
 
