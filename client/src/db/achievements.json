@@ -5,7 +5,7 @@
         "desc": "Clicked 10 times",
         "completed": false,
         "type": "clicks",
-        "goal": 10,
+        "goal": 1,
         "reward": "PPC doubles",
         "rewardType": "pointsPerClick",
         "rewardEffect": 2

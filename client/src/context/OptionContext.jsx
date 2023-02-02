@@ -9,6 +9,7 @@ const OptionContextProvider = ({ children }) => {
     useState(false);
   const [toggleLevelComplete, setToggleLevelComplete] = useState(false);
   const [completedLevelData, setCompletedLevelData] = useState({});
+  const [achievementReady, setAchievementReady] = useState(false);
 
   return (
     <OptionContext.Provider
@@ -19,6 +20,8 @@ const OptionContextProvider = ({ children }) => {
         setToggleAchievementsOpen,
         toggleAchievementComplete,
         setToggleAchievementComplete,
+        achievementReady,
+        setAchievementReady,
         toggleLevelComplete,
         setToggleLevelComplete,
         completedLevelData,

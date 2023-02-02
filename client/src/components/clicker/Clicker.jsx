@@ -13,7 +13,12 @@ function Clicker() {
     toggleAchievementsOpen,
     toggleAchievementComplete,
     setToggleAchievementComplete,
+    setAchievementReady
   } = useContext(OptionContext);
+
+  // const [glowing, setGlowing] = useState('glowing__container')
+  const [glowing, setGlowing] = useState('special__link achievements')
+
 
   const clickButton = () => {
     let newpointsPerClick = playerCharacter.pointsPerClick;
@@ -46,7 +51,7 @@ function Clicker() {
         </div>
         <article className='special__container'>
           <div
-            className='special__link achievements'
+            className={glowing}
             onClick={openAchievements}
           >
             Achievements

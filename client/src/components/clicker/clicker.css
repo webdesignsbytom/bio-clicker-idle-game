@@ -22,19 +22,31 @@
   border-top: 3px solid var(--alt-border-color);
   border-left: 3px solid var(--alt-border-color);
   border-bottom: 3px solid var(--alt-border-color);
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    padding: 0.2rem 0.2rem 0.2rem 1rem;
-    font-size: 1.1rem;
-    display: grid;
-    justify-content: flex-end;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding: 0.2rem 0.2rem 0.2rem 1rem;
+  font-size: 1.1rem;
+  display: grid;
+  justify-content: flex-end;
 }
 
 .special__link:hover {
-    background-color: aquamarine;
-    border-color: blue;
+  background-color: aquamarine;
+  border-color: blue;
 }
 
+.glowing__container {
+  border-top: 3px solid red;
+  border-left: 3px solid red;
+  border-bottom: 3px solid red;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding: 0.2rem 0.2rem 0.2rem 1rem;
+  font-size: 1.1rem;
+  display: grid;
+  justify-content: flex-end;
+  background-color: yellow;
+}
 .bonus {
 }
 .achievements {
