@@ -5,7 +5,10 @@
         "desc": "Clicked 10 times",
         "completed": false,
         "type": "clicks",
-        "goal": 10
+        "goal": 10,
+        "reward": "PPC doubles",
+        "rewardType": "pointsPerClick",
+        "rewardEffect": 2
     },
     {
         "id": 2,
@@ -13,7 +16,10 @@
         "desc": "Clicked 100 times",
         "completed": false,
         "type": "clicks",
-        "goal": 100
+        "goal": 100,
+        "reward": "PPC doubles",
+        "rewardType": "pointsPerClick",
+        "rewardEffect": 2
     },
     {
         "id": 3,
@@ -21,7 +27,10 @@
         "desc": "Robot Slaves liberated",
         "completed": false,
         "type": "purchase",
-        "goal": 10
+        "goal": 10,
+        "reward": "PPS doubles",
+        "rewardType": "pointsPerSecond",
+        "rewardEffect": 2
     },
     {
         "id": 4,
@@ -29,7 +38,10 @@
         "desc": "Clicked 1000 times",
         "completed": false,
         "type": "clicks",
-        "goal": 1000
+        "goal": 1000,
+        "reward": "PPC doubles",
+        "rewardType": "pointsPerClick",
+        "rewardEffect": 2
     },
     {
         "id": 5,
@@ -37,7 +49,10 @@
         "desc": "Own 10 buildings",
         "completed": false,
         "type": "clicks",
-        "goal": 10
+        "goal": 10,
+        "reward": "PPS doubles",
+        "rewardType": "pointsPerSecond",
+        "rewardEffect": 2
     },
     {
         "id": 5,
@@ -45,6 +60,9 @@
         "desc": "Own 100 buildings",
         "completed": false,
         "type": "clicks",
-        "goal": 10
+        "goal": 10,
+        "reward": "PPS doubles",
+        "rewardType": "pointsPerSecond",
+        "rewardEffect": 2
     }
 ]

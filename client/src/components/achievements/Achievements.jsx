@@ -32,9 +32,13 @@ function Achievements() {
           return (
             <article key={index} className='article'>
               <div className='achievement'>
-                {achievement.title}
-                {achievement.completed && <span>✔️</span>}
-                {achievement.desc}
+                <div className='achieve__data'>
+                  <h4>{achievement.title}</h4>
+                  {achievement.desc}
+                </div>
+                <div className='achieve__completed'>
+                  {achievement.completed && <span>✔️</span>}
+                </div>
               </div>
             </article>
           );

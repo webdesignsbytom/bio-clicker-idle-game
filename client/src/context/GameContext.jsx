@@ -37,8 +37,8 @@ const GameContextProvider = ({ children }) => {
     unlockedFuelProducors: false,
     unlockedPowerProducors: false,
     // Bonus
+    perminentMultiplier: 1,
     bonusMultiplier: 1,
-    baseLevelBonusMultiplier: 1,
     bonusPercentage: 0,
     // Joined timedate
     startedDateTime: null,

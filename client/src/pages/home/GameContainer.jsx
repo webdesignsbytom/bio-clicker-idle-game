@@ -32,6 +32,19 @@ function Game() {
     playerCharacter.pointsPerClick,
   ]);
 
+  const setPerSecondIncome = () => {
+    console.log('score');
+    console.log('playerCharacter', playerCharacter.items);
+    const currentBasePPS = playerCharacter.basePointsPerSecond
+    const currentPerminentMultiplier = playerCharacter.perminentMultiplier
+    const currentBonusMultiplier = playerCharacter.bonusMultiplier
+    
+    const newTotalPPS = (currentBasePPS * currentPerminentMultiplier) * currentBonusMultiplier 
+    // const ownedArray = currentArray.filter(e => e.quantity > 0) 
+    // console.log('owned', ownedArray);
+ 
+  }
+
   // Try and move to util if posible 
   const detectAchievements = () => {
     const playerCurrentAchievements = playerCharacter.achievements;
@@ -40,8 +53,8 @@ function Game() {
 
   // Run Detect functions
   detectAchievements();
+  setPerSecondIncome()
 
-  console.log('XXXXXXX', playerCharacter.achievements);
   return (
     <section className='game__container'>
       <ItemMenu />
