@@ -49,6 +49,8 @@ function Game() {
   const detectAchievements = () => {
     const playerCurrentAchievements = playerCharacter.achievements;
     listenForClicks(playerCurrentAchievements, playerCharacter)
+
+    
   };
 
   // Run Detect functions
