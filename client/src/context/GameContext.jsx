@@ -9,10 +9,11 @@ const GameContextProvider = ({ children }) => {
   const [playerCharacter, setPlayerCharacter] = useState({
     username: '',
     // Points
+    basePointsPerSecond: 0,
+      // Actual displayed points
     pointsPerSecond: 0,
     pointsPerClick: 1,
     totalTimesClicked: 0,
-    baseIncome: 0,
     multiplierIncome: 0,
     totalScore: 1000,
     timer: false,
