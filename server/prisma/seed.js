@@ -13,18 +13,18 @@ async function seed() {
     }
   })
 
-  const createGameProfile = await prisma.gameProfile.create({
-    data: {
-        userId: createdUser.id,
-    }
-  })
+  // const createGameProfile = await prisma.gameProfile.create({
+  //   data: {
+  //       userId: createdUser.id,
+  //   }
+  // })
 
-  const createItemOne = await prisma.item.create({
-  data: {
-      gameProfileId: createGameProfile.id,
-      name: 'Large Pillow'
-    }
-  })
+  // const createItemOne = await prisma.item.create({
+  // data: {
+  //     gameProfileId: createGameProfile.id,
+  //     name: 'Large Pillow'
+  //   }
+  // })
 
   const adminUser = await prisma.user.create({
     data: {

@@ -53,7 +53,7 @@ const getAllUsers = async (req, res) => {
 const registerNewUser = async (req, res) => {
   console.log('registering new user...');
 
-  const { email, password, firstName, lastName } = req.body;
+  const { email, password } = req.body;
   const lowerCaseEmail = email.toLowerCase();
 
   try {
@@ -76,9 +76,7 @@ const registerNewUser = async (req, res) => {
 
     const newUser = await createUser(
       lowerCaseEmail,
-      hashedPassword,
-      firstName,
-      lastName
+      hashedPassword
     );
 
     return res.status(200).json({
