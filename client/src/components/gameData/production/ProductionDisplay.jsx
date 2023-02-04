@@ -39,7 +39,7 @@ function LevelDisplay() {
       totalScore: 0,
       currentLevel: newLevel,
       pointsPerSecond: 0,
-      pointsPerClick: 0
+      pointsPerClick: 1
     });
   }
 
