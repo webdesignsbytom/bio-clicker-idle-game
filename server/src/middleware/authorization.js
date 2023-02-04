@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const { findUserByEmail } = require('../domain/users');
 
 const authorization = async (req, res, next) => {
-
   const header = req.header('authorization');
 
   if (!header) {
@@ -20,7 +19,29 @@ const authorization = async (req, res, next) => {
   if (type !== `Bearer`) {
     return res
       .status(409)
-      .json({ error: `Expected Bearer for 'type' but got ${type} instead`, code: `409` });
+      .json({
+        error: `Expected Bearer for 'type' but got ${type} instead`,
+        code: `409`,
+      });
+  }
+
+  const tokenValid = validateToken(token);
+  if (!tokenValid) {
+    return res.status(404).json({
+      authorization: 'Missing access token',
+    });
+  }
+
+  if (tokenValid.name === 'TokenExpiredError') {
+    return res.status(400).json({
+      authorization: 'token expired',
+    });
+  }
+
+  if (tokenValid.name) {
+    return res.status(400).json({
+      authorization: 'Invalid token',
+    });
   }
 
   try {
@@ -30,7 +51,6 @@ const authorization = async (req, res, next) => {
     const foundUser = await findUserByEmail(decodedToken.email);
 
     req.user = foundUser;
-
   } catch (error) {
     //
     return res.status(500).json({

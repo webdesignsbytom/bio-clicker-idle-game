@@ -1,8 +1,12 @@
-.menu__container {
+.mainMenu__container {
   display: grid;
   grid-template-rows: auto auto 1fr;
   overflow-y: hidden;
   background: var(--menu-bg);
+}
+
+.mainMenu__container::-webkit-scrollbar, .menu__container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Titles */
@@ -40,6 +44,8 @@
   overflow-x: hidden;
   scrollbar-width: thin;
 }
+
+
 
 .product {
   border: 3px solid var(--product-border-color);
