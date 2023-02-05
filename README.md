@@ -4,7 +4,9 @@ A idle clicker game based on poular designs
 A example of state manipulation and react stlying
 These games are hugely popular and a good example
 
-Current Address `https://darling-marigold-5cf601.netlify.app/`
+Link to user stories: https://github.com/webdesignbytom/react-idle-clicker/blob/main/userstories.md
+
+Current Address https://darling-marigold-5cf601.netlify.app/
 ## Code
 State and Context
 Mobile and Web version have different layouts
