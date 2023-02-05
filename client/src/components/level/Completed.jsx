@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { OptionContext } from '../../../../context/OptionContext';
-import { GameContext } from '../../../../context/GameContext';
+import { OptionContext } from '../../context/OptionContext';
+import { GameContext } from '../../context/GameContext';
 import { useEffect } from 'react';
 
 function Completed() {

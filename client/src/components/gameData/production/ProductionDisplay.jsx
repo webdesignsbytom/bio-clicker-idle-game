@@ -5,8 +5,8 @@ import LevelState from './../../../db/levels.json';
 import { GameContext } from './../../../context/GameContext';
 import { OptionContext } from '../../../context/OptionContext';
 import { useEffect } from 'react';
-import Completed from './level/Completed';
-import LevelData from './level/LevelData';
+import Completed from '../../level/Completed';
+import LevelData from '../../level/LevelData';
 import PowerProduction from './power/PowerProduction';
 import FuelProduction from './fuel/FuelProduction';
 // TODO: change to produiction
@@ -19,43 +19,10 @@ function LevelDisplay() {
     setCompletedLevelData,
   } = useContext(OptionContext);
 
-  const [levelsArray, setLevelsArray] = useState(LevelState);
-  const [currentLevel, setCurrentLevel] = useState({});
-
-  useEffect(() => {
-    const currentLevel = playerCharacter.currentLevel;
-    const levelIndex = currentLevel - 1;
-    setCurrentLevel(levelsArray[levelIndex]);
-  }, [playerCharacter.currentLevel]);
-
-  if (playerCharacter.totalScore >= currentLevel.targetScore) {
-    setCompletedLevelData(currentLevel);
-    setToggleLevelComplete(true);
-    const newLevel = playerCharacter.currentLevel + 1;
-
-    setPlayerCharacter({
-      ...playerCharacter,
-      totalScore: 0,
-      currentLevel: newLevel,
-      pointsPerSecond: 0,
-      pointsPerClick: 1,
-      percentageCompleted: 0,
-      unlockedFuelProducors: false,
-      unlockedPowerProducors: false,
-      totalItemsOwned: 0,
-      totalBuildingsOwned: 0,
-      fuelPerSecond: 0,
-      totalFuelProducedCurrentLevel: 0,
-      wattsProduced: 0,
-      totalPowerProducedCurrentLevel: 0,
-    });
-  }
-
   return (
     <section className='gameProduction__data__container'>
       <FuelProduction />
       <PowerProduction />
-      <LevelData currentLevel={currentLevel} />
     </section>
   );
 }

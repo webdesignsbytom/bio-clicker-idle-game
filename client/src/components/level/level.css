@@ -1,0 +1,16 @@
+.level__data__container {
+    display: grid;
+    border: 3px solid var(--secondary-bg);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.5rem;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    background: var(--secondary-bg);
+}
+
+.level__image {
+    display: grid;
+    justify-content: center;
+}

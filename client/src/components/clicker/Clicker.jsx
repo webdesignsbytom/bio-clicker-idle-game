@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { GameContext } from '../../context/GameContext';
 import { OptionContext } from '../../context/OptionContext';
 import Achievements from '../achievements/Achievements';
+import LevelData from '../level/LevelData';
 import './clicker.css';
 
 function Clicker() {
@@ -42,6 +43,10 @@ function Clicker() {
   return (
     <>
       <section className='clicker__container'>
+
+        {/* Level Data */}
+        <LevelData />
+
         <div className='clicker__section'>
           <button onClick={clickButton}>
             CLICK ME {playerCharacter.totalTimesClicked}
@@ -59,6 +64,7 @@ function Clicker() {
           >
             Achievements
           </div>}
+
           <div className='special__link quest'>Tech Tree</div>
           <div className='special__link quest'>Quests</div>
           <div className='special__link bonus'>Bonus</div>
