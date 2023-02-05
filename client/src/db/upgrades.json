@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Item Upgrade",
+        "desc": "All items double income",
+        "owned": false
+    },
+    {
+        "id": 2,
+        "name": "Fuel Increase",
+        "desc": "Fuel Production doubled",
+        "owned": false
+    },
+    {
+        "id": 3,
+        "name": "Use Alien Tech",
+        "desc": "Power needs drop 20%",
+        "owned": false
+    }
+]
