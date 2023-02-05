@@ -9,7 +9,7 @@ import Completed from './level/Completed';
 import LevelData from './level/LevelData';
 import PowerProduction from './power/PowerProduction';
 import FuelProduction from './fuel/FuelProduction';
-
+// TODO: change to produiction
 function LevelDisplay() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const {
@@ -26,11 +26,10 @@ function LevelDisplay() {
     const currentLevel = playerCharacter.currentLevel;
     const levelIndex = currentLevel - 1;
     setCurrentLevel(levelsArray[levelIndex]);
-    
   }, [playerCharacter.currentLevel]);
 
   if (playerCharacter.totalScore >= currentLevel.targetScore) {
-    setCompletedLevelData(currentLevel)
+    setCompletedLevelData(currentLevel);
     setToggleLevelComplete(true);
     const newLevel = playerCharacter.currentLevel + 1;
 
@@ -39,13 +38,21 @@ function LevelDisplay() {
       totalScore: 0,
       currentLevel: newLevel,
       pointsPerSecond: 0,
-      pointsPerClick: 1
+      pointsPerClick: 1,
+      percentageCompleted: 0,
+      unlockedFuelProducors: false,
+      unlockedPowerProducors: false,
+      totalItemsOwned: 0,
+      totalBuildingsOwned: 0,
+      fuelPerSecond: 0,
+      totalFuelProducedCurrentLevel: 0,
+      wattsProduced: 0,
+      totalPowerProducedCurrentLevel: 0,
     });
   }
 
   return (
     <section className='gameProduction__data__container'>
-     
       <FuelProduction />
       <PowerProduction />
       <LevelData currentLevel={currentLevel} />
