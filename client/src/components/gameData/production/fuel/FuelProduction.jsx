@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './fuelProduction.css';
+import { GameContext } from '../../../../context/GameContext';
 
 function FuelProduction() {
+  const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+  
   return (
     <div className='gameProduction__data fuel__data__container'>
       <div className='data__image'>

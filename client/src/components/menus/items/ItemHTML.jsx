@@ -9,21 +9,35 @@ function ItemHTML({ item, buyItem, purchaseAmount }) {
         </div>
 
         <div className='product__data'>
+
           <div className='product__name'>
             <h6>Name: </h6>
             <span>{item.name}</span>
           </div>
+
           <div className='product__cost'>
             <h6>Cost: </h6>
             <span>£ {Math.trunc(item.cost)}</span>
           </div>
+
           <div className='product__type'>
             <h6>Type: </h6>
             <span>{item.typetitle}</span>
           </div>
+
           <div className='product__effect'>
             <h6>Effect: </h6>
             <span>+ {item.effect}</span>
+          </div>
+
+          <div className='product__quantity'>
+            <h6>Owned: </h6>
+            <span>{item.quantity}</span>
+          </div>
+
+          <div className='product__income'>
+            <h6>Income: </h6>
+            <span>{item.income}</span>
           </div>
         </div>
 

@@ -11,7 +11,10 @@
     border: 3px solid var(--container-border-color);
     color: var(--font-color-secondary);
     align-items: center;
+    background-color: black;
+
 }
+
 .data__info {
 }
 .data__image {
