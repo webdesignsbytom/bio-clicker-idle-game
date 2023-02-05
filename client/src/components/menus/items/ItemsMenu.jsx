@@ -24,7 +24,7 @@ function ItemsMenu() {
   
 
   return (
-    <section className='menu__container'>
+    <section className='mainMenu__container'>
       <div className='menu__title__container'>
         <h2>Item Menu</h2>
       </div>

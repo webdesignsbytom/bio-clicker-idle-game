@@ -7,7 +7,9 @@
     "reward": "Base PPS doubles",
     "rewardEffect": 1,
     "rewardType": "pointsPerSecond",
-    "desc": "A world of sandbox where you learn the game"
+    "desc": "A world of sandbox where you learn the game",
+    "fuelUnlocked": false,
+    "powerUnlocked": false
   },
   {
     "id": 2,
@@ -17,7 +19,9 @@
     "reward": "PPS doubles",
     "rewardEffect": 1,
     "rewardType": "pointsPerSecond",
-    "desc": "A world of sandbox where you learn the game"
+    "desc": "A world of sandbox where you learn the game",
+    "fuelUnlocked": false,
+    "powerUnlocked": false
   },
   {
     "id": 3,
@@ -26,6 +30,8 @@
     "reward": "PPS doubles",
     "rewardEffect": 1,
     "rewardType": "pointsPerSecond",
-    "desc": "A world of sandbox where you learn the game"
+    "desc": "A world of sandbox where you learn the game",
+    "fuelUnlocked": false,
+    "powerUnlocked": false
   }
 ]

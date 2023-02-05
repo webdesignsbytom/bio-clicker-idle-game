@@ -12,18 +12,12 @@ const createUser = (email, password) =>
   });
 
 const findAllUsers = () => prisma.user.findMany({
-  include: {
-    gameProfile: true,
-  }
 });
 
 const findUserByEmail = (email) =>
   prisma.user.findFirst({
     where: {
       email: email,
-    },
-    include: {
-      gameProfile: true,
     }
   });
 
@@ -31,9 +25,6 @@ const findUserById = (userId) =>
   prisma.user.findFirst({
     where: {
       id: userId,
-    },
-    include: {
-      gameProfile: true,
     }
   });
 

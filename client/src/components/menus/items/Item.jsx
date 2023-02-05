@@ -42,6 +42,7 @@ function Item({ item, setItemsArray, purchaseAmount }) {
           pointsPerClick: newpointsPerClickValue,
           totalScore: newTotalScore,
           totalItemsOwned: newTotalItemsOwned,
+          unlockedFuelProducors: true
         });
       }
 

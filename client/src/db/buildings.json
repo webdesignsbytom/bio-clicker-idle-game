@@ -49,15 +49,15 @@
   },
   {
     "id": 5,
-    "name": "booster5",
-    "type": "pointsPerClick",
-    "typetitle": "PPC",
+    "name": "Power Plant",
+    "type": "fuel-production",
+    "typetitle": "Fuel Production",
     "quantity": 0,
-    "effect": 25,
-    "cost": 25,
-    "image": "🚀",
-    "income": 0,
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
+    "effect": "Production",
+    "cost": 250000,
+    "image": "🔥",
+    "income": null,
+    "desc": "Unlocks fuel producers that turn your algae into fuel"
   },
   {
     "id": 6,
@@ -105,20 +105,19 @@
     "cost": 11,
     "image": "🚀",
     "income": 0,
-
     "desc": "Each finger doubles the amount of points earned per click on the screen"
   },
   {
     "id": 10,
-    "name": "booster10",
-    "type": "pointsPerClick",
-    "typetitle": "PPC",
+    "name": "Power Plant",
+    "type": "power-production",
+    "typetitle": "Power Production",
     "quantity": 0,
-    "effect": 12,
-    "cost": 11,
-    "image": "🚀",
+    "effect": null,
+    "cost": 100000000,
+    "image": "⚡",
     "income": 0,
-    "desc": "Each finger doubles the amount of points earned per click on the screen"
+    "desc": "Start your town producing power from the fuel you make"
   },
   {
     "id": 11,
