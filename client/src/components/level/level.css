@@ -1,13 +1,14 @@
 .level__data__container {
+    background: var(--translucent-bg);
+    border: 3px solid var(--product-border-color);
+
     display: grid;
-    border: 3px solid var(--secondary-bg);
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
     position: absolute;
     top: 10px;
     left: 10px;
     padding: 0.5rem;
-    grid-template-columns: auto 1fr;
-    gap: 0.5rem;
-    background: var(--secondary-bg);
 }
 
 .level__image {

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { OptionContext } from '../../context/OptionContext';
 import { GameContext } from '../../context/GameContext';
 import { useEffect } from 'react';
+import { resetOwnedBuildings, resetOwnedItems } from '../../utils/Resets';
 
 function Completed() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -20,6 +21,8 @@ function Completed() {
       const currentMultiplier = playerCharacter.perminentMultiplier
       const levelReward = completedLevelData.rewardEffect
       const newNum = currentMultiplier + levelReward
+      resetOwnedBuildings(playerCharacter,setPlayerCharacter)
+      resetOwnedItems(playerCharacter, setPlayerCharacter)
       setPlayerCharacter({
         ...playerCharacter,
         perminentMultiplier: newNum 
