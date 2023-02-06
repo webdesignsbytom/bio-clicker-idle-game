@@ -1,0 +1,44 @@
+.completed__container {
+    background-color: var(--alt-bg);
+    display: grid;
+    grid-template-rows: 300px auto 1fr auto;
+}
+
+.completed__titles {
+    background-color: yellow;
+    text-align: center;
+}
+
+.twitter__button {
+    background-color: #1DA1F2;
+    border-radius: 20px;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--font-color-secondary);
+    cursor: pointer;
+}
+
+.twitter__button:hover {
+    filter: brightness(1.2);
+}
+
+.rewards__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+}
+
+.general__rewards, .twitterBonus__rewards {
+    border: 2px solid var(--product-border-color);
+
+}
+
+.close__container {
+    display: grid;
+}
+
+.close__btn {
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+}
