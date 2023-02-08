@@ -2,13 +2,12 @@
   display: grid;
   grid-template-rows: auto auto 1fr;
   overflow-y: hidden;
-  background: var(--main-bg);
-
 }
 
 .mainMenu__container::-webkit-scrollbar,
 .menu__container::-webkit-scrollbar {
   display: none;
+  
 }
 
 /* Titles */
@@ -47,7 +46,7 @@
   padding: 0.3rem;
   overflow: scroll;
   overflow-x: hidden;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
 
 .product {

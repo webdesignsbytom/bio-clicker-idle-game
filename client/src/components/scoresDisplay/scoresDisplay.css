@@ -1,6 +1,6 @@
 .scoresDisplay__container {
   display: grid;
-  background-color: var(--main-bg);
+  background-color: var(--alt-bg);
   border: 3px solid var(--container-border-color);
   padding: 0.2rem;
   line-height: 1;
