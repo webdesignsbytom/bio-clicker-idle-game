@@ -14,7 +14,8 @@ function Clicker() {
     toggleAchievementComplete,
     setToggleAchievementComplete,
     achievementReady,
-    setAchievementReady,
+    setAchievementReady,toggleUpgrades,
+    setToggleUpgrades
   } = useContext(OptionContext);
 
   const clickButton = () => {
@@ -64,6 +65,7 @@ function Clicker() {
             )}
 
             <div className='special__link quest'>Tech Tree</div>
+            <div className='special__link upgrades' onClick={setToggleUpgrades(true)}>Upgrades</div>
             <div className='special__link quest'>Quests</div>
             <div className='special__link bonus'>Bonus</div>
           </article>
