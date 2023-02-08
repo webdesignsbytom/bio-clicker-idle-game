@@ -1,10 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import ItemHTML from './ItemHTML';
 
 function Item({ item, setItemsArray, purchaseAmount }) {
   // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+  const [maxPurchase, setMaxPurchase] = useState(null)
+
+  useEffect(() => {
+
+    if (purchaseAmount === 'max') {
+      console.log('oOOOO hyes')
+      const playerScore = playerCharacter.totalScore
+      console.log('playerScore: ', playerScore)
+      const itemCost = item.cost
+      console.log('itemCost: ', itemCost)
+      const totalPurchasable = playerScore / itemCost
+      console.log('totalPurchasable: ', totalPurchasable)
+      setMaxPurchase(Math.trunc(totalPurchasable))
+    }
+  }, [playerCharacter.totalScore, purchaseAmount])
 
   const buyItem = (item) => {
     // Check if it can be afforded
@@ -70,7 +85,7 @@ function Item({ item, setItemsArray, purchaseAmount }) {
       alert('You cannot afford to purchase');
     }
   };
-  return <ItemHTML item={item} purchaseAmount={purchaseAmount} buyItem={buyItem} />;
+  return <ItemHTML item={item} purchaseAmount={purchaseAmount} maxPurchase={maxPurchase} buyItem={buyItem} />;
 }
 
 export default Item;

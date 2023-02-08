@@ -7,7 +7,7 @@ import '../menu.css';
 function ItemsMenu() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [itemsArray, setItemsArray] = useState(ItemDB);
-  const [purchaseAmount, setPurchaseAmount] = useState(1);
+  const [purchaseAmount, setPurchaseAmount] = useState('max');
 
   useEffect(() => {
     setPlayerCharacter({
@@ -19,6 +19,8 @@ function ItemsMenu() {
   const handleChange = (event) => {
     const { value, name } = event.target;
     console.log('event', value, name);
+
+    setPurchaseAmount(value)
   };
 
   return (
@@ -43,16 +45,18 @@ function ItemsMenu() {
               type='checkbox'
               name='one'
               id='one'
-              value={1}
+              value={'1'}
               onChange={handleChange}
+              checked={purchaseAmount === '1' ? 'active' : ''}
             />
             <label htmlFor='ten'>10</label>
             <input
               type='checkbox'
               name='ten'
               id='ten'
-              value={10}
+              value={'10'}
               onChange={handleChange}
+              checked={purchaseAmount === '10' ? 'active' : ''}
             />
             <label htmlFor='twentyFive'>25</label>
             <input
@@ -60,21 +64,27 @@ function ItemsMenu() {
               name='twentyFive'
               id='twentyFive'
               onChange={handleChange}
+              value={'25'}
+              checked={purchaseAmount === '25' ? 'active' : ''}
             />
             <label htmlFor='oneHundred'>100</label>
             <input
               type='checkbox'
               name='oneHundred'
               id='oneHundred'
+              value={'100'}
               onChange={handleChange}
+              checked={purchaseAmount === '100' ? 'active' : ''}
+
             />
             <label htmlFor='max'>Max</label>
             <input
               type='checkbox'
               name='max'
               id='max'
+              value={'max'}
               onChange={handleChange}
-              checked
+              checked={purchaseAmount === 'max' ? 'active' : ''}
             />
           </form>
         </section>

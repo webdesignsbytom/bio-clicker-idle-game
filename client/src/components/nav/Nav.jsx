@@ -25,7 +25,6 @@ function Nav() {
           <Link to='/register'>Register</Link>
           <Link to='/account'>Account</Link>
           <Link to='/admin'>Admin</Link>
-          <button onClick={openAdminPanel}>AdminPanel</button>
         </div>
       </nav>
     </>
