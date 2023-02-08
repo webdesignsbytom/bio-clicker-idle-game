@@ -3,24 +3,23 @@
   grid-template-rows: auto auto 1fr;
   overflow-y: hidden;
   background-color: rgba(0, 0, 0, 0.55);
-
 }
 
 .mainMenu__container::-webkit-scrollbar,
 .menu__container::-webkit-scrollbar {
   display: none;
-  
 }
 
 /* Titles */
 .titles__holder {
   padding: 0.3rem;
 }
+
 .menu__title__container {
   color: var(--font-color-main);
   display: grid;
   place-content: center;
-  background-color: var(--secondary-bg);
+  background-color: var(--product-bg);
   border: 5px solid var(--container-border-color);
   border-radius: 4px;
 }
