@@ -37,15 +37,15 @@ function Completed() {
   return (
     <div className='completed__containerx'>
       <div className='completed__titles'>
-        <div className='stars__container'></div>
+        <div className='stars__container'>⭐ ⭐</div>
         <div className='completedLevel__titles'>
           <h2>
             Completed Level <br />
             {completedLevelData.id}
           </h2>
+          <h4>{completedLevelData.name}</h4>
         </div>
-        <h4>{completedLevelData.name}</h4>
-        <div className='stars__container'></div>
+        <div className='stars__container'>⭐ ⭐</div>
       </div>
 
       <div className='tweet__container'>

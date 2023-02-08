@@ -8,6 +8,18 @@
 
 .completed__titles {
     text-align: center;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.stars__container {
+    font-size: 3rem;
+}
+
+.tweet__container {
+    display: grid;
+    place-content: center;
 }
 
 .twitter__button {
@@ -17,6 +29,7 @@
     font-size: 1rem;
     color: var(--font-color-secondary);
     cursor: pointer;
+
 }
 
 .twitter__button:hover {
