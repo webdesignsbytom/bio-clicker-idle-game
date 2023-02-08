@@ -21,6 +21,17 @@
 .logo__container img {
   width: 30px;
   height: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo__container p {
+  z-index: 2;
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  padding-left: 14px;
+  font-weight: 800;
 }
 
 .links__container {

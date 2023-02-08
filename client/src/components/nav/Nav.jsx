@@ -17,6 +17,7 @@ function Nav() {
         <div className='logo__container'>
           <Link to='/'>
             <img src={Logo} alt='logo' />
+            <p>Bio-Clicker</p>
           </Link>
         </div>
         <div className='links__container'>
