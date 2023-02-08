@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
+import { OptionContext } from '../../context/OptionContext';
+
 import Completed from '../../components/level/Completed';
 import Clicker from '../../components/clicker/Clicker';
-import GameData from '../../components/gameData/GameData';
 import LevelAnimation from '../../components/levelAnimation/LevelAnimation';
 import ScoresDisplay from '../../components/scoresDisplay/ScoresDisplay';
-import { OptionContext } from '../../context/OptionContext';
+import ProductionDisplay from '../../components/production/ProductionDisplay';
 
 function Game() {
   const { toggleLevelComplete, setToggleLevelComplete } =
@@ -14,7 +15,7 @@ function Game() {
     <main className='main__game'>
       <ScoresDisplay />
       {toggleLevelComplete ? <Completed /> : <Clicker />}
-      <GameData />
+      <ProductionDisplay />
       <LevelAnimation />
     </main>
   );
