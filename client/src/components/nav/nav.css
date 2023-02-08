@@ -1,7 +1,7 @@
 .nav__container {
   background-color: var(--nav-bg);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 0.5fr;
   padding: 0.4rem;
   border-bottom: var(--border-thickness-sm) solid var(--container-border-color);
 }
@@ -36,9 +36,10 @@
 
 .links__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30px, 100px));
+  grid-auto-flow: column;
   align-items: center;
   justify-content: end;
+  justify-content: space-evenly;
 }
 
 .links__container a {

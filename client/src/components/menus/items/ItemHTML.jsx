@@ -1,6 +1,7 @@
 import React from 'react';
 
 function ItemHTML({ item, buyItem, purchaseAmount, maxPurchase }) {
+  console.log('image', item.image)
   return (
     <div className='product'>
       <div className='inner__product'>

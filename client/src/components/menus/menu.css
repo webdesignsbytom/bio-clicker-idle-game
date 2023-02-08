@@ -32,6 +32,7 @@
 
 .product__data__main {
   display: grid;
+  padding: 0 1rem;
   color: var(--font-color-secondary);
 }
 

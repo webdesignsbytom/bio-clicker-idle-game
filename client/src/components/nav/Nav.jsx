@@ -11,6 +11,7 @@ function Nav() {
     console.log('click');
     setIsAdminPanelOpen(!isAdminPanelOpen);
   };
+
   return (
     <>
       <nav className='nav__container'>
@@ -25,6 +26,7 @@ function Nav() {
           <Link to='/login'>Login</Link>
           <Link to='/register'>Register</Link>
           <Link to='/account'>Account</Link>
+          <Link to='/stats'>Stats</Link>
           <Link to='/admin'>Admin</Link>
         </div>
       </nav>
