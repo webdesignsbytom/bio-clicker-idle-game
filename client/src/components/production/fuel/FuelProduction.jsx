@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './fuelProduction.css';
-import { GameContext } from '../../../../context/GameContext';
+import { GameContext } from '../../../context/GameContext';
 
 function FuelProduction() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
