@@ -49,7 +49,7 @@ const GameContextProvider = ({ children }) => {
     prestigeScore: 0,
     achievements: AchievementsDB,
     // Gems and paid items
-    gems: 50,
+    gems: 50
   });
 
   return (

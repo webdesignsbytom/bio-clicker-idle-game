@@ -1,19 +1,35 @@
-.completed__container {
-    background-color: #1DA1F2;
+
+.completed__containerx {
+    background-color: var(--secondary-bg);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr auto;
+    padding: 1rem;
 }
 
 .completed__titles {
-    background-color: yellow;
     text-align: center;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.stars__container {
+    font-size: 3rem;
+}
+
+.tweet__container {
+    display: grid;
+    place-content: center;
 }
 
 .twitter__button {
-    background-color: #1DA1F2;
+    background-color: var(--twitter-blue);
     border-radius: 20px;
     padding: 1rem;
     font-size: 1rem;
     color: var(--font-color-secondary);
     cursor: pointer;
+
 }
 
 .twitter__button:hover {
@@ -33,10 +49,4 @@
 
 .close__container {
     display: grid;
-}
-
-.close__btn {
-    border-radius: 12px;
-    padding: 1rem;
-    cursor: pointer;
 }

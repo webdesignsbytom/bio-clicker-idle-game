@@ -1,6 +1,7 @@
 import React from 'react';
 
-function ItemHTML({ item, buyItem, purchaseAmount }) {
+function ItemHTML({ item, buyItem, purchaseAmount, maxPurchase }) {
+  console.log('image', item.image)
   return (
     <div className='product'>
       <div className='inner__product'>
@@ -31,14 +32,14 @@ function ItemHTML({ item, buyItem, purchaseAmount }) {
         </div>
 
         <div className='purchase__product'>
-          <button className='buy__btn' onClick={() => buyItem(item)}>
+          <button className='btn' onClick={() => buyItem(item)}>
             <div className='buy__amount'>
               <h6>Buy</h6>
-              <span>{purchaseAmount}</span>
+              <span>{purchaseAmount === 'max' ? maxPurchase : purchaseAmount}</span>
             </div>
             <div className='owned__quantity'>
-              <h6>Owned</h6>
-              <span>{item.quantity}</span>
+              <h6>Owned <span>{item.quantity}</span></h6>
+              
             </div>
           </button>
         </div>

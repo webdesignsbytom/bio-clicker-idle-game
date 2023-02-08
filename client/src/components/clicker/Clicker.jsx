@@ -4,6 +4,7 @@ import { OptionContext } from '../../context/OptionContext';
 import Achievements from '../achievements/Achievements';
 import LevelData from '../level/LevelData';
 import './clicker.css';
+import AlgaeIcon from '../../assets/images/algae.png'
 
 function Clicker() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -13,10 +14,9 @@ function Clicker() {
     toggleAchievementComplete,
     setToggleAchievementComplete,
     achievementReady,
-    setAchievementReady
+    setAchievementReady,toggleUpgrades,
+    setToggleUpgrades
   } = useContext(OptionContext);
-
-
 
   const clickButton = () => {
     let newpointsPerClick = playerCharacter.pointsPerClick;
@@ -37,39 +37,40 @@ function Clicker() {
 
   const openAchievements = () => {
     setToggleAchievementsOpen(!toggleAchievementsOpen);
-    setAchievementReady(false)
+    setAchievementReady(false);
   };
 
   return (
     <>
-      <section className='clicker__container'>
+      <div className='clicker__bg'>
+        <section className='clicker__container'>
+          {/* Level Data */}
+          <LevelData />
 
-        {/* Level Data */}
-        <LevelData />
+          <div className='clicker__section'>
+            <img src={AlgaeIcon} alt="clicker icon" onClick={clickButton} />
+          </div>
+          <article className='special__container'>
+            {achievementReady ? (
+              <div
+                className='completeAcheive__link quest'
+                onClick={openAchievements}
+              >
+                Achievements
+              </div>
+            ) : (
+              <div className='special__link quest' onClick={openAchievements}>
+                Achievements
+              </div>
+            )}
 
-        <div className='clicker__section'>
-          <button onClick={clickButton}>
-            CLICK ME {playerCharacter.totalTimesClicked}
-          </button>
-        </div>
-        <article className='special__container'>
-          {achievementReady ? <div
-            className='completeAcheive__link quest'
-            onClick={openAchievements}
-          >
-            Achievements
-          </div> : <div
-            className='special__link quest'
-            onClick={openAchievements}
-          >
-            Achievements
-          </div>}
-
-          <div className='special__link quest'>Tech Tree</div>
-          <div className='special__link quest'>Quests</div>
-          <div className='special__link bonus'>Bonus</div>
-        </article>
-      </section>
+            <div className='special__link quest'>Tech Tree</div>
+            <div className='special__link upgrades' onClick={setToggleUpgrades(true)}>Upgrades</div>
+            <div className='special__link quest'>Quests</div>
+            <div className='special__link bonus'>Bonus</div>
+          </article>
+        </section>
+      </div>
       {toggleAchievementsOpen && <Achievements />}
     </>
   );

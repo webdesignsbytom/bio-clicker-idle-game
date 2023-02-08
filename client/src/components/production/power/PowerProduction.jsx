@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { GameContext } from '../../../../context/GameContext';
+import { GameContext } from '../../../context/GameContext';
 import './powerProduction.css';
 
 
@@ -34,7 +34,7 @@ function PowerProduction() {
         </div>
       ) : (
         <div className='closed__container'>
-          <h3>⚡ UNLOCK </h3>
+          <h3>⚡ UNLOCK ⚡</h3>
         </div>
       )}
     </>

@@ -35,14 +35,9 @@
     display: grid;
     text-align: center;
   }
+  
   .submit__container {
       padding-top: 1rem;
-  }
-  
-  .btn {
-      padding: 0.5rem;
-      border-radius: 12px;
-      border: 1px black;
   }
   
   .register__link {

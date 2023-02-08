@@ -1,7 +1,7 @@
 .nav__container {
-  background-color: var(--secondary-bg);
+  background-color: var(--nav-bg);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 0.5fr;
   padding: 0.4rem;
   border-bottom: var(--border-thickness-sm) solid var(--container-border-color);
 }
@@ -21,19 +21,32 @@
 .logo__container img {
   width: 30px;
   height: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo__container p {
+  z-index: 2;
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  padding-left: 14px;
+  font-weight: 800;
 }
 
 .links__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30px, 100px));
+  grid-auto-flow: column;
   align-items: center;
   justify-content: end;
+  justify-content: space-evenly;
 }
 
 .links__container a {
-  color: var(--font-color-secondary);
+  color: var(--font-color-white);
   text-decoration: none;
 }
+
 .links__container a:hover {
-  color: var(--nav-hover);
+  color: var(--font-nav-hover);
 }

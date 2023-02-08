@@ -11,12 +11,14 @@ function Nav() {
     console.log('click');
     setIsAdminPanelOpen(!isAdminPanelOpen);
   };
+
   return (
     <>
       <nav className='nav__container'>
         <div className='logo__container'>
           <Link to='/'>
             <img src={Logo} alt='logo' />
+            <p>Bio-Clicker</p>
           </Link>
         </div>
         <div className='links__container'>
@@ -24,8 +26,8 @@ function Nav() {
           <Link to='/login'>Login</Link>
           <Link to='/register'>Register</Link>
           <Link to='/account'>Account</Link>
+          <Link to='/stats'>Stats</Link>
           <Link to='/admin'>Admin</Link>
-          <button onClick={openAdminPanel}>AdminPanel</button>
         </div>
       </nav>
     </>

@@ -6,4 +6,6 @@
     bottom: 0;
     padding: 1rem;
     font-size: 0.8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

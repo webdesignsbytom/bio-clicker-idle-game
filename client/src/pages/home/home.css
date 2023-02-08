@@ -3,6 +3,7 @@
     height: 100vh;
     max-height: 100vh;
     grid-template-rows: auto 1fr auto;
+    background: var(--main-bg);
 }
 
 .game__container {
@@ -20,7 +21,6 @@
     overflow: hidden;
     /* border: 5px solid var(--container-border-color); */
     padding: 0.4rem;
-    background: var(--main-bg);
 }
 
 .clicker__container {

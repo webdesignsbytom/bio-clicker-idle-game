@@ -1,5 +1,5 @@
 .level__data__container {
-    background: var(--translucent-bg);
+    background: var(--nav-bg);
     border: 3px solid var(--product-border-color);
 
     display: grid;
@@ -8,7 +8,12 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    padding: 0.5rem;
+
+    color: var(--font-color-white);
+    padding: 1rem 2rem;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    font-weight: 700;
 }
 
 .level__image {
