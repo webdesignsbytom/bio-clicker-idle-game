@@ -1,7 +1,5 @@
 .completed__container {
-    background-color: var(--alt-bg);
-    display: grid;
-    grid-template-rows: 300px auto 1fr auto;
+    background-color: #1DA1F2;
 }
 
 .completed__titles {

@@ -36,6 +36,7 @@ function Completed() {
 
   return (
     <div className='completed__container'>
+
       <div className='completed__titles'>
         <h2>Completed Level {completedLevelData.id}</h2>
         <h2>{completedLevelData.name}</h2>
