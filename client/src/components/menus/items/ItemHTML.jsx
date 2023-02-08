@@ -31,7 +31,7 @@ function ItemHTML({ item, buyItem, purchaseAmount }) {
         </div>
 
         <div className='purchase__product'>
-          <button className='buy__btn' onClick={() => buyItem(item)}>
+          <button className='btn' onClick={() => buyItem(item)}>
             <div className='buy__amount'>
               <h6>Buy</h6>
               <span>{purchaseAmount}</span>

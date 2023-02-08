@@ -1,6 +1,6 @@
 .clicker__container {
   border: 3px solid var(--container-border-color);
-  background-color: var(--color-2);
+  background: var(--radial-bg);
   position: relative;
   display: grid;
 }
@@ -29,7 +29,25 @@
   display: grid;
   justify-content: flex-end;
   cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    #00bf8f 0%,
+    #001510 51%,
+    #00bf8f 100%
+  );
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 2px #eeeeee9b;
+  display: block;
+}
 
+.special__link:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Alt link */
@@ -52,11 +70,6 @@
   50% {
     scale: 1.2;
   }
-}
-
-.special__link:hover {
-  background-color: aquamarine;
-  border-color: blue;
 }
 
 .glowing__container {

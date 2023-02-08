@@ -35,11 +35,10 @@ function Completed() {
   };
 
   return (
-    <div className='completed__container'>
+    <div className='completed__containerx'>
       <div className='completed__titles'>
-        <h2>Completed Level {completedLevelData.id}</h2>
-        <h2>{completedLevelData.name}</h2>
-        <h4>{completedLevelData.reward}</h4>
+        <h2>Completed Level <br />{completedLevelData.id}</h2>
+        <h4>{completedLevelData.name}</h4>
       </div>
 
       <div className='tweet__container'>
@@ -48,8 +47,9 @@ function Completed() {
           class='twitter__button'
           id='twitter'
           title='Tweet This!'
-        >
-          <i class='fab fa-twitter'> Tweet This!</i>
+        > Tweet This!
+          <i class='fab fa-twitter'></i>
+          <h6>Earn 5 gems!</h6>
         </button>
       </div>
 
@@ -62,8 +62,8 @@ function Completed() {
       </div>
 
       <div className='close__container'>
-        <button className='close__btn' onClick={closeLevel}>
-          CLOSE
+        <button className='btn' onClick={closeLevel}>
+          NEXT LEVEL
         </button>
       </div>
     </div>

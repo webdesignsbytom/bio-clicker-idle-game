@@ -34,7 +34,7 @@ function PowerProduction() {
         </div>
       ) : (
         <div className='closed__container'>
-          <h3>⚡ UNLOCK </h3>
+          <h3>⚡ UNLOCK ⚡</h3>
         </div>
       )}
     </>
