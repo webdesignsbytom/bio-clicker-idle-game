@@ -2,30 +2,31 @@ import React, { useContext } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import BuildingHTML from './BuildingHTML';
 
-function Building({ building, setBuildingsArray }) {
+function Building({ building, setBuildingsArray, purchaseAmount }) {
   // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const buyBuilding = (building) => {
     // Check if it can be afforded
     if (playerCharacter.totalScore >= building.cost) {
-      // Find the item in players state and add to quantity
+      // Find the building in players state and add to quantity
       let character = playerCharacter;
       let newArray = character.buildings;
+      const buildingIndex = newArray.findIndex((i) => i.id === building.id);
 
-      const buildingIndex = newArray.findIndex((b) => b.id === building.id);
-      console.log('building INDEX', buildingIndex);
       // Increment the quantity
       newArray[buildingIndex].quantity++;
 
-      // Increase item cost
+      // Increase building cost
       const newCost = building.cost * 1.1;
       newArray[buildingIndex].cost = newCost.toFixed(2);
 
       const pushArray = newArray;
       setBuildingsArray(pushArray);
 
+      // PPC Building
       if (building.type === 'pointsPerClick') {
+        // Assign current values
         let currentpointsPerClick = playerCharacter.pointsPerClick;
         let currentTotalScore = playerCharacter.totalScore;
 
@@ -41,33 +42,35 @@ function Building({ building, setBuildingsArray }) {
           pointsPerClick: newpointsPerClickValue,
           totalScore: newTotalScore,
           totalBuildingsOwned: newTotalBuildingsOwned,
+          unlockedFuelProducors: true
         });
       }
 
+      // PPS Item
       if (building.type === 'pointsPerSecond') {
-        let currentpointsPerSecond = playerCharacter.pointsPerSecond;
+        let currentPointsPerSecond = playerCharacter.pointsPerSecond;
         let currentTotalScore = playerCharacter.totalScore;
 
-        let newpointsPerSecondValue = currentpointsPerSecond + building.effect;
+        let newPointsPerSecondValue = currentPointsPerSecond + building.effect;
         let newTotalScore = currentTotalScore - building.cost;
 
         let purchaseAmount = 1;
-        let newTotalBuildingsOwned =
-          playerCharacter.totalBuildingsOwned + purchaseAmount;
+        let newTotalBuildingOwned =
+          playerCharacter.totalBuildingOwned + purchaseAmount;
+        console.log('AAAAAAAAAAAAA', playerCharacter.totalBuildingOwned);
 
         setPlayerCharacter({
           ...playerCharacter,
-          pointsPerSecond: newpointsPerSecondValue,
+          pointsPerSecond: newPointsPerSecondValue,
           totalScore: newTotalScore,
-          totalBuildingsOwned: newTotalBuildingsOwned,
+          totalBuildingOwned: newTotalBuildingOwned,
         });
       }
     } else {
       alert('You cannot afford to purchase');
     }
   };
-
-  return <BuildingHTML building={building} buyBuilding={buyBuilding} />;
+  return <BuildingHTML building={building} purchaseAmount={purchaseAmount} buyBuilding={buyBuilding} />;
 }
 
 export default Building;
