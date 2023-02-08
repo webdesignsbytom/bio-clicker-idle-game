@@ -1,6 +1,6 @@
 .scroll__container {
-    background-color: var(--alt-bg);
-    color: var(--font-color-main);
+    background-color: var(--nav-bg);
+    color: var(--font-color-white);
     border-top: var(--border-thickness-sm) solid var(--alt-border-color);
     border-bottom: var(--border-thickness-sm) solid var(--alt-border-color);
     padding: 0;

@@ -1,5 +1,5 @@
 .nav__container {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: var(--nav-bg);
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0.4rem;
@@ -42,9 +42,10 @@
 }
 
 .links__container a {
-  color: var(--font-color-secondary);
+  color: var(--font-color-white);
   text-decoration: none;
 }
+
 .links__container a:hover {
-  color: var(--nav-hover);
+  color: var(--font-nav-hover);
 }

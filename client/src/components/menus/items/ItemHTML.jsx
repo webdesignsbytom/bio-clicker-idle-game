@@ -37,8 +37,8 @@ function ItemHTML({ item, buyItem, purchaseAmount, maxPurchase }) {
               <span>{purchaseAmount === 'max' ? maxPurchase : purchaseAmount}</span>
             </div>
             <div className='owned__quantity'>
-              <h6>Owned</h6>
-              <span>{item.quantity}</span>
+              <h6>Owned <span>{item.quantity}</span></h6>
+              
             </div>
           </button>
         </div>

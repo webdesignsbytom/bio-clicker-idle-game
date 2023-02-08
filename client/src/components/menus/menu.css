@@ -2,6 +2,8 @@
   display: grid;
   grid-template-rows: auto auto 1fr;
   overflow-y: hidden;
+  background-color: rgba(0, 0, 0, 0.55);
+
 }
 
 .mainMenu__container::-webkit-scrollbar,
@@ -47,6 +49,8 @@
   overflow: scroll;
   overflow-x: hidden;
   scrollbar-width: none;
+  font-weight: 700;
+
 }
 
 .product {
@@ -105,7 +109,6 @@
   border: 2px solid var(--product-border-color);
   border-radius: 4px;
   padding: 0.1rem;
-  font-weight: 500;
 }
 
 .purchase__product {

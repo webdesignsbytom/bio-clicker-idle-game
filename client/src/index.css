@@ -1,8 +1,28 @@
 :root {
   --border-radius-sm: 4px;
-  --main-bg: linear-gradient(137deg, rgba(11,97,3,1) 7%, rgba(41,138,36,1) 10%, rgba(34,52,52,1) 20%, rgba(41,161,30,1) 22%, rgba(38,114,31,1) 23%, rgba(34,52,52,1) 26%, rgba(20,89,18,1) 46%, rgba(68,133,62,1) 49%, rgba(23,73,29,1) 52%, rgba(34,52,52,1) 53%, rgba(68,133,62,1) 55%, rgba(41,70,54,1) 58%, rgba(41,161,30,1) 66%, rgba(11,97,3,1) 75%, rgba(34,52,52,1) 94%, rgba(234,240,235,1) 96%, rgba(11,97,3,1) 100%);
+  --main-bg: linear-gradient(
+    137deg,
+    rgba(11, 97, 3, 1) 7%,
+    rgba(41, 138, 36, 1) 10%,
+    rgba(34, 52, 52, 1) 20%,
+    rgba(41, 161, 30, 1) 22%,
+    rgba(38, 114, 31, 1) 23%,
+    rgba(34, 52, 52, 1) 26%,
+    rgba(20, 89, 18, 1) 46%,
+    rgba(68, 133, 62, 1) 49%,
+    rgba(23, 73, 29, 1) 52%,
+    rgba(34, 52, 52, 1) 53%,
+    rgba(68, 133, 62, 1) 55%,
+    rgba(41, 70, 54, 1) 58%,
+    rgba(41, 161, 30, 1) 66%,
+    rgba(11, 97, 3, 1) 75%,
+    rgba(34, 52, 52, 1) 94%,
+    rgba(234, 240, 235, 1) 96%,
+    rgba(11, 97, 3, 1) 100%
+  );
   --secondary-bg: #7f7b82;
   --menu-bg: #172121;
+  --nav-bg: rgba(0, 0, 0, 0.75);
   --alt-bg: #bfacb5;
   --product-bg: #bfacb5;
   --glowing-bg: #d80668;
@@ -26,10 +46,10 @@
   --highlighted-border-color: rgb(4, 4, 4) f;
 
   --font-color-main: #000;
-  --font-color-secondary: #ffffff;
+  --font-color-white: #ffffff;
   --font-color-alt: ;
   --font-hover-color: ;
-  --font-nav-hover-color: #bfacb5;
+  --font-nav-hover: rgb(30, 81, 175, 1);
 
   --color-1: #444554;
   --color-2: #e5d0cc;
