@@ -5,31 +5,21 @@ import Product from './Product';
 
 function Menu({ menuDB, type, title }) {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
-  const [productArray, setProductArray] = useState(menuDB[0].content);
+  const [productArray, setProductArray] = useState(menuDB.content);
   const [purchaseAmount, setPurchaseAmount] = useState('max');
   const [total, setTotal] = useState(null)
 
   useEffect(() => {
-    console.log('PRODUCT ARRAY', productArray);
     console.log('PLAYER CHARACTER', playerCharacter);
 
-    if (menuDB[0].type === 'items') {
-      setPlayerCharacter({
-        ...playerCharacter,
-        items: productArray,
-      });
+    if (menuDB.type === 'items') {
       setTotal(playerCharacter.totalItemsOwned)
     }
 
-    if (menuDB[0].type === 'buildings') {
-      setPlayerCharacter({
-        ...playerCharacter,
-        buildings: productArray,
-      });
+    if (menuDB.type === 'buildings') {
       setTotal(playerCharacter.totalBuildingsOwned)
-
     }
-  }, [productArray]);
+  }, [playerCharacter.totalItemsOwned]);
 
   // Select amount of products to purchase
   const handleChange = (event) => {
@@ -49,7 +39,7 @@ function Menu({ menuDB, type, title }) {
       <div className='product__data__main'>
         <article className='totals__container'>
           <h6>Total
-            {/* Total {title}: <span>{playerCharacter.total}</span> */}
+            Total {title}: <span>{total}</span>
           </h6>
         </article>
 

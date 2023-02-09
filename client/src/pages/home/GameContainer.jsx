@@ -4,9 +4,8 @@ import { GameContext } from '../../context/GameContext';
 import { listenForClicks } from '../../utils/Achievements';
 import { OptionContext } from '../../context/OptionContext';
 
-import ItemDB from '../../db/items.json';
-import BuildingDB from '../../db/buildings.json';
 import Menu from '../../components/menus/menu/Menu';
+import { ItemsDB } from '../../utils/ItemsDB';
 
 
 function Game() {
@@ -38,8 +37,6 @@ function Game() {
   ]);
 
   const setPerSecondIncome = () => {
-    console.log('score');
-    console.log('playerCharacter', playerCharacter.items);
     const currentBasePPS = playerCharacter.basePointsPerSecond;
     const currentPerminentMultiplier = playerCharacter.perminentMultiplier;
     const currentBonusMultiplier = playerCharacter.bonusMultiplier;
@@ -62,9 +59,9 @@ function Game() {
 
   return (
     <section className='game__container'>
-      <Menu menuDB={ItemDB} type='items' title='Items' />
+      <Menu menuDB={ItemsDB} type='items' title='Items' />
       <Main />
-      <Menu menuDB={BuildingDB} type='buildings' title='Buildings' />
+      {/* <Menu menuDB={BuildingDB} type='buildings' title='Buildings' /> */}
     </section>
   );
 }

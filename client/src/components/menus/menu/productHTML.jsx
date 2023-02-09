@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProductHTML({ product, buyProduct, purchaseAmount, maxPurchase }) {
+function ProductHTML({ product, buyProduct, purchaseAmount, maxPurchase, quantityOwned }) {
   console.log('image', product.image)
   return (
     <div className='product'>
@@ -38,7 +38,7 @@ function ProductHTML({ product, buyProduct, purchaseAmount, maxPurchase }) {
               <span>{purchaseAmount === 'max' ? maxPurchase : purchaseAmount}</span>
             </div>
             <div className='owned__quantity'>
-              <h6>Owned <span>{product.quantity}</span></h6>
+              <h6>Owned <span>{quantityOwned}</span></h6>
               
             </div>
           </button>
