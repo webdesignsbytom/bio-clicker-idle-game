@@ -21,10 +21,10 @@ const GameContextProvider = ({ children }) => {
     timer: false,
     // Items
     totalItemsOwned: 0,
-    items: ItemsDB, // db model
+    items: [], // db model
     // Buildings
     totalBuildingsOwned: 0,
-    buildings: BuildingsDB, // db model
+    buildings: [], // db model
     // Fuel
     fuelPerSecond: 0,
     totalFuelProducedCurrentLevel: 0,

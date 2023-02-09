@@ -64,7 +64,7 @@ function Game() {
     <section className='game__container'>
       <Menu menuDB={ItemDB} type='items' title='Items' />
       <Main />
-      <Menu menuDB={BuildingDB} type='items' title='Buildings' />
+      <Menu menuDB={BuildingDB} type='buildings' title='Buildings' />
     </section>
   );
 }

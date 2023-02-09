@@ -6,6 +6,8 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
   // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [maxPurchase, setMaxPurchase] = useState(null)
+  const [productType, setProductType] = useState(type)
+  // console.log('PRODUCT TYPE ALPHA', productType)
 
   useEffect(() => {
     if (purchaseAmount === 'max') {
@@ -17,24 +19,40 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
   }, [playerCharacter.totalScore, purchaseAmount])
 
   const buyProduct = (product) => {
-    console.log('AAAA')
+    console.log('AAAA', product)
+
     // Check if it can be afforded
     if (playerCharacter.totalScore >= product.cost) {
+
       // Find the product in players state and add to quantity
       let character = playerCharacter;
       let newArray = []
 
-      if (type === 'items') {
-        newArray.push(character.items[0].content)
+      if (productType === 'items') {
+        // console.log('IIII', character.items[0].content)
+        newArray.push(character.items)
       }
-      if (type === 'buildings') {
-        newArray.push(character.buildings[0].content)
-      }
-      console.log('NEW ARRAY', newArray)
-      const productIndex = newArray.findIndex((p) => p.id === product.id);
 
-      // Increment the quantity
-      newArray[productIndex].quantity++;
+      if (productType === 'buildings') {
+        // console.log('XX', character)
+        newArray.push(character.buildings)
+      }
+
+      console.log('NEW Array', newArray)
+      
+      // console.log('NEW ARRAY 1', newArray)
+      const productIndex = newArray.findIndex((p) => p.id === product.id);
+      
+      // if (productIndex !== -1) {
+      //   newArray[productIndex].quantity++;
+      // } else {
+      //   newArray.push({
+      //     ...product,
+      //     quantity: 1,
+      //   });
+      // }
+      
+      console.log('NEW ARRAY3', newArray)
 
       // Increase product cost
       const newCost = product.cost * 1.1;

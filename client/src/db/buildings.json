@@ -5,7 +5,7 @@
     "content": [
       {
         "id": 1,
-        "name": "Fier",
+        "name": "Small",
         "type": "pointsPerClick",
         "typetitle": "PPC",
         "quantity": 0,
@@ -17,7 +17,7 @@
       },
       {
         "id": 2,
-        "name": "Sola",
+        "name": "Medium",
         "type": "pointsPerSecond",
         "quantity": 0,
         "typetitle": "PPS",
@@ -29,7 +29,7 @@
       },
       {
         "id": 3,
-        "name": "Algaes",
+        "name": "LArge",
         "type": "pointsPerSecond",
         "typetitle": "PPS",
         "quantity": 0,
@@ -41,7 +41,7 @@
       },
       {
         "id": 4,
-        "name": "Nutrients",
+        "name": "Factory",
         "type": "pointsPerSecond",
         "typetitle": "PPS",
         "quantity": 0,

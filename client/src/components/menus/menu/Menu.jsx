@@ -11,6 +11,7 @@ function Menu({ menuDB, type, title }) {
 
   useEffect(() => {
     console.log('PRODUCT ARRAY', productArray);
+    console.log('PLAYER CHARACTER', playerCharacter);
 
     if (menuDB[0].type === 'items') {
       setPlayerCharacter({
