@@ -1,7 +1,7 @@
 
-const setCost = (testPhrase) => {
-    console.log(testPhrase)
-    return testPhrase
+export const setCost = (x) => {
+    let newCost = 5 * 5
+    return newCost
 }
 
 export const ItemsDB = {

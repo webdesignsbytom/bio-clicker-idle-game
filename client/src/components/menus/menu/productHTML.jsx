@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ProductHTML({ product, buyProduct, purchaseAmount, maxPurchase, quantityOwned }) {
-  console.log('image', product.image)
+  
   return (
     <div className='product'>
       <div className='inner__product'>

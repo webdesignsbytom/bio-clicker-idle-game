@@ -1,40 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { GameContext } from '../../../context/GameContext';
-import { setCost } from '../../../utils/ItemsDB';
-import ProductHTML from './productHTML';
+export const BuyProduct = (product, playerCharacter, setPlayerCharacter, productType, setQuantityOwned) => {
+    console.log('AAAA', product);
 
-function Product({ product, type, setProductArray, purchaseAmount }) {
-  // Player data from context
-  const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
-  const [maxPurchase, setMaxPurchase] = useState(null);
-  const [productType, setProductType] = useState(type);
-  const [quantityOwned, setQuantityOwned] = useState(0);
-  const [increaseConstant, setIncreaseConstant] = useState(1.1)
-  // console.log('PRODUCT TYPE ALPHA', productType)
-
-  useEffect(() => {
-    if (purchaseAmount === 'max') {
-      const playerScore = playerCharacter.totalScore;
-      const productCost = product.cost;
-      const totalPurchasable = playerScore / productCost;
-      setMaxPurchase(Math.trunc(totalPurchasable));
-    }
-  }, [playerCharacter.totalScore, purchaseAmount]);
-
-  useEffect(() => {
-    if (productType === 'items') {
-      const itemArray = playerCharacter.items;
-      const foundItem = itemArray.find((item) => item.id === product.id);
-      if (foundItem) {
-        setQuantityOwned(foundItem.quantity);
-        let originalCost = product.cost
-        
-        // product.cost = (foundItem.quantity + originalCost) * increaseConstant
-      }
-    } 
-  }, []);
-
-  const buyProduct = (product) => {
     // Check if it can be afforded
     if (playerCharacter.totalScore >= product.cost) {
       // Find the product in players state and add to quantity
@@ -60,11 +26,9 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
       if (productIndex !== -1) {
         newArray[productIndex].quantity++;
       } else {
-        const newCost = newArray[productIndex].cost * 1.1;
         newArray.push({
           ...product,
           quantity: 1,
-          cost: newCost
         });
       }
 
@@ -162,16 +126,3 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
       alert('You cannot afford to purchase');
     }
   };
-  
-  return (
-    <ProductHTML
-      product={product}
-      purchaseAmount={purchaseAmount}
-      maxPurchase={maxPurchase}
-      buyProduct={buyProduct}
-      quantityOwned={quantityOwned}
-    />
-  );
-}
-
-export default Product;

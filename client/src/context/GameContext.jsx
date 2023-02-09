@@ -29,7 +29,7 @@ const GameContextProvider = ({ children }) => {
       quantity: 1,
       effect: 7,
       test: 767,
-      cost: 10,
+      cost: 100,
       image: '🚀',
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
