@@ -1,38 +1,54 @@
 import React, { useContext, useEffect, useState } from 'react';
-import BuildingDB from '../../../db/buildings.json';
-import Building from './Building';
 import { GameContext } from '../../../context/GameContext';
 import '../menu.css';
+import Product from './Product';
 
-function BuildingsMenu() {
+function Menu({ menuDB, type, title }) {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
-  const [buildingsArray, setBuildingsArray] = useState(BuildingDB);
-  const [purchaseAmount, setPurchaseAmount] = useState(1);
+  const [productArray, setProductArray] = useState(menuDB[0].content);
+  const [purchaseAmount, setPurchaseAmount] = useState('max');
+  const [total, setTotal] = useState(null)
 
   useEffect(() => {
-    setPlayerCharacter({
-      ...playerCharacter,
-      buildings: buildingsArray,
-    });
-  }, [buildingsArray]);
+    console.log('PRODUCT ARRAY', productArray);
 
+    if (menuDB[0].type === 'items') {
+      setPlayerCharacter({
+        ...playerCharacter,
+        items: productArray,
+      });
+      setTotal(playerCharacter.totalItemsOwned)
+    }
+
+    if (menuDB[0].type === 'buildings') {
+      setPlayerCharacter({
+        ...playerCharacter,
+        buildings: productArray,
+      });
+      setTotal(playerCharacter.totalBuildingsOwned)
+
+    }
+  }, [productArray]);
+
+  // Select amount of products to purchase
   const handleChange = (event) => {
     const { value, name } = event.target;
-    console.log('event', value, name);
+
+    setPurchaseAmount(value);
   };
 
   return (
     <section className='mainMenu__container'>
       <div className='titles__holder'>
         <div className='menu__title__container'>
-          <h2>Building Menu</h2>
+          <h2>{title} Menu</h2>
         </div>
       </div>
 
       <div className='product__data__main'>
         <article className='totals__container'>
-          <h6>
-            Total building: <span>{playerCharacter.totalBuildingsOwned}</span>
+          <h6>Total
+            {/* Total {title}: <span>{playerCharacter.total}</span> */}
           </h6>
         </article>
 
@@ -43,16 +59,18 @@ function BuildingsMenu() {
               type='checkbox'
               name='one'
               id='one'
-              value={1}
+              value={'1'}
               onChange={handleChange}
+              checked={purchaseAmount === '1' ? 'active' : ''}
             />
             <label htmlFor='ten'>10</label>
             <input
               type='checkbox'
               name='ten'
               id='ten'
-              value={10}
+              value={'10'}
               onChange={handleChange}
+              checked={purchaseAmount === '10' ? 'active' : ''}
             />
             <label htmlFor='twentyFive'>25</label>
             <input
@@ -60,33 +78,39 @@ function BuildingsMenu() {
               name='twentyFive'
               id='twentyFive'
               onChange={handleChange}
+              value={'25'}
+              checked={purchaseAmount === '25' ? 'active' : ''}
             />
             <label htmlFor='oneHundred'>100</label>
             <input
               type='checkbox'
               name='oneHundred'
               id='oneHundred'
+              value={'100'}
               onChange={handleChange}
+              checked={purchaseAmount === '100' ? 'active' : ''}
             />
             <label htmlFor='max'>Max</label>
             <input
               type='checkbox'
               name='max'
               id='max'
+              value={'max'}
               onChange={handleChange}
-              checked
+              checked={purchaseAmount === 'max' ? 'active' : ''}
             />
           </form>
         </section>
       </div>
 
       <div className='menu__container'>
-        {buildingsArray.map((building, index) => {
+        {productArray.map((product, index) => {
           return (
-            <Building
-              building={building}
+            <Product
+              product={product}
+              type={type}
               purchaseAmount={purchaseAmount}
-              setBuildingsArray={setBuildingsArray}
+              setProductArray={setProductArray}
               key={index}
             />
           );
@@ -96,4 +120,4 @@ function BuildingsMenu() {
   );
 }
 
-export default  BuildingsMenu;
+export default Menu;

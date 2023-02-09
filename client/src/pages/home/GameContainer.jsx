@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Main from './Game';
-import BuildingsMenu from '../../components/menus/buildings/BuildingsMenu';
-import ItemsMenu from '../../components/menus/items/ItemsMenu';
 import { GameContext } from '../../context/GameContext';
 import { listenForClicks } from '../../utils/Achievements';
 import { OptionContext } from '../../context/OptionContext';
+
+import ItemDB from '../../db/items.json';
+import BuildingDB from '../../db/buildings.json';
+import Menu from '../../components/menus/menu/Menu';
+
 
 function Game() {
   const { achievementReady, setAchievementReady } = useContext(OptionContext);
@@ -59,9 +62,9 @@ function Game() {
 
   return (
     <section className='game__container'>
-      <ItemsMenu />
+      <Menu menuDB={ItemDB} type='items' title='Items' />
       <Main />
-      <BuildingsMenu />
+      <Menu menuDB={BuildingDB} type='items' title='Buildings' />
     </section>
   );
 }
