@@ -7,6 +7,14 @@ import BuildingsDB from './../db/buildings.json';
 export const GameContext = React.createContext();
 
 const GameContextProvider = ({ children }) => {
+
+  // Load local storage
+  useEffect(() => {
+    const storedData = localStorage.getItem('GameData')
+    const parseData = JSON.parse(storedData)
+    setPlayerCharacter(parseData)
+  }, [])
+
   // player
   const [playerCharacter, setPlayerCharacter] = useState({
     username: '',
@@ -20,7 +28,7 @@ const GameContextProvider = ({ children }) => {
     totalScore: 1000,
     timer: false,
     // Items
-    totalItemsOwned: 1,
+    totalItemsOwned: 0,
     items: [], // db model
     // Buildings
     totalBuildingsOwned: 0,
@@ -51,6 +59,11 @@ const GameContextProvider = ({ children }) => {
     // Gems and paid items
     gems: 50
   });
+
+  // Saving game to local storage
+  setInterval(() => {
+    localStorage.setItem('GameData', JSON.stringify(playerCharacter));
+  }, 1000)
 
   return (
     <GameContext.Provider
