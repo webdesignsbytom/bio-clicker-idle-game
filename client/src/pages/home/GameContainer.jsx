@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Main from './Game';
-import BuildingsMenu from '../../components/menus/buildings/BuildingsMenu';
-import ItemsMenu from '../../components/menus/items/ItemsMenu';
 import { GameContext } from '../../context/GameContext';
 import { listenForClicks } from '../../utils/Achievements';
 import { OptionContext } from '../../context/OptionContext';
+
+import Menu from '../../components/menus/menu/Menu';
+import { ItemsDB } from '../../components/menus/utils/ItemsDB';
+import { BuildingsDB } from '../../components/menus/utils/BuildingsDB';
+
 
 function Game() {
   const { achievementReady, setAchievementReady } = useContext(OptionContext);
@@ -35,8 +38,6 @@ function Game() {
   ]);
 
   const setPerSecondIncome = () => {
-    console.log('score');
-    console.log('playerCharacter', playerCharacter.items);
     const currentBasePPS = playerCharacter.basePointsPerSecond;
     const currentPerminentMultiplier = playerCharacter.perminentMultiplier;
     const currentBonusMultiplier = playerCharacter.bonusMultiplier;
@@ -59,9 +60,9 @@ function Game() {
 
   return (
     <section className='game__container'>
-      <ItemsMenu />
+      <Menu menuDB={ItemsDB} type='items' title='Items' />
       <Main />
-      <BuildingsMenu />
+      <Menu menuDB={BuildingsDB} type='buildings' title='Buildings' />
     </section>
   );
 }
