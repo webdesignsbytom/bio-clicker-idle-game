@@ -52,7 +52,7 @@ function Completed() {
       <div className='tweet__container'>
         <button
           onClick={tweetQuote}
-          class='twitter__button'
+          className='twitter__button'
           id='twitter'
           title='Tweet This!'
         >
