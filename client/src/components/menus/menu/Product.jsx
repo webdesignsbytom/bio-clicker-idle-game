@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
-import { setCost } from '../../../utils/ItemsDB';
+import { setCost } from '../utils/ItemsDB';
 import ProductHTML from './productHTML';
 
 function Product({ product, type, setProductArray, purchaseAmount }) {
@@ -27,9 +27,7 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
       const foundItem = itemArray.find((item) => item.id === product.id);
       if (foundItem) {
         setQuantityOwned(foundItem.quantity);
-        let originalCost = product.cost
-        
-        // product.cost = (foundItem.quantity + originalCost) * increaseConstant
+        product.cost = foundItem.cost
       }
     } 
   }, []);
@@ -59,12 +57,16 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
 
       if (productIndex !== -1) {
         newArray[productIndex].quantity++;
-      } else {
         const newCost = newArray[productIndex].cost * 1.1;
         newArray.push({
           ...product,
-          quantity: 1,
           cost: newCost
+        });
+      } else {
+        console.log('AAAAAAAAA')
+        newArray.push({
+          ...product,
+          quantity: 1,
         });
       }
 

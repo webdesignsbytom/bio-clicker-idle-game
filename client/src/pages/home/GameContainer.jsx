@@ -5,7 +5,8 @@ import { listenForClicks } from '../../utils/Achievements';
 import { OptionContext } from '../../context/OptionContext';
 
 import Menu from '../../components/menus/menu/Menu';
-import { ItemsDB } from '../../utils/ItemsDB';
+import { ItemsDB } from '../../components/menus/utils/ItemsDB';
+import { BuildingsDB } from '../../components/menus/utils/BuildingsDB';
 
 
 function Game() {
@@ -61,7 +62,7 @@ function Game() {
     <section className='game__container'>
       <Menu menuDB={ItemsDB} type='items' title='Items' />
       <Main />
-      {/* <Menu menuDB={BuildingDB} type='buildings' title='Buildings' /> */}
+      <Menu menuDB={BuildingsDB} type='buildings' title='Buildings' />
     </section>
   );
 }
