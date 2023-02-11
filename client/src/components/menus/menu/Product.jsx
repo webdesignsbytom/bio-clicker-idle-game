@@ -33,6 +33,7 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
   const buyProduct = (product) => {
     // Check if it can be afforded
     const purchasePrice = purchaseAmount * product.cost
+    console.log('purchasePrice', purchasePrice)
 
     console.log('PLAYER XX', playerCharacter.items)
     console.log('PLAYER XX', playerCharacter.totalItemsOwned)
@@ -52,7 +53,6 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
       }
 
       let productIndex = newArray.findIndex((p) => p.id === product.id);
-      console.log('Product Index: ', productIndex);
 
       if (productIndex !== -1) {
         let newQ = newArray[productIndex].quantity + Number(purchaseAmount)
@@ -63,10 +63,6 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
         let newCost = newArray[productIndex].cost * increaseConstant;
         console.log('newcost', newCost)
         newArray[productIndex].cost = Number(newCost)
-        // newArray.push({
-        //   ...product,
-        //   cost: newCost
-        // });
         //
       } else {
         //
@@ -84,8 +80,19 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
       }
 
       // // Increase product cost
-      const newCost = product.cost * 1.1;
-      product.cost = newCost.toFixed(2);
+      let purchaseCount = Number(purchaseAmount)
+
+      let startingPrice = product.cost
+      let newTotalCost = startingPrice
+      console.log('starting price', startingPrice)
+      console.log('newTotalCost1', newTotalCost)
+
+      for (let i = 0; i < purchaseCount; i++) {
+        newTotalCost *= increaseConstant
+      }
+      console.log('newTotalCost2', newTotalCost)
+
+      product.cost = newTotalCost.toFixed(2);
 
       // PPC Product
       if (product.type === 'pointsPerClick') {
@@ -95,7 +102,7 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
         let currentTotalScore = playerCharacter.totalScore;
 
         let newPointsPerClickValue = currentPointsPerClick + product.effect;
-        let newTotalScore = currentTotalScore - product.cost;
+        let newTotalScore = currentTotalScore - purchasePrice;
 
         setQuantityOwned((prev) => prev + Number(purchaseAmount));
 
