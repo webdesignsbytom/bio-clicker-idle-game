@@ -58,9 +58,9 @@ const GameContextProvider = ({ children }) => {
   });
 
   // Saving game to local storage
-  // setInterval(() => {
-  //   localStorage.setItem('GameData', JSON.stringify(playerCharacter));
-  // }, 1000)
+  setInterval(() => {
+    localStorage.setItem('GameData', JSON.stringify(playerCharacter));
+  }, 1000)
 
   return (
     <GameContext.Provider
