@@ -1,6 +1,6 @@
 
 .completed__containerx {
-    background-color: var(--secondary-bg);
+    background-color: gold;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr auto;
     padding: 1rem;

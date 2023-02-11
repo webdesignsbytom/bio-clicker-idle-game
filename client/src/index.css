@@ -38,6 +38,7 @@
     rgb(4, 33, 87) 100.2%,
     rgba(187, 187, 187, 1) 100.2%
   );
+  --completed-radial: radial-gradient(green);
 
   --container-border-color: black;
   --product-border-color: #172121;
