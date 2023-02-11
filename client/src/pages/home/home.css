@@ -4,6 +4,7 @@
     max-height: 100vh;
     grid-template-rows: auto 1fr auto;
     background: var(--main-bg);
+    position: relative;
 }
 
 .game__container {

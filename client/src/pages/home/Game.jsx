@@ -33,7 +33,7 @@ function Game() {
   return (
     <main className='main__game'>
       <ScoresDisplay />
-      {toggleLevelComplete ? <Completed /> : <Clicker />}
+      <Clicker />
       <ProductionDisplay />
       <LevelAnimation />
     </main>
