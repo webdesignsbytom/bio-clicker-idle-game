@@ -1,19 +1,16 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import AchievementsDB from './../db/achievements.json';
-import ItemsDB from './../db/items.json';
-import BuildingsDB from './../db/buildings.json';
 
 export const GameContext = React.createContext();
 
 const GameContextProvider = ({ children }) => {
-
   // Load local storage
-  useEffect(() => {
-    const storedData = localStorage.getItem('GameData')
-    const parseData = JSON.parse(storedData)
-    setPlayerCharacter(parseData)
-  }, [])
+  // useEffect(() => {
+  //   const storedData = localStorage.getItem('GameData')
+  //   const parseData = JSON.parse(storedData)
+  //   setPlayerCharacter(parseData)
+  // }, [])
 
   // player
   const [playerCharacter, setPlayerCharacter] = useState({
@@ -61,9 +58,9 @@ const GameContextProvider = ({ children }) => {
   });
 
   // Saving game to local storage
-  setInterval(() => {
-    localStorage.setItem('GameData', JSON.stringify(playerCharacter));
-  }, 1000)
+  // setInterval(() => {
+  //   localStorage.setItem('GameData', JSON.stringify(playerCharacter));
+  // }, 1000)
 
   return (
     <GameContext.Provider

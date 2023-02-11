@@ -10,8 +10,6 @@ function Menu({ menuDB, type, title }) {
   const [total, setTotal] = useState(null)
 
   useEffect(() => {
-    console.log('PLAYER CHARACTER', playerCharacter);
-
     if (menuDB.type === 'items') {
       setTotal(playerCharacter.totalItemsOwned)
     }
@@ -38,7 +36,7 @@ function Menu({ menuDB, type, title }) {
 
       <div className='product__data__main'>
         <article className='totals__container'>
-          <h6>Total
+          <h6>
             Total {title}: <span>{total}</span>
           </h6>
         </article>

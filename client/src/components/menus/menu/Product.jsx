@@ -1,16 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import { setCost } from '../utils/ItemsDB';
-import ProductHTML from './productHTML';
+import ProductHTML from './ProductHTML';
 
 function Product({ product, type, setProductArray, purchaseAmount }) {
-  // Player data from context
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [maxPurchase, setMaxPurchase] = useState(null);
   const [productType, setProductType] = useState(type);
   const [quantityOwned, setQuantityOwned] = useState(0);
   const [increaseConstant, setIncreaseConstant] = useState(1.1)
-  // console.log('PRODUCT TYPE ALPHA', productType)
 
   useEffect(() => {
     if (purchaseAmount === 'max') {
@@ -34,13 +32,16 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
 
   const buyProduct = (product) => {
     // Check if it can be afforded
-    if (playerCharacter.totalScore >= product.cost) {
+    const purchasePrice = purchaseAmount * product.cost
+
+    console.log('PLAYER XX', playerCharacter.items)
+    console.log('PLAYER XX', playerCharacter.totalItemsOwned)
+
+    if (playerCharacter.totalScore >= purchasePrice) {
       // Find the product in players state and add to quantity
       let character = playerCharacter;
-      console.log('CHARACTER', character);
 
       let newArray;
-      console.log('NEW Array 1', newArray);
 
       if (productType === 'items') {
         newArray = character.items;
@@ -50,27 +51,28 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
         newArray = character.buildings;
       }
 
-      console.log('NEW Array 2', newArray);
-
-      const productIndex = newArray.findIndex((p) => p.id === product.id);
-      console.log('productIndex', productIndex);
+      let productIndex = newArray.findIndex((p) => p.id === product.id);
+      console.log('Product Index: ', productIndex);
 
       if (productIndex !== -1) {
-        newArray[productIndex].quantity++;
-        const newCost = newArray[productIndex].cost * 1.1;
+        let newQ = newArray[productIndex].quantity + Number(purchaseAmount)
+        console.log('new q', newQ);
+        console.log('newArray', newArray)
+        newArray[productIndex].quantity = Number(newQ)
+        //
+        let newCost = newArray[productIndex].cost * increaseConstant;
         newArray.push({
           ...product,
           cost: newCost
         });
+        //
       } else {
-        console.log('AAAAAAAAA')
+        //
         newArray.push({
           ...product,
-          quantity: 1,
+          quantity: purchaseAmount,
         });
       }
-
-      console.log('NEW ARRAY 3', newArray);
 
       if (productType === 'items') {
         setPlayerCharacter({
@@ -79,9 +81,6 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
         });
       }
 
-      console.log('PLAYER CHAR XX', playerCharacter);
-      // console.log('NEW ARRAY3', newArray)
-
       // // Increase product cost
       const newCost = product.cost * 1.1;
       product.cost = newCost.toFixed(2);
@@ -89,37 +88,39 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
       // PPC Product
       if (product.type === 'pointsPerClick') {
         // Assign current values
-        console.log('CLLLLLICK');
+
         let currentPointsPerClick = playerCharacter.pointsPerClick;
         let currentTotalScore = playerCharacter.totalScore;
 
         let newPointsPerClickValue = currentPointsPerClick + product.effect;
         let newTotalScore = currentTotalScore - product.cost;
 
-        let purchaseAmount = 1;
-        console.log('PURChase amout', purchaseAmount);
-
-        setQuantityOwned((q) => q + purchaseAmount);
+        setQuantityOwned((prev) => prev + Number(purchaseAmount));
 
         let newTotalBuildingsOwned = playerCharacter.totalBuildingsOwned;
-        let newTotalItemsOwned = playerCharacter.totalItemsOwned;
+        let currentTotalItemsOwned = playerCharacter.totalItemsOwned;
+        console.log('newTotalItems', currentTotalItemsOwned)
 
         if (productType === 'items') {
-          const newNum = playerCharacter.totalItemsOwned + purchaseAmount;
-          newTotalItemsOwned = newNum;
+          let newNum = currentTotalItemsOwned + Number(purchaseAmount);
+          console.log('newnum', newNum)
+          currentTotalItemsOwned = Number(newNum);
+          console.log('currentTotalItemsOwned: ' + currentTotalItemsOwned)
         }
 
         if (productType === 'buildings') {
-          const newNum =
+          let newNum =
             playerCharacter.newTotalBuildingsOwned + purchaseAmount;
           newTotalBuildingsOwned = newNum;
         }
+
+        let testNum = Number(currentTotalItemsOwned)
 
         setPlayerCharacter({
           ...playerCharacter,
           pointsPerClick: newPointsPerClickValue,
           totalScore: newTotalScore,
-          totalItemsOwned: newTotalItemsOwned,
+          totalItemsOwned: testNum,
           totalBuildingsOwned: newTotalBuildingsOwned,
         });
       }
@@ -137,11 +138,11 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
         setQuantityOwned((q) => q + purchaseAmount);
 
         let newTotalBuildingsOwned = playerCharacter.totalBuildingsOwned;
-        let newTotalItemsOwned = playerCharacter.totalItemsOwned;
+        let currentTotalItemsOwned = playerCharacter.totalItemsOwned;
 
         if (productType === 'items') {
           const newNum = playerCharacter.totalItemsOwned + purchaseAmount;
-          newTotalItemsOwned = newNum;
+          currentTotalItemsOwned = newNum;
         }
 
         if (productType === 'buildings') {
@@ -154,7 +155,7 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
           ...playerCharacter,
           pointsPerSecond: newPointsPerSecondValue,
           totalScore: newTotalScore,
-          totalItemsOwned: newTotalItemsOwned,
+          totalItemsOwned: currentTotalItemsOwned,
           totalBuildingsOwned: newTotalBuildingsOwned,
         });
       }

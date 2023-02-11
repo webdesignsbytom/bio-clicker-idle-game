@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import UpgradeDB from '../../../db/upgrades.json';
+import UpgradeDB from '../../db/upgrades.json';
 
-import { GameContext } from '../../../context/GameContext';
+import { GameContext } from '../../context/GameContext';
 import { useContext } from 'react';
 
 import './upgrades.css';
-import { OptionContext } from '../../../context/OptionContext';
+import { OptionContext } from '../../context/OptionContext';
 
 function Upgrades() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
