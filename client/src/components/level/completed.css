@@ -1,52 +1,81 @@
-
 .completed__containerx {
-    background-color: gold;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr auto;
-    padding: 1rem;
+    background: rgb(253, 255, 0);
+    background: radial-gradient(
+      circle,
+      rgba(253, 255, 0, 1) 0%,
+      rgba(245, 51, 51, 1) 25%,
+      rgba(245, 70, 46, 1) 74%,
+      rgba(249, 251, 0, 1) 100%
+    );
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr auto;
+  padding: 1rem;
 }
 
 .completed__titles {
-    text-align: center;
-    display: grid;
-    grid-auto-flow: column;
-    align-items: center;
+  text-align: center;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
 }
 
 .stars__container {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .tweet__container {
-    display: grid;
-    place-content: center;
+  display: grid;
+  place-content: center;
 }
 
 .twitter__button {
-    background-color: var(--twitter-blue);
-    border-radius: 20px;
-    padding: 1rem;
-    font-size: 1rem;
-    color: var(--font-color-secondary);
-    cursor: pointer;
+  background-color: var(--twitter-blue);
+  border-radius: 20px;
+  padding: 2rem;
+  font-size: 1rem;
+  color: var(--font-color-white);
+  cursor: pointer;
+  font-weight: 800;
+  display: grid;
+  grid-template-columns: auto auto;
+}
 
+.text__container {
+  display: grid;
+  align-items: center;
+}
+
+.twitter__icon {
+  padding-left: 1rem;
+  display: grid;
+  place-content: center;
+  font-size: 3rem;
 }
 
 .twitter__button:hover {
-    filter: brightness(1.2);
+  filter: brightness(1.2);
 }
 
 .rewards__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
 }
 
-.general__rewards, .twitterBonus__rewards {
-    border: 2px solid var(--product-border-color);
-
+.general__rewards,
+.twitterBonus__rewards {
+  border: 2px solid var(--product-border-color);
 }
 
 .close__container {
-    display: grid;
+  display: grid;
+  justify-content: center;
+}
+
+.btn__con__close button {
+ padding: 2rem 3rem;
+ border-radius: 18px;
+ background-color: darkgreen;
+ color: var(--font-color-white);
+font-weight: 800;
 }
