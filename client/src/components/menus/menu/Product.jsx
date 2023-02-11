@@ -61,16 +61,18 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
         newArray[productIndex].quantity = Number(newQ)
         //
         let newCost = newArray[productIndex].cost * increaseConstant;
-        newArray.push({
-          ...product,
-          cost: newCost
-        });
+        console.log('newcost', newCost)
+        newArray[productIndex].cost = Number(newCost)
+        // newArray.push({
+        //   ...product,
+        //   cost: newCost
+        // });
         //
       } else {
         //
         newArray.push({
           ...product,
-          quantity: purchaseAmount,
+          quantity: Number(purchaseAmount),
         });
       }
 
