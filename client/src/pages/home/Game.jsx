@@ -32,10 +32,10 @@ function Game() {
 
   return (
     <main className='main__game'>
-      {/* <ScoresDisplay />
+      <ScoresDisplay />
       <Clicker />
       <ProductionDisplay />
-      <LevelAnimation /> */}
+      <LevelAnimation />
     </main>
   );
 }
