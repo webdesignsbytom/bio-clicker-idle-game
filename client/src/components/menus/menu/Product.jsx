@@ -185,14 +185,13 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
   };
   
   return (
-    <></>
-    // <ProductHTML
-    //   product={product}
-    //   purchaseAmount={purchaseAmount}
-    //   maxPurchase={maxPurchase}
-    //   buyProduct={buyProduct}
-    //   quantityOwned={quantityOwned}
-    // />
+    <ProductHTML
+      product={product}
+      purchaseAmount={purchaseAmount}
+      maxPurchase={maxPurchase}
+      buyProduct={buyProduct}
+      quantityOwned={quantityOwned}
+    />
   );
 }
 
