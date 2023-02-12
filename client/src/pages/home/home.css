@@ -25,3 +25,19 @@
   padding: 0.4rem;
 }
 
+@media screen and (max-width: 800px) {
+  .homepage__container {
+    display: none;
+  }
+
+  .phone__container {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .clicker__bg {
+    height: 100vh;
+    width: 100vw;
+  }
+}

@@ -18,6 +18,10 @@ function Home() {
         {toggleLevelComplete ? <Completed /> : <Game />}
         <TextScroll />
       </div>
+
+      <div className='phone__container'>
+        {toggleLevelComplete ? <Completed /> : <Clicker />}
+      </div>
     </>
   );
 }
