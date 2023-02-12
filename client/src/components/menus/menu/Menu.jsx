@@ -4,7 +4,7 @@ import '../menu.css';
 import Product from './Product';
 
 function Menu({ menuDB, type, title }) {
-  const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+  const { playerCharacter } = useContext(GameContext);
   const [productArray, setProductArray] = useState(menuDB.content);
   const [purchaseAmount, setPurchaseAmount] = useState('max');
   const [total, setTotal] = useState(null)
@@ -17,11 +17,12 @@ function Menu({ menuDB, type, title }) {
     if (menuDB.type === 'buildings') {
       setTotal(playerCharacter.totalBuildingsOwned)
     }
-  }, [playerCharacter.totalItemsOwned]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playerCharacter.totalItemsOwned, playerCharacter.totalBuildingsOwned]);
 
   // Select amount of products to purchase
   const handleChange = (event) => {
-    const { value, name } = event.target;
+    const { value } = event.target;
 
     setPurchaseAmount(value);
   };

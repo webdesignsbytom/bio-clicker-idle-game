@@ -1,14 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
-import { setCost } from '../utils/ItemsDB';
 import ProductHTML from './ProductHTML';
 
 function Product({ product, type, setProductArray, purchaseAmount }) {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const [maxPurchase, setMaxPurchase] = useState(null);
-  const [productType, setProductType] = useState(type);
+  const [productType] = useState(type);
   const [quantityOwned, setQuantityOwned] = useState(0);
-  const [increaseConstant, setIncreaseConstant] = useState(1.1)
+  const [increaseConstant] = useState(1.1)
 
   useEffect(() => {
     if (purchaseAmount === 'max') {
@@ -17,6 +16,7 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
       const totalPurchasable = playerScore / productCost;
       setMaxPurchase(Math.trunc(totalPurchasable));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerCharacter.totalScore, purchaseAmount]);
 
   useEffect(() => {
@@ -28,6 +28,15 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
         product.cost = foundItem.cost
       }
     } 
+    if (productType === 'buildings') {
+      const buildingArray = playerCharacter.buildings;
+      const foundBuilding = buildingArray.find((building) => building.id === product.id);
+      if (foundBuilding) {
+        setQuantityOwned(foundBuilding.quantity);
+        product.cost = foundBuilding.cost
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const buyProduct = (product) => {
