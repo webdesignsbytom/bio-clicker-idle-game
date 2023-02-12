@@ -6,11 +6,6 @@ export const GameContext = React.createContext();
 
 const GameContextProvider = ({ children }) => {
   // Load local storage
-  // useEffect(() => {
-  //   const storedData = localStorage.getItem('GameData')
-  //   const parseData = JSON.parse(storedData)
-  //   setPlayerCharacter(parseData)
-  // }, [])
 
   // player
   const [playerCharacter, setPlayerCharacter] = useState({
@@ -58,9 +53,6 @@ const GameContextProvider = ({ children }) => {
   });
 
   // Saving game to local storage
-  // setInterval(() => {
-  //   localStorage.setItem('GameData', JSON.stringify(playerCharacter));
-  // }, 1000)
 
   return (
     <GameContext.Provider
