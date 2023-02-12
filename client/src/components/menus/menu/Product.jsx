@@ -143,40 +143,40 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
         });
       }
 
-      // // PPS Item
-      // if (product.type === 'pointsPerSecond') {
-      //   let currentPointsPerSecond = playerCharacter.pointsPerSecond;
-      //   let currentTotalScore = playerCharacter.totalScore;
+      // PPS Item
+      if (product.type === 'pointsPerSecond') {
+        let currentPointsPerSecond = playerCharacter.pointsPerSecond;
+        let currentTotalScore = playerCharacter.totalScore;
 
-      //   let newPointsPerSecondValue = currentPointsPerSecond + product.effect;
-      //   let newTotalScore = currentTotalScore - product.cost;
+        let newPointsPerSecondValue = currentPointsPerSecond + product.effect;
+        let newTotalScore = currentTotalScore - product.cost;
 
-      //   let purchaseAmount = 1;
+        let purchaseAmount = 1;
 
-      //   setQuantityOwned((q) => q + purchaseAmount);
+        setQuantityOwned((q) => q + purchaseAmount);
 
-      //   let newTotalBuildingsOwned = playerCharacter.totalBuildingsOwned;
-      //   let currentTotalItemsOwned = playerCharacter.totalItemsOwned;
+        let newTotalBuildingsOwned = playerCharacter.totalBuildingsOwned;
+        let currentTotalItemsOwned = playerCharacter.totalItemsOwned;
 
-      //   if (productType === 'items') {
-      //     const newNum = playerCharacter.totalItemsOwned + purchaseAmount;
-      //     currentTotalItemsOwned = newNum;
-      //   }
+        if (productType === 'items') {
+          const newNum = playerCharacter.totalItemsOwned + purchaseAmount;
+          currentTotalItemsOwned = newNum;
+        }
 
-      //   if (productType === 'buildings') {
-      //     const newNum =
-      //       playerCharacter.newTotalBuildingsOwned + purchaseAmount;
-      //     newTotalBuildingsOwned = newNum;
-      //   }
+        if (productType === 'buildings') {
+          const newNum =
+            playerCharacter.newTotalBuildingsOwned + purchaseAmount;
+          newTotalBuildingsOwned = newNum;
+        }
 
-      //   setPlayerCharacter({
-      //     ...playerCharacter,
-      //     pointsPerSecond: newPointsPerSecondValue,
-      //     totalScore: newTotalScore,
-      //     totalItemsOwned: currentTotalItemsOwned,
-      //     totalBuildingsOwned: newTotalBuildingsOwned,
-      //   });
-      // }
+        setPlayerCharacter({
+          ...playerCharacter,
+          pointsPerSecond: newPointsPerSecondValue,
+          totalScore: newTotalScore,
+          totalItemsOwned: currentTotalItemsOwned,
+          totalBuildingsOwned: newTotalBuildingsOwned,
+        });
+      }
 
       // set new cost
     } else {
@@ -185,13 +185,14 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
   };
   
   return (
-    <ProductHTML
-      product={product}
-      purchaseAmount={purchaseAmount}
-      maxPurchase={maxPurchase}
-      buyProduct={buyProduct}
-      quantityOwned={quantityOwned}
-    />
+    <></>
+    // <ProductHTML
+    //   product={product}
+    //   purchaseAmount={purchaseAmount}
+    //   maxPurchase={maxPurchase}
+    //   buyProduct={buyProduct}
+    //   quantityOwned={quantityOwned}
+    // />
   );
 }
 
