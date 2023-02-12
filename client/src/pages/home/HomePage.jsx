@@ -1,19 +1,30 @@
-import React from 'react'
-import Nav from '../../components/nav/Nav'
-import Game from './GameContainer'
-import TextScroll from '../../components/textScroll/TextScroll'
-import AdminPanel from '../../components/admin/AdminPanel'
-import './home.css'
+import React, { useContext } from 'react';
+import Nav from '../../components/nav/Nav';
+import Game from './GameContainer';
+import TextScroll from '../../components/textScroll/TextScroll';
+import AdminPanel from '../../components/admin/AdminPanel';
+import './home.css';
+import Completed from '../../components/level/Completed';
+import { OptionContext } from '../../../context/OptionContext';
+import Clicker from '../../components/clicker/Clicker';
+
+
 
 function Home() {
+  const { toggleLevelComplete } = useContext(OptionContext);
   return (
-    <div className='homepage__container'>
+    <>
+      <div className='homepage__container'>
         <Nav />
-        <Game />
+        {toggleLevelComplete ? <Completed /> : <Game />}
         <TextScroll />
-        <AdminPanel />
-    </div>
-  )
+      </div>
+
+      <div className='phone__container'>
+        {toggleLevelComplete ? <Completed /> : <Clicker />}
+      </div>
+    </>
+  );
 }
 
-export default Home
+export default Home;

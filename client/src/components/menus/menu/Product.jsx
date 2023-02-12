@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
-import { setCost } from '../utils/ItemsDB';
 import ProductHTML from './productHTML';
 
 function Product({ product, type, setProductArray, purchaseAmount }) {
