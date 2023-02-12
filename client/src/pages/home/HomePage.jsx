@@ -2,10 +2,9 @@ import React, { useContext } from 'react';
 import Nav from '../../components/nav/Nav';
 import Game from './GameContainer';
 import TextScroll from '../../components/textScroll/TextScroll';
-import AdminPanel from '../../components/admin/AdminPanel';
 import './home.css';
 import Completed from '../../components/level/Completed';
-import { OptionContext } from '../../../context/OptionContext';
+import { OptionContext } from '../../context/OptionContext';
 import Clicker from '../../components/clicker/Clicker';
 
 
