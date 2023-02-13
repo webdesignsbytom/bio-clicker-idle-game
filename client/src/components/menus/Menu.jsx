@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
 import '../menu.css';
-// import Product from './Product';
+import Product from './Product';
 
 function Menu({ menuDB, type, title }) {
   const { playerCharacter } = useContext(GameContext);
@@ -92,7 +92,7 @@ function Menu({ menuDB, type, title }) {
           </form>
         </section>
       </div>
-{/* 
+
       <div className='menu__container'>
         {productArray.map((product, index) => {
           return (
@@ -105,7 +105,7 @@ function Menu({ menuDB, type, title }) {
             />
           );
         })}
-      </div> */}
+      </div>
     </section>
   );
 }
