@@ -1,4 +1,6 @@
+import Finger from '../../../assets/images/pointer.png'
 export const ItemsDB = {
+
   title: 'Items',
   type: 'items',
   content: [
@@ -9,7 +11,7 @@ export const ItemsDB = {
       typetitle: 'PPC',
       effect: 7,
       cost: 10,
-      image: '🚀',
+      image: Finger,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
     },

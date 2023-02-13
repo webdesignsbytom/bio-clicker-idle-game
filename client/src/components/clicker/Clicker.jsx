@@ -42,6 +42,7 @@ function Clicker() {
   return (
     <>
       <div className='clicker__bg'>
+
         <section className='clicker__container'>
           {/* Level Data */}
           <LevelData />
