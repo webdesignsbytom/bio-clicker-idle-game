@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
-import '../menu.css';
+import './menu.css';
 import Product from './Product';
-// import Product from './Product';
 
 function Menu({ menuDB, type, title }) {
   const { playerCharacter } = useContext(GameContext);
