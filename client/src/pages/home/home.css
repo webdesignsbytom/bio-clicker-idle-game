@@ -7,6 +7,9 @@
   position: relative;
 }
 
+.phone__container {
+  display: none;
+}
 
 .game__container {
   display: grid;
