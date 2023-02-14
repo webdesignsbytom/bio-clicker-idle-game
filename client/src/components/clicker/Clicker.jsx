@@ -3,8 +3,9 @@ import { GameContext } from '../../context/GameContext';
 import { OptionContext } from '../../context/OptionContext';
 import Achievements from '../achievements/Achievements';
 import LevelData from '../level/LevelData';
-import './clicker.css';
 import AlgaeIcon from '../../assets/images/algae.png'
+import ScoresDisplay from '../scoresDisplay/ScoresDisplay';
+import './clicker.css';
 
 function Clicker() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -43,7 +44,11 @@ function Clicker() {
     <>
       <div className='clicker__bg'>
 
+
         <section className='clicker__container'>
+        <div className="phone__score__container">
+          <ScoresDisplay />
+        </div>
           {/* Level Data */}
           <LevelData />
 
