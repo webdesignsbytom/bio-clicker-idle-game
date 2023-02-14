@@ -25,9 +25,10 @@ canvas {
 
 .clicker__section {
   display: grid;
-  place-content: center;
-  z-index: 3;
   position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  z-index: 10;
 }
 
 .clicker__section img, .phone__clicker__section img {
