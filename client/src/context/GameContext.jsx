@@ -1,12 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
+// Data
 import AchievementsDB from './../db/achievements.json';
 
 export const GameContext = React.createContext();
 
 const GameContextProvider = ({ children }) => {
-  // Load local storage
-
   // player
   const [playerCharacter, setPlayerCharacter] = useState({
     username: '',
@@ -51,8 +50,6 @@ const GameContextProvider = ({ children }) => {
     // Gems and paid items
     gems: 50
   });
-
-  // Saving game to local storage
 
   return (
     <GameContext.Provider
