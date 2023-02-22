@@ -1,16 +1,16 @@
 // Images
-import Finger from '../../../assets/images/pointer.png'
-import AIComputer from '../../../assets/images/algorithm.png'
-import SolarPanel from '../../../assets/images/solar-panel.png'
-import TestTube from '../../../assets/images/test-tube.png'
-import CoffeeMachine from '../../../assets/images/coffee-machine.png'
-import Printer3D from '../../../assets/images/factory-machine.png'
-import PackingMachine from '../../../assets/images/packing-machine.png'
-import FillingMachine from '../../../assets/images/filling-machine.png'
-import WaterPump from '../../../assets/images/water-pump.png'
-import Nutrients from '../../../assets/images/nutrients.png'
-import Ultraviolet from '../../../assets/images/ultraviolet.png'
-import UnltrasonicRefinery from '../../../assets/images/unltrasonicRefinery.png'
+import Finger from '../../../assets/images/items/pointer.png'
+import AIComputer from '../../../assets/images/items/algorithm.png'
+import SolarPanel from '../../../assets/images/items/solar-panel.png'
+import TestTube from '../../../assets/images/items/test-tube.png'
+import CoffeeMachine from '../../../assets/images/items/coffee-machine.png'
+import Printer3D from '../../../assets/images/items/factory-machine.png'
+import PackingMachine from '../../../assets/images/items/packing-machine.png'
+import FillingMachine from '../../../assets/images/items/filling-machine.png'
+import WaterPump from '../../../assets/images/items/water-pump.png'
+import Nutrients from '../../../assets/images/items/nutrients.png'
+import Ultraviolet from '../../../assets/images/items/ultraviolet.png'
+import UnltrasonicRefinery from '../../../assets/images/items/unltrasonicRefinery.png'
 
 export const ItemsDB = {
 
