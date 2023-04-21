@@ -7,6 +7,7 @@ import { join } from 'path';
 import * as url from 'url';
 // Import routers
 import authRouter from './routes/auth.js';
+import eventRouter from './routes/events.js';
 import userRouter from './routes/users.js';
 
 const app = express();
@@ -25,30 +26,20 @@ app.use(express.urlencoded({ extended: true }));
 
 // Set the port and URl
 const PORT = process.env.PORT || 4000;
-const HTTP_URL = process.env.HTTP_URL || 'http://localhost:4000'
+const HTTP_URL = process.env.HTTP_URL || 'https://webdesignsbytom-app.vercel.app';
 
 // Create path to HTML
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 // Start of actions
 app.use('/', authRouter);
-app.use('/colour-palette', paletteRouter);
-app.use('/complaints', complaintRouter);
-app.use('/components', componentRouter);
-app.use('/contacts', contactRouter);
-app.use('/designs', designRouter);
 app.use('/events', eventRouter);
-app.use('/messages', messageRouter);
-app.use('/notifications', notificationRouter);
-app.use('/pages', pageRouter);
-app.use('/projects', projectRouter);
-app.use('/reviews', reviewRouter);
 app.use('/users', userRouter);
 
 // Server interface page
 app.get('/', (req, res) => {
   res.sendFile('index.html', {
-    root: join(__dirname, '..', 'views'),
+    root: join(__dirname, 'views'),
   });
 });
 
@@ -56,7 +47,7 @@ app.get('/', (req, res) => {
 app.all('*', (req, res) => {
   res.status(404);
   if (req.accepts('html')) {
-    res.sendFile(join(__dirname, '..', 'views', '404.html'));
+    res.sendFile(join(__dirname, 'views', '404.html'));
   } else if (req.accepts('json')) {
     res.json({ message: '404 Not Found' });
   } else {
@@ -66,11 +57,9 @@ app.all('*', (req, res) => {
 
 app.use((error, req, res, next) => {
   console.error(error)
-
   if (error.code === 'P2025') {
     return sendDataResponse(res, 404, 'Record does not exist')
   }
-
   return sendDataResponse(res, 500)
 })
 

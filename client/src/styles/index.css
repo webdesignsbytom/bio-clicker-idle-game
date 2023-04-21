@@ -8,13 +8,91 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
 }
 
 body {
+  line-height: 1.4;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  padding: 0;
+  margin: 0;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.no__highlights {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.background__design {
+  background-color: linear-gradient(
+    137deg,
+    rgba(11, 97, 3, 1) 7%,
+    rgba(41, 138, 36, 1) 10%,
+    rgba(34, 52, 52, 1) 20%,
+    rgba(41, 161, 30, 1) 22%,
+    rgba(38, 114, 31, 1) 23%,
+    rgba(34, 52, 52, 1) 26%,
+    rgba(20, 89, 18, 1) 46%,
+    rgba(68, 133, 62, 1) 49%,
+    rgba(23, 73, 29, 1) 52%,
+    rgba(34, 52, 52, 1) 53%,
+    rgba(68, 133, 62, 1) 55%,
+    rgba(41, 70, 54, 1) 58%,
+    rgba(41, 161, 30, 1) 66%,
+    rgba(11, 97, 3, 1) 75%,
+    rgba(34, 52, 52, 1) 94%,
+    rgba(234, 240, 235, 1) 96%,
+    rgba(11, 97, 3, 1) 100%
+  );
 }
