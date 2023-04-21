@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
+// Pages
 import AdminPanel from './pages/adminPanel/AdminPanel';
 import Home from './pages/home/HomePage';
 import Login from './users/login/Login';
 import Register from './users/register/Register';
-import Account from './users/account/Account';
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
         <Route path='/admin' element={<AdminPanel />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/account' element={<Account />} />
       </Routes>
     </>
   );
