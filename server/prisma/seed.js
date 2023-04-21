@@ -1,74 +1,79 @@
-const { PrismaClient } = require('@prisma/client');
-const bcrypt = require('bcrypt');
-
-const prisma = new PrismaClient()
+import bcrypt from 'bcrypt';
+import dbClient from '../src/utils/dbClient.js';
 
 async function seed() {
-  const password = await bcrypt.hash('123', 8)
+  const password = await bcrypt.hash('123', 8);
 
-  const createdUser = await prisma.user.create({
+  const testUser = await dbClient.user.create({
     data: {
-      email: 'mario_italy@email.com',
-      password: password
-    }
-  })
+      email: `xtombrock1989@gmail.com`,
+      password,
+      profile: {
+        create: {
+          username: `xtombrock`,
+        },
+      },
+    },
+  });
 
-  // const createGameProfile = await prisma.gameProfile.create({
-  //   data: {
-  //       userId: createdUser.id,
-  //   }
-  // })
-
-  // const createItemOne = await prisma.item.create({
-  // data: {
-  //     gameProfileId: createGameProfile.id,
-  //     name: 'Large Pillow'
-  //   }
-  // })
-
-  const adminUser = await prisma.user.create({
+  const devUser = await dbClient.user.create({
     data: {
-      email: 'deandangerous@admin.com',
-      password: password,
-      role: 'ADMIN'
-    }
-  })
+      email: 'dev@dev.com',
+      password,
+      role: 'DEVELOPER',
+      profile: {
+        create: {
+          username: `deve`,
+        },
+      },
+    },
+  });
 
-  // const itemOne = await prisma.item.create({
-  //   data: {
-  //     name: 'Cool item'
-  //   }
-  // })
-  // const itemTwo = await prisma.item.create({
-  //   data: {
-  //     name: 'Wool item'
-  //   }
-  // })
-  // const itemThree = await prisma.item.create({
-  //   data: {
-  //     name: 'Sad item'
-  //   }
-  // })
-
-  // const buildingOne = await prisma.building.create({
-  //   data: {
-  //     name: 'Cool building'
-  //   }
-  // })
-  // const buildingTwo = await prisma.building.create({
-  //   data: {
-  //     name: 'Wool building'
-  //   }
-  // })
-  // const buildingThree = await prisma.building.create({
-  //   data: {
-  //     name: 'Sad building'
-  //   }
-  // })
+  // EVENTS
+  const eventOne = await dbClient.event.create({
+    data: {
+      type: 'ERROR',
+      topic: 'Test event',
+      code: 500,
+      content: '500 test content',
+    },
+  });
+  const eventTwo = await dbClient.event.create({
+    data: {
+      type: 'USER',
+      topic: 'Test event',
+      code: 200,
+      content: '200 test content',
+    },
+  });
+  const eventThree = await dbClient.event.create({
+    data: {
+      type: 'ADMIN',
+      topic: 'Test event',
+      code: 201,
+      content: '201 test content',
+    },
+  });
+  const eventFour = await dbClient.event.create({
+    data: {
+      type: 'VISITOR',
+      topic: 'Test event',
+      code: 201,
+      content: '201 test content',
+    },
+  });
+  const eventFive = await dbClient.event.create({
+    data: {
+      type: 'DEVELOPER',
+      topic: 'Test event',
+      code: 201,
+      content: '201 test content',
+    },
+  });
 }
 
 seed().catch(async (error) => {
-  console.error(error)
-  await prisma.$disconnect()
-  process.exit(1)
-})
+  console.error(error);
+  await dbClient.$disconnect();
+  process.exit(1);
+});

@@ -8,7 +8,6 @@ import OptionContextProvider from './context/OptionContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <GameContextProvider>
         <OptionContextProvider>
@@ -16,5 +15,4 @@ root.render(
         </OptionContextProvider>
       </GameContextProvider>
     </BrowserRouter>
-  </React.StrictMode>
 );
