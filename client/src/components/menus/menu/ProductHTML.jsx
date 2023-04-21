@@ -1,12 +1,19 @@
 import React from 'react';
 
-function ProductHTML({ product, buyProduct, purchaseAmount, maxPurchase, quantityOwned }) {
-  
+function ProductHTML({
+  product,
+  buyProduct,
+  purchaseAmount,
+  maxPurchase,
+  quantityOwned,
+}) {
   return (
     <div className='product'>
       <div className='inner__product'>
         <div className='product__image'>
-          <div className='image__icon'>{product.image}</div>
+          <div className='image__icon'>
+            <img src={product.image} alt={product.name} />
+          </div>
         </div>
 
         <div className='product__data'>
@@ -35,11 +42,14 @@ function ProductHTML({ product, buyProduct, purchaseAmount, maxPurchase, quantit
           <button className='btn' onClick={() => buyProduct(product)}>
             <div className='buy__amount'>
               <h6>Buy</h6>
-              <span>{purchaseAmount === 'max' ? maxPurchase : purchaseAmount}</span>
+              <span>
+                {purchaseAmount === 'max' ? maxPurchase : purchaseAmount}
+              </span>
             </div>
             <div className='owned__quantity'>
-              <h6>Owned <span>{quantityOwned}</span></h6>
-              
+              <h6>
+                Owned <span>{quantityOwned}</span>
+              </h6>
             </div>
           </button>
         </div>
