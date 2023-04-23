@@ -75,7 +75,7 @@ select {
 }
 
 .background__design {
-  background-color: linear-gradient(
+  background: linear-gradient(
     137deg,
     rgba(11, 97, 3, 1) 7%,
     rgba(41, 138, 36, 1) 10%,

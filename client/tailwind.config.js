@@ -3,11 +3,15 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        // 'news-bg': "url('../assets/img/backgrounds/newsletter-bg.jpg')",
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
       colors: {
         'main-colour': '#',
+        'bio-green': '#4AAD37',
         'nav-colour': '#',
         'footer-colour': '#',
         'colour-pale': '#',
@@ -28,7 +32,7 @@ module.exports = {
         'event-red': '',
         'twitter-blue': '#1da1f2',
         'hyperlink-blue': '#2563eb',
-        secleted: '#2563eb',
+        'secleted': '#2563eb',
         'non-selected': '#cbd5e1',
       },
       gridTemplateRows: {
