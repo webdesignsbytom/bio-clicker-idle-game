@@ -10,21 +10,21 @@ import { BuildingsDB } from '../../utils/data/BuildingsDB';
 function GameMainPage() {
 
   return (
-    <div className='grid grid-rows-reg h-screen md:background__design'>
+    <div className='grid grid-rows-reg h-screen lg:max-h-screen lg:overflow-hidden main__bg__gradient'>
       <Navbar />
-      <main className='bg-red-300 p-2 grid'>
-        <section className='bg-blue-400 grid grid-cols-121 gap-2'>
+      <main className='grid h-full w-full mt-2'>
+        <section className='grid grid-cols-121 gap-2'>
           {/* Buildings Menu */}
-          <div className='grid outline outline-2 outline-black bg-white'>
+          <div className='hidden lg:grid h-full'>
             <MenuContainer displayArray={ItemsDB} />
           </div>
           {/* Main Container */}
-          <div className='grid outline outline-2 outline-black bg-white relative'>
+          <div className='grid outline outline-2 outline-black bg-white relative mb-4'>
             {/* <EnemyAnimation /> */}
             <EnemyArray />
           </div>
           {/* Upgrades Menu */}
-          <div className='grid outline outline-2 outline-black bg-white'>
+          <div className='hidden lg:grid'>
             <MenuContainer displayArray={BuildingsDB} />
           </div>
         </section>

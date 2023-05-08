@@ -9,6 +9,7 @@ import UserContextProvider from './context/UserContext';
 import ToggleContextProvider from './context/ToggleContext';
 // Styles
 import './styles/index.css';
+import './styles/components.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

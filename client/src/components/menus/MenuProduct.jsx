@@ -8,17 +8,17 @@ function MenuProduct({
   quantityOwned,
 }) {
   return (
-    <li className='grid items-center p-1 outline outline-2 outline-black text-xs'>
-      <section className='grid grid-flow-col'>
-        <div className=''>
+    <li className='grid gap-1 items-center rounded text-[8px] p-1 product__container'>
+      <section className='grid grid-cols-a1a product__container rounded px-1 py-1 gap-1'>
+        <div className='grid product__container items-center justify-center'>
           <img
-            className='w-[50px] h-[50px] outline outline-2 outline-black rounded-lg'
+            className='object-cover w-[75px] rounded'
             src={product.image}
             alt={product.name}
           />
         </div>
 
-        <section className='grid grid-cols-2'>
+        <section className='grid grid-cols-2 product__container rounded p-2'>
           <div className='grid'>
             <h6>Name: </h6>
             <span>{product.name}</span>
@@ -40,9 +40,12 @@ function MenuProduct({
           </div>
         </section>
 
-        <div className='grid'>
-          <button className='outline outline-2 outline-black rounded-lg' onClick={() => buyProduct(product)}>
-            <h6>BUY</h6>
+        <div className='grid w-full'>
+          <button
+            className='rounded product__container p-2 w-full'
+            onClick={() => buyProduct(product)}
+          >
+            <h6 className='p-1'>BUY</h6>
             {/* <div className=''>
           <h6>Buy</h6>
           <span>{purchaseAmount === 'max' ? maxPurchase : purchaseAmount}</span>
@@ -56,7 +59,7 @@ function MenuProduct({
         </div>
       </section>
 
-      <section className=''>
+      <section className='product__container rounded px-2 py-1 text-sm'>
         <p className='leading-3'>{product.desc}</p>
       </section>
     </li>

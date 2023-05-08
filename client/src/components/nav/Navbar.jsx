@@ -10,19 +10,19 @@ function Navbar() {
   };
 
   return (
-    <header className='flex justify-between p-2 bg-transparent-black px-2 md:px-4 h-fit'>
+    <header className='flex justify-between bg-transparent-black p-4'>
       {/* Logo */}
       <section>
         <Link className='flex items-center' to='/'>
           <img className='w-8 h-8' src={Logo} alt='logo' />
-          <p className='font-semibold pl-1'>
+          <p className='font-semibold pl-1 text-gray-100'>
             <span className='text-bio-green'>Bio</span>-Clicker
           </p>
         </Link>
       </section>
 
       {/* Nav Monitor*/}
-      <nav className='hidden md:flex items-center'>
+      <nav className='hidden md:flex items-center text-gray-100'>
         <section className='flex gap-6'>
           <Link to='/'>Home</Link>
           <Link to='/login'>Login</Link>
