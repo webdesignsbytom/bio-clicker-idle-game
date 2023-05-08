@@ -5,10 +5,8 @@ import { listenForClicks } from '../../utils/Achievements';
 import { OptionContext } from '../../context/OptionContext';
 
 import Menu from '../../components/menus/menu/Menu';
-import { ItemsDB } from '../../components/menus/utils/ItemsDB';
-import { BuildingsDB } from '../../components/menus/utils/BuildingsDB';
-
-
+import { ItemsDB } from '../../utils/data/ItemsDB';
+import { BuildingsDB } from '../../utils/data/BuildingsDB';
 function Game() {
   const { achievementReady, setAchievementReady } = useContext(OptionContext);
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);

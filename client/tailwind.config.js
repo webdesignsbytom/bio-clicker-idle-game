@@ -60,6 +60,7 @@ module.exports = {
         faf: '1fr 0.5fr 1fr',
         '1p1': '1fr 30px 1fr',
         '2a': '2fr 1fr auto',
+        '121': '1fr 2.5fr 1fr',
         '3a': '1fr 1fr 0.7fr auto',
         '3x': '3fr 1fr',
         item: '50px 1fr',

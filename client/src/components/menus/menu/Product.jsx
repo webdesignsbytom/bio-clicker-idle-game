@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../../../context/GameContext';
-import ProductHTML from './ProductHTML';
 
 function Product({ product, type, setProductArray, purchaseAmount }) {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -185,13 +184,7 @@ function Product({ product, type, setProductArray, purchaseAmount }) {
   };
   
   return (
-    <ProductHTML
-      product={product}
-      purchaseAmount={purchaseAmount}
-      maxPurchase={maxPurchase}
-      buyProduct={buyProduct}
-      quantityOwned={quantityOwned}
-    />
+<>a</>
   );
 }
 

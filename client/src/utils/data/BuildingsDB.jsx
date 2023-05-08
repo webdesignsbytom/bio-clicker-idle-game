@@ -1,15 +1,15 @@
 // Images
-import FireStation from '../../../assets/images/buildings/fire-station.png'
-import Pond from '../../../assets/images/buildings/pond.png'
-import SmallFactory from '../../../assets/images/buildings/factory.png'
-import Transformer from '../../../assets/images/buildings/transformer.png'
-import FuelStorage from '../../../assets/images/buildings/fuelStorage.png'
-import LargePowerStation from '../../../assets/images/buildings/largePowerStation.png'
-import SmallPowerPlant from '../../../assets/images/buildings/smallPowerPlant.png'
-import WaterPurifier from '../../../assets/images/buildings/waterStorage.png'
-import FuelRefinery from '../../../assets/images/buildings/fuelRefinery.png'
-import OfficeBuilding from '../../../assets/images/buildings/officeBuilding.png'
-import GreenFactory from '../../../assets/images/buildings/green-factory.png'
+import FireStation from '../../assets/images/buildings/fire-station.png'
+import Pond from '../../assets/images/buildings/pond.png'
+import SmallFactory from '../../assets/images/buildings/factory.png'
+import Transformer from '../../assets/images/buildings/transformer.png'
+import FuelStorage from '../../assets/images/buildings/fuelStorage.png'
+import LargePowerStation from '../../assets/images/buildings/largePowerStation.png'
+import SmallPowerPlant from '../../assets/images/buildings/smallPowerPlant.png'
+import WaterPurifier from '../../assets/images/buildings/waterStorage.png'
+import FuelRefinery from '../../assets/images/buildings/fuelRefinery.png'
+import OfficeBuilding from '../../assets/images/buildings/officeBuilding.png'
+import GreenFactory from '../../assets/images/buildings/green-factory.png'
 
 export const BuildingsDB = {
   title: 'Buildings',
