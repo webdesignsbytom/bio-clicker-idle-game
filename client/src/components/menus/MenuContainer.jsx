@@ -7,7 +7,7 @@ function MenuContainer({ displayArray }) {
       <article className='bg-yellow-400 grid items-center justify-center py-2 px-2 text-center border-b-2 border-solid border-black'>
         <h3 className='text-xl font-semibold'>{displayArray.title}</h3>
       </article>
-      <ol className='bg-orange-400'>
+      <ol className='bg-orange-400 w-full p-1 grid gap-2'>
         {displayArray.content.map((product, index) => {
           return (
             <MenuProduct key={index} product={product} />

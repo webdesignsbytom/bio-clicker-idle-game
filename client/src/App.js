@@ -1,20 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 // Pages
 import AdminPanel from './pages/adminPanel/AdminPanel';
-import Home from './pages/home/HomePage';
-import Login from './users/login/Login';
-import Register from './users/register/Register';
-import GameMainPage from './pages/home/GameMainPage';
+import GameMainPage from './pages/game/GameMainPage';
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path='/bio-clicker' element={<Home />} />
         <Route path='/' element={<GameMainPage />} />
+        <Route path='/home' element={<GameMainPage />} />
         <Route path='/admin' element={<AdminPanel />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
       </Routes>
     </>
   );

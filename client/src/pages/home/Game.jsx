@@ -6,14 +6,11 @@ import Clicker from '../../components/clicker/Clicker';
 import LevelAnimation from '../../components/levelAnimation/LevelAnimation';
 import ScoresDisplay from '../../components/scoresDisplay/ScoresDisplay';
 import ProductionDisplay from '../../components/production/ProductionDisplay';
-import Upgrades from '../../components/upgrades/Upgrades';
 
 function Game() {
   const {
     toggleLevelComplete,
     setToggleLevelComplete,
-    toggleUpgrades,
-    setToggleUpgrades,
   } = useContext(OptionContext);
 
   const [currentElement, setCurrentElement] = useState('Completed');
@@ -23,10 +20,6 @@ function Game() {
 
     if (type === 'level') {
       return <Completed />;
-    }
-
-    if (type === 'upgrades') {
-      return <Upgrades />;
     }
   };
 
