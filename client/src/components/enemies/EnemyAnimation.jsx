@@ -3,23 +3,25 @@ import React, { useEffect } from 'react';
 import './canvas.css';
 
 function EnemyAnimation() {
-
   const useScript = (url) => {
     useEffect(() => {
-      let bgColour = `#000000`
-      let particleColour = `#000000`
+      let bgColour = `#000000`;
+      let particleColour = `#000000`;
 
       if (
         window.matchMedia &&
         window.matchMedia('(prefers-color-scheme: dark)').matches
       ) {
-        bgColour = `#ffffff`
-        particleColour = `#ffffff`
+        bgColour = `#ffffff`;
+        particleColour = `#ffffff`;
       }
 
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       const container = document.querySelector('#game-container');
+
+      ctx.fillStyle = 'blue';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       container.appendChild(canvas);
 
@@ -197,7 +199,7 @@ function EnemyAnimation() {
       };
     }, [url]);
   };
-  
+
   // const useScript = (url) => {
   //   useEffect(() => {
   //     // Get containers

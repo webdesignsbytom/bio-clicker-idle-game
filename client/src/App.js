@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/bio-clicker' element={<GameMainPage />} />
+        <Route path='/bio-clicker' element={<Home />} />
+        <Route path='/' element={<GameMainPage />} />
         <Route path='/admin' element={<AdminPanel />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
