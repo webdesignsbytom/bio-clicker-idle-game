@@ -3,16 +3,20 @@ import MenuProduct from './MenuProduct';
 
 function MenuContainer({ displayArray }) {
   return (
-    <section className='grid grid-rows-reg'>
-      <article className='bg-green-500 grid items-center justify-center py-2 px-2 text-center border-b-2 border-solid border-black'>
-        <h3 className='text-xl font-semibold'>{displayArray.title}</h3>
-      </article>
-      <div className='grid'>
-        <ol className='grid gap-2 overflow-y-scroll h-[580px] p-1'>
-          {displayArray.content.map((product, index) => {
-            return <MenuProduct key={index} product={product} />;
-          })}
-        </ol>
+    <section className='grid border-4 border-solid border-black bg-green-950'>
+      <div className='grid grid-rows-reg'>
+        <article className='bg-green-700 border-b-4 border-solid border-black grid p-1 text-center'>
+          <div className='outline outline-2 outline-black w-full'>
+            <h3 className='text-xl font-semibold'>{displayArray.title}</h3>
+          </div>
+        </article>
+        <div className='grid'>
+          <ol className='grid gap-2 overflow-y-scroll h-[530px] p-1'>
+            {displayArray.content.map((product, index) => {
+              return <MenuProduct key={index} product={product} />;
+            })}
+          </ol>
+        </div>
       </div>
     </section>
   );
