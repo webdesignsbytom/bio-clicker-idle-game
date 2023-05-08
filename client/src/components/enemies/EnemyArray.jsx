@@ -38,15 +38,14 @@ function EnemyArray() {
       canvas.addEventListener('click', (e) => {
         var x = e.pageX - canvas.offsetLeft;
         var y = e.pageY - canvas.offsetTop;
-        console.log('CLICK');
 
         enemySwarmArray.forEach(function (algae) {
           if (
             Math.pow(x - algae.xpos, 2) + Math.pow(y - algae.ypos, 2) <
-            Math.pow(algae.radius, 2)
+            Math.pow(algae.radius, 4)
           ) {
             console.log('PPP');
-            algae.enemyHit();
+            algae.clicked();
           }
         });
       });
@@ -61,10 +60,9 @@ function EnemyArray() {
           this.colour = colour;
           this.count = count; // Number of instance in the array
           this.speed = speed; // Moving speed
-          this.enemyHit = function () {
-            console.log('Enemy Hit'); // this = enemy instance data
-            // hitCount++;
-            // this.delete(); // Remove enemy from array
+          this.clicked = function () {
+            console.log('CLIIIIIIICKED', this);
+            this.delete(); // Remove enemy from array
           };
           this.dx = 1 * this.speed;
           this.dy = 1 * this.speed;
@@ -115,10 +113,10 @@ function EnemyArray() {
           console.log(
             'Enemy died later in hospital, his widow was told he survived and then had her heart broken twice.'
           );
-          const foundAlgae = enemySwarmArray.find((a) => a.id === this.id);
-          const algaeIndex = enemySwarmArray.indexOf(foundAlgae);
-          console.log('foundAlgae', algaeIndex);
-          enemySwarmArray.splice(algaeIndex, 1);
+            const foundAlgae = enemySwarmArray.find((a) => a.id === this.id);
+            const algaeIndex = enemySwarmArray.indexOf(foundAlgae);
+            console.log('foundAlgae', algaeIndex);
+            enemySwarmArray.splice(algaeIndex, 1);
         }
       }
 
