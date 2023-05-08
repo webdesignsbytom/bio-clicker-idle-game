@@ -5,7 +5,7 @@ A example of state manipulation and react stlying
 These games are hugely popular and a good example
 Canvas element for clickable enemies moving about.
 
-Current Address https://rococo-kleicha-53fa88.netlify.app/
+Current Address [Live Bio Clicker Link](https://rococo-kleicha-53fa88.netlify.app/)
 
 ## Table of contents
 
@@ -20,9 +20,13 @@ Current Address https://rococo-kleicha-53fa88.netlify.app/
 
 ## General info
 
-A new design for my website as a professional portfolio. Coupled with an attempt to sell freelance work through a sale page.
+<img src='./assets/images/bioclickerMd.png' alt='login page' style='width: 300px; height: 200px;' />
+<img src='./assets/images/bioclickerSm.png' alt='login page' style='width: 150px; height: 300px;' />
+
+A database is not in use yet but will be and is currently found.
 
 Server deployment with Vercel @ [https://webdesignsbytom-app.vercel.app/](https://webdesignsbytom-app.vercel.app/)
+
 ## Game play
 
 1. Algae is the main click producor
