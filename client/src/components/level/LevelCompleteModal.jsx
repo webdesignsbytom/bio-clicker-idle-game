@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { resetOwnedBuildings, resetOwnedItems } from '../../utils/Resets';
 import './completed.css';
 
-function Completed() {
+function LevelCompleteModal() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const { setToggleLevelComplete, completedLevelData } =
     useContext(OptionContext);
@@ -85,4 +85,4 @@ function Completed() {
   );
 }
 
-export default Completed;
+export default LevelCompleteModal;

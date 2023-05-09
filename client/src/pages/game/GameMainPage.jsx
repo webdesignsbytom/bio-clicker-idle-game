@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // Components
 import Navbar from '../../components/nav/Navbar';
 import EnemyArray from '../../components/enemies/EnemyArray';
 import MenuContainer from '../../components/menus/MenuContainer';
-// DB
-import { ItemsDB } from '../../utils/data/ItemsDB';
-import { BuildingsDB } from '../../utils/data/BuildingsDB';
 import ScoresDisplay from '../../components/scoresDisplay/ScoresDisplay';
 import TextScroll from '../../components/textScroll/TextScroll';
 import LevelData from '../../components/level/LevelData'
 import InGameMenu from '../../components/menus/InGameMenu';
 import AlgaeClicker from '../../components/game/AlgaeClicker';
+import AchievementsContainer from '../../components/achievements/AchievementsContainer';
+// Context
+import { ToggleContext } from '../../context/ToggleContext';
+// DB
+import { ItemsDB } from '../../utils/data/ItemsDB';
+import { BuildingsDB } from '../../utils/data/BuildingsDB';
 
 function GameMainPage() {
+  const { toggleAchievements } = useContext(ToggleContext)
+
   return (
     <div className='grid grid-rows-reg h-screen lg:max-h-screen lg:overflow-hidden main__bg__gradient'>
       <Navbar />
@@ -33,6 +38,8 @@ function GameMainPage() {
               <LevelData />
               <InGameMenu />
               <AlgaeClicker />
+              {toggleAchievements &&  <AchievementsContainer />}
+             
             </div>
             <div className='grid outline outline-2 outline-black bg-white relative mb-4'>
               data

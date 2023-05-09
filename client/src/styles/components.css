@@ -35,6 +35,14 @@
   z-index: 1;
 }
 
+.clicker__section {
+  display: grid;
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  z-index: 10;
+}
+
 .special__link {
   border-top: 3px solid var(--alt-border-color);
   border-left: 3px solid var(--alt-border-color);
@@ -66,4 +74,25 @@
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+
+.clicker__section img, .phone__clicker__section img {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.clicker__section img:hover, .phone__clicker__section img:hover {
+  scale: 1.2;
+  filter: brightness(1.2);
+  background: transparent;
+
+}
+
+.clicker__section img:active, .phone__clicker__section img:active {
+  scale: 0.5;
+  filter: brightness(0.5);
+  background: transparent;
 }

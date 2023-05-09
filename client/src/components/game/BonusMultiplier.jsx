@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { GameContext } from '../../context/GameContext';
-import './bonusMultiplier.css'
 
 function BonusMultiplier() {
   const {

@@ -1,5 +1,4 @@
 import React from 'react'
-import './textScroll.css'
 
 function TextScroll() {
   return (
