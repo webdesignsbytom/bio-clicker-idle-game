@@ -58,6 +58,7 @@ function Clicker() {
           <div className='clicker__section'>
             <img src={AlgaeIcon} alt='clicker icon' onClick={clickButton} />
           </div>
+          
           <article className='special__container'>
             {achievementReady ? (
               <div

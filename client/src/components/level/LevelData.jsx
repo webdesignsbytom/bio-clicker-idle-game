@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
+// Context
 import { GameContext } from '../../context/GameContext';
 import { OptionContext } from '../../context/OptionContext';
 import LevelState from '../../db/levels.json';
-import './level.css'
 
 function LevelData() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
@@ -46,10 +46,11 @@ function LevelData() {
   }
 
   return (
-    <div className='level__data__container'>
-      <div className='level__image'>
-        <p className='level__icon'>🔥</p>
+    <section className='grid grid-cols-reg gap-4 relative z-30 bg-transparent-black w-fit h-fit mt-4 ml-4 outline outline-4 outline-black py-2 pl-4 pr-8 rounded-br-2xl rounded-tr-2xl'>
+      <div className='grid items-center justify-center w-full'>
+        <p className='text-3xl'>🔥</p>
       </div>
+
       <div className='data__info'>
         <div className='level__name'>
           <span>Level Name</span>
@@ -62,7 +63,7 @@ function LevelData() {
           <h6>{currentLevel.targetScore}</h6>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

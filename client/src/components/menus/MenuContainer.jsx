@@ -11,7 +11,7 @@ function MenuContainer({ displayArray }) {
           </div>
         </article>
         <div className='grid'>
-          <ol className='grid gap-2 overflow-y-scroll h-[530px] p-1'>
+          <ol className='grid gap-2 overflow-y-scroll lg:h-[650px] xl:h-[720px] 2xl:h-[750px] p-1'>
             {displayArray.content.map((product, index) => {
               return <MenuProduct key={index} product={product} />;
             })}

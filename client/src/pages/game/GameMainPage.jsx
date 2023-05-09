@@ -8,12 +8,15 @@ import { ItemsDB } from '../../utils/data/ItemsDB';
 import { BuildingsDB } from '../../utils/data/BuildingsDB';
 import ScoresDisplay from '../../components/scoresDisplay/ScoresDisplay';
 import TextScroll from '../../components/textScroll/TextScroll';
+import LevelData from '../../components/level/LevelData'
+import InGameMenu from '../../components/menus/InGameMenu';
+import AlgaeClicker from '../../components/game/AlgaeClicker';
 
 function GameMainPage() {
   return (
     <div className='grid grid-rows-reg h-screen lg:max-h-screen lg:overflow-hidden main__bg__gradient'>
       <Navbar />
-      <main className='grid h-full w-full'>
+      <main className='grid grid-rows-rev h-full w-full'>
         {/* Main continer */}
         <section className='grid grid-cols-121 gap-2 mt-1 px-1'>
           {/* Buildings Menu */}
@@ -25,8 +28,11 @@ function GameMainPage() {
             <div className='grid border-black border-solid border-4 bg-white relative mb-4'>
               <ScoresDisplay />
             </div>
-            <div className='grid outline outline-2 outline-black bg-white relative mb-4'>
+            <div className='clicker__container outline outline-2 outline-black bg-white mb-4'>
               <EnemyArray />
+              <LevelData />
+              <InGameMenu />
+              <AlgaeClicker />
             </div>
             <div className='grid outline outline-2 outline-black bg-white relative mb-4'>
               data
