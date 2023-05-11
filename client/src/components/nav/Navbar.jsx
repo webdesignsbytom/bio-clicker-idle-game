@@ -10,13 +10,13 @@ function Navbar() {
   };
 
   return (
-    <header className='flex justify-between bg-transparent-black p-4'>
+    <header className='hidden md:flex justify-between bg-transparent-black px-4 py-2'>
       {/* Logo */}
       <section>
         <Link className='flex items-center' to='/'>
           <img className='w-8 h-8' src={Logo} alt='logo' />
-          <p className='font-semibold pl-1 text-gray-100'>
-            <span className='text-bio-green'>Bio</span>-Clicker
+          <p className='font-semibold pl-1 text-bio-green '>
+            <span className='text-gray-100 -ml-5'>Bio</span>-Clicker
           </p>
         </Link>
       </section>

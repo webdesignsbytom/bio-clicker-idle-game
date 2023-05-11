@@ -3,8 +3,12 @@ import React, { useContext } from 'react';
 import { ToggleContext } from '../../context/ToggleContext';
 
 function InGameMenu() {
-  const { toggleAchievementsFun, toggleAchievements } =
-    useContext(ToggleContext);
+  const {
+    toggleAchievementsFun,
+    toggleTechTreeFun,
+    toggleUpgradesFun,
+    toggleQuestsFun,
+  } = useContext(ToggleContext);
 
   return (
     <article className='absolute top-4 right-0 grid gap-1'>
@@ -14,10 +18,19 @@ function InGameMenu() {
       >
         Achievements
       </div>
-      <div className='special__link no__highlights '>Tech Tree</div>
-      <div className='special__link no__highlights '>Upgrades</div>
-      <div className='special__link no__highlights '>Quests</div>
-      <div className='special__link no__highlights '>Bonus</div>
+      <div
+        onClick={toggleTechTreeFun}
+        className='special__link no__highlights '
+      >
+        Tech Tree
+      </div>
+      <div onClick={toggleUpgradesFun} className='special__link no__highlights '>
+        Upgrades
+      </div>
+      <div onClick={toggleQuestsFun} className='special__link no__highlights '>
+        Quests
+      </div>
+      -{' '}
     </article>
   );
 }

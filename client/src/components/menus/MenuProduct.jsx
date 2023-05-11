@@ -10,9 +10,9 @@ function MenuProduct({
   return (
     <li className='grid gap-1 items-center rounded text-[8px] p-1 product__container'>
       <section className='grid grid-cols-a1a product__container rounded px-1 py-1 gap-1'>
-        <div className='grid product__container items-center justify-center'>
+        <div className='grid product__container items-center justify-center w-[60px] h-[60px]'>
           <img
-            className='object-cover w-[75px] rounded'
+            className='object-cover rounded'
             src={product.image}
             alt={product.name}
           />

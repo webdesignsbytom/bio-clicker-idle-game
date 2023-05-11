@@ -4,7 +4,6 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 // Context
 import GameContextProvider from './context/GameContext';
-import OptionContextProvider from './context/OptionContext';
 import UserContextProvider from './context/UserContext';
 import ToggleContextProvider from './context/ToggleContext';
 // Styles
@@ -17,9 +16,7 @@ root.render(
     <UserContextProvider>
       <ToggleContextProvider>
         <GameContextProvider>
-          <OptionContextProvider>
             <App />
-          </OptionContextProvider>
         </GameContextProvider>
       </ToggleContextProvider>
     </UserContextProvider>

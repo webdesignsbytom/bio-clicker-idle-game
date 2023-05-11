@@ -136,7 +136,7 @@ function EnemyArray() {
             random_x,
             random_y,
             20,
-            'red',
+            'green',
             enemySwarmArraySize,
             1
           );

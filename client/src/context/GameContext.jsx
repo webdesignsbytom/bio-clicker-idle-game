@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 // Data
-import AchievementsDB from './../db/achievements.json';
+import { AchievementsDB } from '../utils/data/AchievementsDB';
 
 export const GameContext = React.createContext();
 
@@ -12,7 +12,7 @@ const GameContextProvider = ({ children }) => {
     // Points
     basePointsPerSecond: 1,
       // Actual displayed points
-    pointsPerSecond: 0,
+    pointsPerSecond: 2,
     pointsPerClick: 1,
     totalTimesClicked: 0,
     multiplierIncome: 0,
@@ -46,7 +46,7 @@ const GameContextProvider = ({ children }) => {
     lastLoggedInDateTime: null,
     latestLogoutDateTime: null,
     prestigeScore: 0,
-    achievements: AchievementsDB,
+    achievements: AchievementsDB.content,
     // Gems and paid items
     gems: 50
   });

@@ -5,7 +5,7 @@ export const LevelsDB = {
     {
       id: 1,
       name: 'Training Level',
-      targetScore: 1001,
+      targetScore: 10,
       image: '🚀',
       reward: 'Base PPS doubles',
       rewardEffect: 1,
