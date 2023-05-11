@@ -11,7 +11,7 @@ const GameContextProvider = ({ children }) => {
     username: '',
     // Points
     basePointsPerSecond: 1,
-      // Actual displayed points
+    // Actual displayed points
     pointsPerSecond: 2,
     pointsPerClick: 1,
     totalTimesClicked: 0,
@@ -48,13 +48,15 @@ const GameContextProvider = ({ children }) => {
     prestigeScore: 0,
     achievements: AchievementsDB.content,
     // Gems and paid items
-    gems: 50
+    gems: 50,
   });
+  const [increaseConstant] = useState(1.1);
 
   return (
     <GameContext.Provider
       value={{
         playerCharacter,
+        increaseConstant,
         setPlayerCharacter,
       }}
     >

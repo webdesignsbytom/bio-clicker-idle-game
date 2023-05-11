@@ -1,12 +1,153 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GameContext } from '../../context/GameContext';
 
-function MenuProduct({
-  product,
-  buyProduct,
-  purchaseAmount,
-  maxPurchase,
-  quantityOwned,
-}) {
+function MenuProduct({ product, purchaseAmount, productType }) {
+  const { playerCharacter, setPlayerCharacter, increaseConstant } = useContext(GameContext)
+
+  const buyProduct = (product) => {
+    // Check if it can be afforded
+    const purchasePrice = purchaseAmount * product.cost
+    console.log('purchasePrice', purchasePrice)
+
+    console.log('PLAYER XX', playerCharacter.items)
+    console.log('PLAYER XX', playerCharacter.totalItemsOwned)
+
+    if (playerCharacter.totalScore >= purchasePrice) {
+      // Find the product in players state and add to quantity
+      let character = playerCharacter;
+
+      let newArray;
+
+      if (productType === 'items') {
+        newArray = character.items;
+      }
+
+      if (productType === 'buildings') {
+        newArray = character.buildings;
+      }
+
+      let productIndex = newArray.findIndex((p) => p.id === product.id);
+
+      if (productIndex !== -1) {
+        let newQ = newArray[productIndex].quantity + Number(purchaseAmount)
+        console.log('new q', newQ);
+        console.log('newArray', newArray)
+        newArray[productIndex].quantity = Number(newQ)
+        //
+        let newCost = newArray[productIndex].cost * increaseConstant;
+        console.log('newcost', newCost)
+        newArray[productIndex].cost = Number(newCost)
+        //
+      } else {
+        //
+        newArray.push({
+          ...product,
+          quantity: Number(purchaseAmount),
+        });
+      }
+
+      if (productType === 'items') {
+        setPlayerCharacter({
+          ...playerCharacter,
+          items: newArray,
+        });
+      }
+
+      // // Increase product cost
+      let purchaseCount = Number(purchaseAmount)
+
+      let startingPrice = product.cost
+      let newTotalCost = startingPrice
+      console.log('starting price', startingPrice)
+      console.log('newTotalCost1', newTotalCost)
+
+      for (let i = 0; i < purchaseCount; i++) {
+        newTotalCost *= increaseConstant
+      }
+      console.log('newTotalCost2', newTotalCost)
+
+      product.cost = newTotalCost.toFixed(2);
+
+      // PPC Product
+      if (product.type === 'pointsPerClick') {
+        // Assign current values
+
+        let currentPointsPerClick = playerCharacter.pointsPerClick;
+        let currentTotalScore = playerCharacter.totalScore;
+
+        let newPointsPerClickValue = currentPointsPerClick + product.effect;
+        let newTotalScore = currentTotalScore - purchasePrice;
+
+        // setQuantityOwned((prev) => prev + Number(purchaseAmount));
+
+        let newTotalBuildingsOwned = playerCharacter.totalBuildingsOwned;
+        let currentTotalItemsOwned = playerCharacter.totalItemsOwned;
+        console.log('newTotalItems', currentTotalItemsOwned)
+
+        if (productType === 'items') {
+          let newNum = currentTotalItemsOwned + Number(purchaseAmount);
+          console.log('newnum', newNum)
+          currentTotalItemsOwned = Number(newNum);
+          console.log('currentTotalItemsOwned: ' + currentTotalItemsOwned)
+        }
+
+        if (productType === 'buildings') {
+          let newNum =
+            playerCharacter.newTotalBuildingsOwned + purchaseAmount;
+          newTotalBuildingsOwned = newNum;
+        }
+
+        let testNum = Number(currentTotalItemsOwned)
+
+        setPlayerCharacter({
+          ...playerCharacter,
+          pointsPerClick: newPointsPerClickValue,
+          totalScore: newTotalScore,
+          totalItemsOwned: testNum,
+          totalBuildingsOwned: newTotalBuildingsOwned,
+        });
+      }
+
+      // PPS Item
+      if (product.type === 'pointsPerSecond') {
+        let currentPointsPerSecond = playerCharacter.pointsPerSecond;
+        let currentTotalScore = playerCharacter.totalScore;
+
+        let newPointsPerSecondValue = currentPointsPerSecond + product.effect;
+        let newTotalScore = currentTotalScore - product.cost;
+
+        let purchaseAmount = 1;
+
+        // setQuantityOwned((q) => q + purchaseAmount);
+
+        let newTotalBuildingsOwned = playerCharacter.totalBuildingsOwned;
+        let currentTotalItemsOwned = playerCharacter.totalItemsOwned;
+
+        if (productType === 'items') {
+          const newNum = playerCharacter.totalItemsOwned + purchaseAmount;
+          currentTotalItemsOwned = newNum;
+        }
+
+        if (productType === 'buildings') {
+          const newNum =
+            playerCharacter.newTotalBuildingsOwned + purchaseAmount;
+          newTotalBuildingsOwned = newNum;
+        }
+
+        setPlayerCharacter({
+          ...playerCharacter,
+          pointsPerSecond: newPointsPerSecondValue,
+          totalScore: newTotalScore,
+          totalItemsOwned: currentTotalItemsOwned,
+          totalBuildingsOwned: newTotalBuildingsOwned,
+        });
+      }
+
+      // set new cost
+    } else {
+      alert('You cannot afford to purchase');
+    }
+  };
   return (
     <li className='grid gap-1 items-center rounded text-[8px] p-1 product__container'>
       <section className='grid grid-cols-a1a product__container rounded px-1 py-1 gap-1'>

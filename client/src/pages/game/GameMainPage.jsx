@@ -56,7 +56,7 @@ function GameMainPage() {
       <main className='grid lg:grid-rows-rev h-full w-full'>
         {/* Main continer */}
         <section className='grid lg:grid-cols-121 gap-2 mt-1 px-1'>
-          {/* Buildings Menu */}
+          {/* Items Menu */}
           <div className='hidden lg:grid h-full'>
             <MenuContainer displayArray={ItemsDB} />
           </div>
@@ -81,7 +81,7 @@ function GameMainPage() {
               <PlayerDataContainer />
             </section>
           </section>
-          {/* Upgrades Menu */}
+          {/* Buildings Menu */}
           <div className='hidden lg:grid'>
             <MenuContainer displayArray={BuildingsDB} />
           </div>

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MenuProduct from './MenuProduct';
 
 function MenuContainer({ displayArray }) {
+  const [purchaseAmount, setPurchaseAmount] = useState(1)
+
   return (
     <section className='grid border-2 border-solid border-green-950 bg-green-950'>
       <div className='grid grid-rows-reg'>
@@ -13,7 +15,7 @@ function MenuContainer({ displayArray }) {
         <div className='grid'>
           <ol className='grid gap-2 overflow-y-scroll lg:h-[500px] xl:h-[520px] 2xl:h-[540px] p-1'>
             {displayArray.content.map((product, index) => {
-              return <MenuProduct key={index} product={product} />;
+              return <MenuProduct key={index} product={product} purchaseAmount={purchaseAmount} productType={displayArray.type} />;
             })}
           </ol>
         </div>

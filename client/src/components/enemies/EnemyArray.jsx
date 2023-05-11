@@ -128,7 +128,6 @@ function EnemyArray() {
       if (enemySwarmArraySize < totalSizeOfAlgaeArray) {
         // Create enemy array
         for (let i = enemySwarmArraySize; i < totalSizeOfAlgaeArray; i++) {
-          console.log('enemySwarmArray', enemySwarmArray);
           let random_x = Math.random() * canvas.width;
           let random_y = Math.random() * canvas.height;
           const newEnemy = new Algae(
