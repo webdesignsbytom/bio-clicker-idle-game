@@ -1,8 +1,13 @@
 import React, { useContext } from 'react';
 // Context
 import { ToggleContext } from '../../context/ToggleContext';
+import { GameContext } from '../../context/GameContext';
+import { AchievementsListener } from '../../utils/AchievementsListener';
 
 function InGameMenu() {
+  const { playerCharacter } = useContext(GameContext);
+  const { toggleAchievementReadyFun, achievementReady } = useContext(ToggleContext)
+
   const {
     toggleAchievementsFun,
     toggleTechTreeFun,
@@ -10,10 +15,16 @@ function InGameMenu() {
     toggleQuestsFun,
   } = useContext(ToggleContext);
 
+  AchievementsListener()
+  
   return (
     <article className='absolute top-4 right-0 grid gap-1'>
       <div
-        className='special__link no__highlights'
+      className={
+        achievementReady === true
+          ? 'special__link no__highlights bg-red-500 animate-pulse'
+          : 'special__link no__highlights'
+      }
         onClick={toggleAchievementsFun}
       >
         Achievements

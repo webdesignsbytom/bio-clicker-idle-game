@@ -21,6 +21,11 @@ const ToggleContextProvider = ({ children }) => {
     setToggleAchievements(!toggleAchievements);
   };
 
+  // Achievements
+  const toggleAchievementReadyFun = () => {
+    setAchievementReady(!achievementReady);
+  };
+
   // Tech Tree
   const toggleTechTreeFun = () => {
     console.log('xx');
@@ -45,6 +50,7 @@ const ToggleContextProvider = ({ children }) => {
         // Functions
         toggleNavigationFun,
         toggleAchievementsFun,
+        toggleAchievementReadyFun,
         toggleTechTreeFun,
         toggleUpgradesFun,
         toggleQuestsFun,

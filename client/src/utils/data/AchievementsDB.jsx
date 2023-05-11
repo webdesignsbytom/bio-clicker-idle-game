@@ -6,12 +6,13 @@ export const AchievementsDB = {
       id: 1,
       title: 'Finger warmed up',
       desc: 'Clicked 10 times',
-      completed: true,
+      completed: false,
       type: 'clicks',
       goal: 10,
       reward: 'PPC doubles',
       rewardType: 'pointsPerClick',
       rewardEffect: 2,
+      viewed: false,
     },
     {
       id: 2,
@@ -23,6 +24,7 @@ export const AchievementsDB = {
       reward: 'PPC doubles',
       rewardType: 'pointsPerClick',
       rewardEffect: 2,
+      viewed: false,
     },
     {
       id: 3,
@@ -34,6 +36,7 @@ export const AchievementsDB = {
       reward: 'PPS doubles',
       rewardType: 'pointsPerSecond',
       rewardEffect: 2,
+      viewed: false,
     },
     {
       id: 4,
@@ -67,6 +70,7 @@ export const AchievementsDB = {
       reward: 'PPS triples',
       rewardType: 'pointsPerSecond',
       rewardEffect: 3,
+      viewed: false,
     },
     {
       id: 7,
@@ -100,6 +104,7 @@ export const AchievementsDB = {
       reward: 'PPS triples',
       rewardType: 'pointsPerSecond',
       rewardEffect: 3,
+      viewed: false,
     },
     {
       id: 10,
@@ -122,6 +127,7 @@ export const AchievementsDB = {
       reward: '',
       rewardType: '',
       rewardEffect: null,
+      viewed: false,
     },
   ],
 };

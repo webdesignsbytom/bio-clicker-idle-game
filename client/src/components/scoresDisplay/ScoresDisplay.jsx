@@ -9,7 +9,7 @@ function ScoresDisplay() {
     playerCharacter.basePointsPerSecond *
     playerCharacter.perminentMultiplier;
   
-  console.log('NEW PPS (Score Display)', newPPS);
+  // console.log('NEW PPS (Score Display)', newPPS);
 
   return (
     <section className='grid w-full bg-green-700'>

@@ -19,6 +19,7 @@ import { GameContext } from '../../context/GameContext';
 import { ItemsDB } from '../../utils/data/ItemsDB';
 import { BuildingsDB } from '../../utils/data/BuildingsDB';
 import { LevelsDB } from '../../utils/data/LevelsDB';
+import PlayerDataContainer from '../../components/containers/PlayerDataContainer';
 // Functions
 
 function GameMainPage() {
@@ -76,9 +77,9 @@ function GameMainPage() {
                 {toggleQuests && <QuestsContainer />}
               </div>
             </div>
-            <div className='hidden lg:grid outline outline-2 outline-green-950 bg-white relative mb-4'>
-              data
-            </div>
+            <section className='hidden lg:grid outline outline-2 outline-green-950 bg-white relative mb-4'>
+              <PlayerDataContainer />
+            </section>
           </section>
           {/* Upgrades Menu */}
           <div className='hidden lg:grid'>
