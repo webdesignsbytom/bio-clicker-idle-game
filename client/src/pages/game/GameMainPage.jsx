@@ -12,20 +12,27 @@ import AchievementsContainer from '../../components/containers/AchievementsConta
 import TechTreeContainer from '../../components/containers/TechTreeContainer';
 import UpgradesContainer from '../../components/containers/UpgradesContainer';
 import QuestsContainer from '../../components/containers/QuestsContainer';
+import PlayerDataContainer from '../../components/containers/PlayerDataContainer';
+import LevelCompleted from '../../components/level/LevelCompleted';
 // Context
 import { ToggleContext } from '../../context/ToggleContext';
 import { GameContext } from '../../context/GameContext';
 // DB
 import { ItemsDB } from '../../utils/data/ItemsDB';
 import { BuildingsDB } from '../../utils/data/BuildingsDB';
-import { LevelsDB } from '../../utils/data/LevelsDB';
-import PlayerDataContainer from '../../components/containers/PlayerDataContainer';
-// Functions
 
 function GameMainPage() {
-  const { toggleAchievements, toggleTechTree, toggleUpgrades, toggleQuests } =
-    useContext(ToggleContext);
-  const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
+  const {
+    toggleAchievements,
+    toggleTechTree,
+    toggleUpgrades,
+    toggleQuests,
+    toggleLevelCompletedFun,
+    levelCompleted
+  } = useContext(ToggleContext);
+
+  const { playerCharacter, setPlayerCharacter, currentLevel, resetPlayerStats, savePlayerCompleteState } =
+    useContext(GameContext);
 
   useEffect(() => {
     if (playerCharacter.pointsPerSecond >= 1) {
@@ -46,9 +53,30 @@ function GameMainPage() {
     }
   }, [playerCharacter]);
 
-  // if (playerCharacter.totalScore >= LevelsDB.content[playerCharacter.currentLevel - 1].targetScore) {
-  //   console.log('WINNNNNNNN');
-  // }
+  useEffect(() => {
+    if (playerCharacter.totalScore >= currentLevel.targetScore) {
+      completedLevel();
+    }
+  }, [playerCharacter.totalScore, currentLevel.targetScore]);
+
+  const completedLevel = async () => {
+    await toggleLevelCompletedFun();
+    await savePlayerCompleteState()
+    resetPlayerStats()
+  };
+
+  // const setPerSecondIncome = () => {
+  //   const currentBasePPS = playerCharacter.basePointsPerSecond;
+  //   const currentPerminentMultiplier = playerCharacter.perminentMultiplier;
+  //   const currentBonusMultiplier = playerCharacter.bonusMultiplier;
+
+  //   const newTotalPPS =
+  //     currentBasePPS * currentPerminentMultiplier * currentBonusMultiplier;
+  //   // const ownedArray = currentArray.filter(e => e.quantity > 0)
+  //   // console.log('owned', ownedArray);
+  // };
+
+  // setPerSecondIncome()
 
   return (
     <div className='grid lg:grid-rows-reg h-screen max-h-screen overflow-hidden main__bg__gradient'>
@@ -75,6 +103,7 @@ function GameMainPage() {
                 {toggleTechTree && <TechTreeContainer />}
                 {toggleUpgrades && <UpgradesContainer />}
                 {toggleQuests && <QuestsContainer />}
+                {levelCompleted && <LevelCompleted />}
               </div>
             </div>
             <section className='hidden lg:grid outline outline-2 outline-green-950 bg-white relative mb-4'>

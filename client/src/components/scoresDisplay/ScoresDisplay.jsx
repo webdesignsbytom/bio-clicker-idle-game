@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+// Context
 import { GameContext } from '../../context/GameContext';
 
 function ScoresDisplay() {
@@ -9,8 +10,6 @@ function ScoresDisplay() {
     playerCharacter.basePointsPerSecond *
     playerCharacter.perminentMultiplier;
   
-  // console.log('NEW PPS (Score Display)', newPPS);
-
   return (
     <section className='grid w-full bg-green-700'>
       <div className='grid grid-cols-3 p-1 gap-1 text-center h-fit font-semibold leading-4'>

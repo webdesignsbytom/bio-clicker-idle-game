@@ -25,12 +25,9 @@ function Navbar() {
       <nav className='hidden md:flex items-center text-gray-100'>
         <section className='flex gap-6'>
           <Link to='/'>Home</Link>
-          <Link to='/login'>Login</Link>
           <Link to='/bio-clicker'>Game</Link>
+          <Link to='/login'>Login</Link>
           <Link to='/register'>Register</Link>
-          <Link to='/account'>Account</Link>
-          <Link to='/stats'>Stats</Link>
-          <Link to='/admin'>Admin</Link>
         </section>
       </nav>
 

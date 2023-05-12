@@ -81,6 +81,11 @@
   z-index: 10;
 }
 
+.completed__container {
+  background: rgb(34,195,161);
+  background: linear-gradient(0deg, rgba(34,195,161,1) 0%, rgba(253,231,45,1) 51%);
+}
+
 .special__link:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;

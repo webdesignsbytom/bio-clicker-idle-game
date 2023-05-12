@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 // Data
 import { AchievementsDB } from '../utils/data/AchievementsDB';
+import { LevelsDB } from '../utils/data/LevelsDB';
 
 export const GameContext = React.createContext();
 
 const GameContextProvider = ({ children }) => {
   // player
   const [playerCharacter, setPlayerCharacter] = useState({
-    username: '',
+    username: 'The Great Humongo',
     // Points
     basePointsPerSecond: 1,
     // Actual displayed points
@@ -49,14 +50,57 @@ const GameContextProvider = ({ children }) => {
     achievements: AchievementsDB.content,
     // Gems and paid items
     gems: 50,
+    // Memory
+    playerLevelCompletedData: [],
   });
+
   const [increaseConstant] = useState(1.1);
+  const [currentLevel, setCurrentLevel] = useState({});
+
+  useEffect(() => {
+    const currentLevel = playerCharacter.currentLevel;
+    const levelIndex = currentLevel - 1;
+    setCurrentLevel(LevelsDB.content[levelIndex]);
+  }, [playerCharacter.currentLevel]);
+
+  const resetPlayerStats = () => {
+    let newLevel = playerCharacter.currentLevel + 1;
+
+    setPlayerCharacter({
+      ...playerCharacter,
+      pointsPerSecond: 0,
+      pointsPerClick: 1,
+      totalScore: 0,
+      totalItemsOwned: 0,
+      items: [], // db model
+      totalBuildingsOwned: 0,
+      buildings: [], // db model
+      currentLevel: newLevel,
+    });
+  };
+
+  const savePlayerCompleteState = () => {
+    let playerData = playerCharacter;
+    let newArray = playerCharacter.playerLevelCompletedData;
+
+    newArray.push(playerData);
+
+    setPlayerCharacter({
+      ...playerCharacter,
+      playerLevelCompletedData: newArray,
+    });
+  };
 
   return (
     <GameContext.Provider
       value={{
+        // Functions
+        resetPlayerStats,
+        savePlayerCompleteState,
+        // State
         playerCharacter,
         increaseConstant,
+        currentLevel,
         setPlayerCharacter,
       }}
     >

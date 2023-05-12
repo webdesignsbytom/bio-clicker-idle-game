@@ -9,6 +9,7 @@ const ToggleContextProvider = ({ children }) => {
   const [toggleTechTree, setToggleTechTree] = useState(false);
   const [toggleUpgrades, setToggleUpgrades] = useState(false);
   const [toggleQuests, setToggleQuests] = useState(false);
+  const [levelCompleted, setLevelCompleted] = useState(false);
   const [achievementReady, setAchievementReady] = useState(false);
 
   // navigation
@@ -25,22 +26,23 @@ const ToggleContextProvider = ({ children }) => {
   const toggleAchievementReadyFun = () => {
     setAchievementReady(!achievementReady);
   };
+  // Achievements
+  const toggleLevelCompletedFun = () => {
+    setLevelCompleted(!levelCompleted);
+  };
 
   // Tech Tree
   const toggleTechTreeFun = () => {
-    console.log('xx');
     setToggleTechTree(!toggleTechTree);
   };
 
   // Tech Tree
   const toggleUpgradesFun = () => {
-    console.log('xx');
     setToggleUpgrades(!toggleUpgrades);
   };
 
   // Quests
   const toggleQuestsFun = () => {
-    console.log('xx');
     setToggleQuests(!toggleQuests);
   };
 
@@ -54,6 +56,7 @@ const ToggleContextProvider = ({ children }) => {
         toggleTechTreeFun,
         toggleUpgradesFun,
         toggleQuestsFun,
+        toggleLevelCompletedFun,
         // State
         toggleNavigation,
         toggleAchievements,
@@ -61,8 +64,9 @@ const ToggleContextProvider = ({ children }) => {
         toggleTechTree,
         toggleUpgrades,
         toggleQuests,
+        levelCompleted,
         // Set state
-        setAchievementReady
+        setAchievementReady,
       }}
     >
       {children}

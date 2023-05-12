@@ -8,26 +8,30 @@ function AlgaeClicker() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
 
   const AddClicksToScore = () => {
-      let newpointsPerClick = playerCharacter.pointsPerClick;
-      let currentTotalScore = playerCharacter.totalScore;
-      let currentMultiplier = playerCharacter.bonusMultiplier;
-      let totalClicks = playerCharacter.totalTimesClicked;
-  
-      let newTotalClicks = totalClicks + 1;
-      let newTotalScore =
-        newpointsPerClick * currentMultiplier + currentTotalScore;
-  
-      setPlayerCharacter({
-        ...playerCharacter,
-        totalScore: newTotalScore,
-        totalTimesClicked: newTotalClicks,
-      });
+    let newpointsPerClick = playerCharacter.pointsPerClick;
+    let currentTotalScore = playerCharacter.totalScore;
+    let currentMultiplier = playerCharacter.bonusMultiplier;
+    let totalClicks = playerCharacter.totalTimesClicked;
 
-  }
-  
+    let newTotalClicks = totalClicks + 1;
+    let newTotalScore =
+      newpointsPerClick * currentMultiplier + currentTotalScore;
+
+    setPlayerCharacter({
+      ...playerCharacter,
+      totalScore: newTotalScore,
+      totalTimesClicked: newTotalClicks,
+    });
+  };
+
   return (
     <div className='z-30 clicker__section no__highlights'>
-      <img onClick={AddClicksToScore} className='w-[150px] h-[150px]' src={AlgaeIcon} alt='Algae game clicker button icon' />
+      <img
+        onClick={AddClicksToScore}
+        className='w-[125px] h-[125px] lg:w-[150px] lg:h-[150px]'
+        src={AlgaeIcon}
+        alt='Algae game clicker button icon'
+      />
     </div>
   );
 }
