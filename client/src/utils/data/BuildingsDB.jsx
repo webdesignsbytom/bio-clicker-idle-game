@@ -25,6 +25,7 @@ export const BuildingsDB = {
       image: Pond,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 2,
@@ -36,6 +37,7 @@ export const BuildingsDB = {
       image: WaterPurifier,
       income: 0,
       desc: 'The panels earn for you all day once installed',
+      quantityOwned: 0
     },
     {
       id: 3,
@@ -47,6 +49,7 @@ export const BuildingsDB = {
       image: OfficeBuilding,
       income: 0,
       desc: 'Growth tubes for research and fuel production',
+      quantityOwned: 0
     },
     {
       id: 4,
@@ -58,6 +61,7 @@ export const BuildingsDB = {
       image: FireStation,
       income: 0,
       desc: 'Barrels of growth medium and fertilizers to increase growth',
+      quantityOwned: 0
     },
     {
       id: 5,
@@ -69,6 +73,7 @@ export const BuildingsDB = {
       image: FuelRefinery,
       income: null,
       desc: 'Unlocks fuel producers that turn your algae into fuel',
+      quantityOwned: 0
     },
     {
       id: 6,
@@ -80,6 +85,7 @@ export const BuildingsDB = {
       image: FuelStorage,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 7,
@@ -91,6 +97,7 @@ export const BuildingsDB = {
       image: SmallFactory,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 8,
@@ -102,6 +109,7 @@ export const BuildingsDB = {
       image: SmallPowerPlant,
       income: 0,
       desc: 'Start your town producing power from the fuel you make',
+      quantityOwned: 0
     },
     {
       id: 9,
@@ -113,6 +121,7 @@ export const BuildingsDB = {
       image: Transformer,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 10,
@@ -124,6 +133,7 @@ export const BuildingsDB = {
       image: GreenFactory,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
   
     {
@@ -136,6 +146,7 @@ export const BuildingsDB = {
       image: LargePowerStation,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
   ],
 };

@@ -27,6 +27,7 @@ export const ItemsDB = {
       image: Finger,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 2,
@@ -38,6 +39,7 @@ export const ItemsDB = {
       image: SolarPanel,
       income: 0,
       desc: 'The panels earn for you all day once installed',
+      quantityOwned: 0
     },
     {
       id: 3,
@@ -49,6 +51,7 @@ export const ItemsDB = {
       image: TestTube,
       income: 0,
       desc: 'Growth tubes for research and fuel production',
+      quantityOwned: 0
     },
     {
       id: 4,
@@ -60,6 +63,7 @@ export const ItemsDB = {
       image: Nutrients,
       income: 0,
       desc: 'Barrels of growth medium and fertilizers to increase growth',
+      quantityOwned: 0
     },
     {
       id: 5,
@@ -71,6 +75,7 @@ export const ItemsDB = {
       image: Ultraviolet,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 6,
@@ -82,6 +87,7 @@ export const ItemsDB = {
       image: UnltrasonicRefinery,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 7,
@@ -93,6 +99,7 @@ export const ItemsDB = {
       image: WaterPump,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 8,
@@ -104,6 +111,7 @@ export const ItemsDB = {
       image: FillingMachine,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0,
     },
     {
       id: 9,
@@ -115,6 +123,7 @@ export const ItemsDB = {
       image: Printer3D,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 10,
@@ -126,6 +135,7 @@ export const ItemsDB = {
       image: PackingMachine,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 11,
@@ -137,6 +147,7 @@ export const ItemsDB = {
       image: CoffeeMachine,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
     {
       id: 11,
@@ -148,6 +159,7 @@ export const ItemsDB = {
       image: AIComputer,
       income: 0,
       desc: 'Each finger doubles the amount of points earned per click on the screen',
+      quantityOwned: 0
     },
   ],
 };

@@ -2,15 +2,16 @@ import React, { useContext } from 'react';
 import { GameContext } from '../../context/GameContext';
 
 function MenuProduct({ product, purchaseAmount, productType }) {
-  const { playerCharacter, setPlayerCharacter, increaseConstant } = useContext(GameContext)
+  const { playerCharacter, setPlayerCharacter, increaseConstant } =
+    useContext(GameContext);
 
   const buyProduct = (product) => {
     // Check if it can be afforded
-    const purchasePrice = purchaseAmount * product.cost
-    console.log('purchasePrice', purchasePrice)
+    const purchasePrice = purchaseAmount * product.cost;
+    console.log('purchasePrice', purchasePrice);
 
-    console.log('PLAYER XX', playerCharacter.items)
-    console.log('PLAYER XX', playerCharacter.totalItemsOwned)
+    console.log('PLAYER XX', playerCharacter.items);
+    console.log('PLAYER XX', playerCharacter.totalItemsOwned);
 
     if (playerCharacter.totalScore >= purchasePrice) {
       // Find the product in players state and add to quantity
@@ -29,14 +30,14 @@ function MenuProduct({ product, purchaseAmount, productType }) {
       let productIndex = newArray.findIndex((p) => p.id === product.id);
 
       if (productIndex !== -1) {
-        let newQ = newArray[productIndex].quantity + Number(purchaseAmount)
+        let newQ = newArray[productIndex].quantity + Number(purchaseAmount);
         console.log('new q', newQ);
-        console.log('newArray', newArray)
-        newArray[productIndex].quantity = Number(newQ)
+        console.log('newArray', newArray);
+        newArray[productIndex].quantity = Number(newQ);
         //
         let newCost = newArray[productIndex].cost * increaseConstant;
-        console.log('newcost', newCost)
-        newArray[productIndex].cost = Number(newCost)
+        console.log('newcost', newCost);
+        newArray[productIndex].cost = Number(newCost);
         //
       } else {
         //
@@ -54,17 +55,17 @@ function MenuProduct({ product, purchaseAmount, productType }) {
       }
 
       // // Increase product cost
-      let purchaseCount = Number(purchaseAmount)
+      let purchaseCount = Number(purchaseAmount);
 
-      let startingPrice = product.cost
-      let newTotalCost = startingPrice
-      console.log('starting price', startingPrice)
-      console.log('newTotalCost1', newTotalCost)
+      let startingPrice = product.cost;
+      let newTotalCost = startingPrice;
+      console.log('starting price', startingPrice);
+      console.log('newTotalCost1', newTotalCost);
 
       for (let i = 0; i < purchaseCount; i++) {
-        newTotalCost *= increaseConstant
+        newTotalCost *= increaseConstant;
       }
-      console.log('newTotalCost2', newTotalCost)
+      console.log('newTotalCost2', newTotalCost);
 
       product.cost = newTotalCost.toFixed(2);
 
@@ -82,22 +83,21 @@ function MenuProduct({ product, purchaseAmount, productType }) {
 
         let newTotalBuildingsOwned = playerCharacter.totalBuildingsOwned;
         let currentTotalItemsOwned = playerCharacter.totalItemsOwned;
-        console.log('newTotalItems', currentTotalItemsOwned)
+        console.log('newTotalItems', currentTotalItemsOwned);
 
         if (productType === 'items') {
           let newNum = currentTotalItemsOwned + Number(purchaseAmount);
-          console.log('newnum', newNum)
+          console.log('newnum', newNum);
           currentTotalItemsOwned = Number(newNum);
-          console.log('currentTotalItemsOwned: ' + currentTotalItemsOwned)
+          console.log('currentTotalItemsOwned: ' + currentTotalItemsOwned);
         }
 
         if (productType === 'buildings') {
-          let newNum =
-            playerCharacter.newTotalBuildingsOwned + purchaseAmount;
+          let newNum = playerCharacter.newTotalBuildingsOwned + purchaseAmount;
           newTotalBuildingsOwned = newNum;
         }
 
-        let testNum = Number(currentTotalItemsOwned)
+        let testNum = Number(currentTotalItemsOwned);
 
         setPlayerCharacter({
           ...playerCharacter,
@@ -148,6 +148,7 @@ function MenuProduct({ product, purchaseAmount, productType }) {
       alert('You cannot afford to purchase');
     }
   };
+
   return (
     <li className='grid gap-1 items-center rounded text-[8px] p-1 product__container'>
       <section className='grid grid-cols-a1a product__container rounded px-1 py-1 gap-1'>
@@ -159,23 +160,23 @@ function MenuProduct({ product, purchaseAmount, productType }) {
           />
         </div>
 
-        <section className='grid grid-cols-2 product__container rounded p-2'>
-          <div className='grid'>
+        <section className='grid product__container rounded py-1 px-2 leading-2'>
+          <div className='flex w-full justify-between'>
             <h6>Name: </h6>
             <span>{product.name}</span>
           </div>
 
-          <div className='grid'>
+          <div className='flex w-full justify-between'>
             <h6>Cost: </h6>
             <span>£ {Math.trunc(product.cost)}</span>
           </div>
 
-          <div className='grid'>
+          <div className='flex w-full justify-between'>
             <h6>Type: </h6>
             <span>{product.typetitle}</span>
           </div>
 
-          <div className='grid'>
+          <div className='flex w-full justify-between'>
             <h6>Effect: </h6>
             <span>+ {product.effect}</span>
           </div>
@@ -187,21 +188,22 @@ function MenuProduct({ product, purchaseAmount, productType }) {
             onClick={() => buyProduct(product)}
           >
             <h6 className='p-1'>BUY</h6>
-            {/* <div className=''>
-          <h6>Buy</h6>
-          <span>{purchaseAmount === 'max' ? maxPurchase : purchaseAmount}</span>
-          </div>
-        <div className=''>
-        <h6>
-        Owned <span>{quantityOwned}</span>
-        </h6>
-    </div> */}
+            <div className=''>
+              {/* <span>
+                {purchaseAmount === 'max' ? maxPurchase : purchaseAmount}
+              </span> */}
+            </div>
+            <div className=''>
+              <h6 className='grid'>
+                Owned <span>{product.quantityOwned}</span>
+              </h6>
+            </div>
           </button>
         </div>
       </section>
 
-      <section className='product__container rounded px-2 py-1 text-sm'>
-        <p className='leading-3'>{product.desc}</p>
+      <section className='product__container rounded px-1 py-[2px] text-[8px]'>
+        <p className='leading-2'>{product.desc}</p>
       </section>
     </li>
   );
