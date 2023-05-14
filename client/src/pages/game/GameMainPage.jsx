@@ -20,6 +20,7 @@ import { GameContext } from '../../context/GameContext';
 // DB
 import { ItemsDB } from '../../utils/data/ItemsDB';
 import { BuildingsDB } from '../../utils/data/BuildingsDB';
+import PhoneMenuContainer from '../../components/menus/PhoneMenuContainer';
 
 function GameMainPage() {
   const {
@@ -28,11 +29,18 @@ function GameMainPage() {
     toggleUpgrades,
     toggleQuests,
     toggleLevelCompletedFun,
-    levelCompleted
+    levelCompleted,
+    toggleBuildings,
+    toggleItems,
   } = useContext(ToggleContext);
 
-  const { playerCharacter, setPlayerCharacter, currentLevel, resetPlayerStats, savePlayerCompleteState } =
-    useContext(GameContext);
+  const {
+    playerCharacter,
+    setPlayerCharacter,
+    currentLevel,
+    resetPlayerStats,
+    savePlayerCompleteState,
+  } = useContext(GameContext);
 
   useEffect(() => {
     if (playerCharacter.pointsPerSecond >= 1) {
@@ -61,8 +69,8 @@ function GameMainPage() {
 
   const completedLevel = async () => {
     await toggleLevelCompletedFun();
-    await savePlayerCompleteState()
-    resetPlayerStats()
+    await savePlayerCompleteState();
+    resetPlayerStats();
   };
 
   // const setPerSecondIncome = () => {
@@ -89,21 +97,27 @@ function GameMainPage() {
             <MenuContainer displayArray={ItemsDB} />
           </div>
           {/* Main Container */}
-          <section className='grid grid-rows-reg lg:grid-rows-a1a h-full'>
-            <div className='grid border-green-950 border-solid border-2 bg-white relative mb-2'>
+          <section className='grid lg:grid-rows-a1a h-full'>
+            <div className='hidden lg:grid border-green-950 border-solid border-2 bg-white relative mb-2'>
               <ScoresDisplay />
             </div>
             <div className='blue__bg'>
               <div className='clicker__container outline outline-2 outline-green-950 mb-2 h-full'>
+                <div className='grid lg:hidden border-green-950 border-solid border-2 bg-white h-fit'>
+                  <ScoresDisplay />
+                </div>
                 <LevelData />
                 <EnemyArray />
                 <InGameMenu />
+                <PhoneMenuContainer />
                 <AlgaeClicker />
                 {toggleAchievements && <AchievementsContainer />}
                 {toggleTechTree && <TechTreeContainer />}
                 {toggleUpgrades && <UpgradesContainer />}
                 {toggleQuests && <QuestsContainer />}
                 {levelCompleted && <LevelCompleted />}
+                {toggleBuildings && <MenuContainer displayArray={BuildingsDB} />}
+                {toggleItems && <MenuContainer displayArray={ItemsDB} />}
               </div>
             </div>
             <section className='hidden lg:grid outline outline-2 outline-green-950 bg-white relative mb-4'>

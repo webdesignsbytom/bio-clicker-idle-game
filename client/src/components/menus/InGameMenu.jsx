@@ -18,7 +18,7 @@ function InGameMenu() {
   AchievementsListener()
   
   return (
-    <article className='absolute top-4 right-0 grid gap-1'>
+    <article className='absolute top-16 lg:top-4 right-0 grid gap-1'>
       <div
       className={
         achievementReady === true

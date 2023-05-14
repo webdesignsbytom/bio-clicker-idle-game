@@ -6,11 +6,13 @@ function LevelCompletedStats() {
   const { playerCharacter } = useContext(GameContext);
 
   let len = playerCharacter.playerLevelCompletedData.length;
+  console.log('playerCharacter.playerLevelCompletedData', playerCharacter.playerLevelCompletedData);
+
   const { totalScore, pointsPerSecond, pointsPerClick, totalTimesClicked } =
-    playerCharacter.playerLevelCompletedData[len - 1];
+    playerCharacter.playerLevelCompletedData[len - 1] || playerCharacter;
 
   return (
-    <div>
+    <section>
       <div className='my-2'>
         <h4>Congratulations <span className='italic font-semibold'>{playerCharacter.username}</span></h4>
       </div>
@@ -32,7 +34,7 @@ function LevelCompletedStats() {
           <span className='font-semibold'>{totalScore}</span>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

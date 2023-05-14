@@ -9,6 +9,8 @@ const ToggleContextProvider = ({ children }) => {
   const [toggleTechTree, setToggleTechTree] = useState(false);
   const [toggleUpgrades, setToggleUpgrades] = useState(false);
   const [toggleQuests, setToggleQuests] = useState(false);
+  const [toggleBuildings, setToggleBuildings] = useState(false);
+  const [toggleItems, setToggleItems] = useState(false);
   const [levelCompleted, setLevelCompleted] = useState(false);
   const [achievementReady, setAchievementReady] = useState(false);
 
@@ -46,6 +48,16 @@ const ToggleContextProvider = ({ children }) => {
     setToggleQuests(!toggleQuests);
   };
 
+  // Buildings
+  const toggleBuildingsFun = () => {
+    setToggleBuildings(!toggleBuildings)
+  }
+
+  // Items
+  const toggleItemsFun = () => {
+    setToggleItems(!toggleItems)
+  }
+
   return (
     <ToggleContext.Provider
       value={{
@@ -57,6 +69,8 @@ const ToggleContextProvider = ({ children }) => {
         toggleUpgradesFun,
         toggleQuestsFun,
         toggleLevelCompletedFun,
+        toggleBuildingsFun,
+        toggleItemsFun,
         // State
         toggleNavigation,
         toggleAchievements,
@@ -65,6 +79,8 @@ const ToggleContextProvider = ({ children }) => {
         toggleUpgrades,
         toggleQuests,
         levelCompleted,
+        toggleItems,
+        toggleBuildings,
         // Set state
         setAchievementReady,
       }}
