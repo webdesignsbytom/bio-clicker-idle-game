@@ -3,6 +3,8 @@ import { useState } from 'react';
 // Data
 import { AchievementsDB } from '../utils/data/AchievementsDB';
 import { LevelsDB } from '../utils/data/LevelsDB';
+import { ItemsDB } from '../utils/data/ItemsDB';
+import { BuildingsDB } from '../utils/data/BuildingsDB';
 
 export const GameContext = React.createContext();
 
@@ -65,6 +67,14 @@ const GameContextProvider = ({ children }) => {
 
   const resetPlayerStats = () => {
     let newLevel = playerCharacter.currentLevel + 1;
+
+    ItemsDB.content.forEach(item => {
+      item.quantityOwned = 0
+    });
+
+    BuildingsDB.content.forEach(buildings => {
+      buildings.quantityOwned = 0
+    });
 
     setPlayerCharacter({
       ...playerCharacter,

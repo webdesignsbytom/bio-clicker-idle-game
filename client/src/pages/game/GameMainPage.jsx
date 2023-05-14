@@ -73,19 +73,6 @@ function GameMainPage() {
     resetPlayerStats();
   };
 
-  // const setPerSecondIncome = () => {
-  //   const currentBasePPS = playerCharacter.basePointsPerSecond;
-  //   const currentPerminentMultiplier = playerCharacter.perminentMultiplier;
-  //   const currentBonusMultiplier = playerCharacter.bonusMultiplier;
-
-  //   const newTotalPPS =
-  //     currentBasePPS * currentPerminentMultiplier * currentBonusMultiplier;
-  //   // const ownedArray = currentArray.filter(e => e.quantity > 0)
-  //   // console.log('owned', ownedArray);
-  // };
-
-  // setPerSecondIncome()
-
   return (
     <div className='grid lg:grid-rows-reg h-screen max-h-screen overflow-hidden main__bg__gradient'>
       <Navbar />
