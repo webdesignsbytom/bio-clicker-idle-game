@@ -13,6 +13,7 @@ export const LevelsDB = {
       desc: 'A world of sandbox where you learn the game',
       fuelUnlocked: false,
       powerUnlocked: false,
+      completed: false,
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ export const LevelsDB = {
       desc: 'Forests hide forest creatures',
       fuelUnlocked: false,
       powerUnlocked: false,
+      completed: false,
     },
     {
       id: 3,
@@ -37,6 +39,7 @@ export const LevelsDB = {
       desc: 'Every game needs a underwater level!',
       fuelUnlocked: false,
       powerUnlocked: false,
+      completed: false,
     },
     {
       id: 4,
@@ -49,6 +52,7 @@ export const LevelsDB = {
       desc: 'Antartica has no bears and means no bears. Artic means bears.',
       fuelUnlocked: false,
       powerUnlocked: false,
+      completed: false,
     },
   ],
 };

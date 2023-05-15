@@ -7,17 +7,6 @@ function QuestsContainer() {
   const { playerCharacter, setPlayerCharacter } = useContext(GameContext);
   const { toggleQuestsFun } = useContext(ToggleContext);
 
-  // const [achievementsArray, setAchievementsArray] = useState(
-  //   playerCharacter.achievements
-  // );
-
-  // useEffect(() => {
-  //   setPlayerCharacter({
-  //     ...playerCharacter,
-  //     achievements: achievementsArray,
-  //   });
-  // }, [achievementsArray]);
-
   return (
     <section className='grid absolute top-0 left-0 z-40 h-full bg-yellow-100 outline outline-4 outline-black overflow-hidden w-full'>
       <article className='overflow-y-scroll h-full'>

@@ -1,9 +1,9 @@
 // Images
 import Printer3D from '../../assets/images/items/factory-machine.png';
 
-export const UpgradesDB = {
-  title: 'Upgrades',
-  type: 'upgrades',
+export const TechDB = {
+  title: 'Tech',
+  type: 'tech',
   content: [
     {
       id: 1,

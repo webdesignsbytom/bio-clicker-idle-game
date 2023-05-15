@@ -25,9 +25,9 @@ function MenuContainer({ displayArray }) {
   };
 
   return (
-    <section className='z-50 lg:z-0 grid border-2 border-solid border-green-950 bg-green-950'>
+    <section className='z-50 lg:z-0 grid border-2 border-solid border-green-950 blue__bg'>
       <div className='grid grid-rows-reg'>
-        <article className='bg-green-700 border-b-2 border-solid border-green-950 grid p-1 text-center'>
+        <article className='blue__bg2 border-b-2 border-solid border-green-950 grid p-1 text-center'>
           <div className='flex justify-between items-center px-2 outline outline-2 outline-green-950 w-full bg-[#bfacb5]'>
             <h3 className='text-xl font-semibold'>{displayArray.title}</h3>
             <div className='lg:hidden' onClick={closeContainer}>

@@ -11,7 +11,7 @@ function ScoresDisplay() {
     playerCharacter.perminentMultiplier;
   
   return (
-    <section className='grid w-full bg-green-700'>
+    <section className='grid w-full blue__bg2'>
       <div className='grid grid-cols-3 p-1 gap-1 text-center h-fit font-semibold leading-4'>
         <div className='grid h-fit outline outline-2 outline-green-950 bg-[#bfacb5] p-1'>
           <h5 className='grid'>
