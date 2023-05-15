@@ -7,6 +7,8 @@ Canvas element for clickable enemies moving about.
 
 Current Address [Live Bio Clicker Link](https://rococo-kleicha-53fa88.netlify.app/)
 
+Currently the Mobile version is in poor quality. It needs a complete resdesign and new menu buttons and overflow scroll options.
+
 ## Table of contents
 
 - [Bio Clicker](#bio-clicker)
