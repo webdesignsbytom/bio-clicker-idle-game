@@ -85,10 +85,10 @@ function GameMainPage() {
           </div>
           {/* Main Container */}
           <section className='grid lg:grid-rows-a1a h-full'>
-            <div className='hidden lg:grid border-green-950 border-solid border-2 bg-white relative mb-2'>
+            <div className='hidden lg:grid w-full border-green-950 border-solid border-2 bg-white relative mb-2'>
               <ScoresDisplay />
             </div>
-            <div className='blue__bg'>
+            <div className='blue__bg m-1'>
               <div className='clicker__container outline outline-2 outline-green-950 mb-2 h-full'>
                 <div className='grid lg:hidden border-green-950 border-solid border-2 bg-white h-fit'>
                   <ScoresDisplay />
@@ -107,7 +107,7 @@ function GameMainPage() {
                 {toggleItems && <MenuContainer displayArray={ItemsDB} />}
               </div>
             </div>
-            <section className='hidden lg:grid outline outline-2 outline-green-950 bg-white relative mb-4'>
+            <section className='hidden lg:grid outline outline-2 outline-green-950 relative my-2'>
               <PlayerDataContainer />
             </section>
           </section>

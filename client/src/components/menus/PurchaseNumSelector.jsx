@@ -3,7 +3,7 @@ import React from 'react';
 function PurchaseNumSelector({ purchaseAmount, handleChange }) {
     
   return (
-    <section className='grid'>
+    <section className='grid h-fit'>
       <form className='grid grid-flow-col px-1 text-gray-100'>
         <div className='grid grid-flow-col items-center w-fit gap-1'>
           <label htmlFor='one'>1</label>
