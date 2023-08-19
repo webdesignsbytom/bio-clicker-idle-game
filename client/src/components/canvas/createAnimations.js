@@ -1,4 +1,4 @@
-import { AlgaeObject } from '../aglae/algaeObject';
+import { AlgaeObject } from '../algae/algaeObject';
 
 export const createAnimationsOnScreen = (totalAnimationsOnCanvas, algaeRef, numAnimations, canvasRef) => {
     let arrayNum = totalAnimationsOnCanvas;

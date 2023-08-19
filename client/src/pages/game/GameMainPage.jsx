@@ -1,13 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 // Components
 import Navbar from '../../components/nav/Navbar';
-import EnemyArray from '../../components/enemies/EnemyArray';
 import MenuContainer from '../../components/menus/MenuContainer';
 import ScoresDisplay from '../../components/scoresDisplay/ScoresDisplay';
 import TextScroll from '../../components/textScroll/TextScroll';
 import LevelData from '../../components/level/LevelData';
 import InGameMenu from '../../components/menus/InGameMenu';
-import AlgaeClicker from '../../components/game/AlgaeClicker';
+import AlgaeClicker from '../../components/algae/AlgaeClicker';
 import AchievementsContainer from '../../components/containers/AchievementsContainer';
 import TechTreeContainer from '../../components/containers/TechTreeContainer';
 import UpgradesContainer from '../../components/containers/UpgradesContainer';
