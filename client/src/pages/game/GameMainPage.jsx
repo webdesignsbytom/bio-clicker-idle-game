@@ -21,6 +21,7 @@ import { GameContext } from '../../context/GameContext';
 import { ItemsDB } from '../../utils/data/ItemsDB';
 import { BuildingsDB } from '../../utils/data/BuildingsDB';
 import PhoneMenuContainer from '../../components/menus/PhoneMenuContainer';
+import CanvasContainer from '../../components/canvas/CanvasContainer';
 
 function GameMainPage() {
   const {
@@ -94,7 +95,9 @@ function GameMainPage() {
                   <ScoresDisplay />
                 </div>
                 <LevelData />
-                <EnemyArray />
+                {/* Canvas */}
+                <CanvasContainer />
+                {/* <EnemyArray /> */}
                 <InGameMenu />
                 <PhoneMenuContainer />
                 <AlgaeClicker />
