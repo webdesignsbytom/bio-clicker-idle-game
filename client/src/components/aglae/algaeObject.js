@@ -55,16 +55,8 @@ export class AlgaeObject {
 
   // Delete algae on click
   delete(algaeRef) {
-    console.log(
-      'Enemy died later in hospital, his widow was told he survived and then had her heart broken twice.'
-    );
     const foundAlgae = algaeRef.current.find((a) => a.id === this.id);
-    console.log('sssssssssssssss');
     const algaeIndex = algaeRef.current.indexOf(foundAlgae);
-    console.log('ooooooooooo');
-    console.log('foundAlgae', foundAlgae);
-    console.log('algaeIndex', algaeIndex);
     algaeRef.current.splice(algaeIndex, 1);
-    console.log('pppppppp');
   }
 }

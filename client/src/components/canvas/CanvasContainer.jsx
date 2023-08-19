@@ -11,7 +11,6 @@ function CanvasContainer() {
   const [totalAnimationsOnCanvas, setTotalAnimationsOnCanvas] = useState(0);
 
   useEffect(() => {
-    console.log('AAAAAAAAAAAAAAAAAAAA');
     const canvas = canvasRef.current;
     var rect = canvas.parentNode.getBoundingClientRect();
 
@@ -29,8 +28,6 @@ function CanvasContainer() {
     context.strokeStyle = 'black';
     context.lineWidth = 5;
     contextRef.current = context;
-
-    // createAnimationsOnScreen();
 
     context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -68,7 +65,6 @@ function CanvasContainer() {
         Math.pow(offsetX - algae.xpos, 2) + Math.pow(offsetY - algae.ypos, 2);
   
       if (distanceSquared < Math.pow(algae.radius, 2)) {
-        console.log('Clicked on algae');
         algae.clicked(algaeRef);
       }
     });
