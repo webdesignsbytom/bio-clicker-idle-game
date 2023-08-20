@@ -7,10 +7,7 @@ import TextScroll from '../../components/textScroll/TextScroll';
 import LevelData from '../../components/level/LevelData';
 import InGameMenu from '../../components/menus/InGameMenu';
 import AlgaeClicker from '../../components/algae/AlgaeClicker';
-import AchievementsContainer from '../../components/containers/AchievementsContainer';
-import TechTreeContainer from '../../components/containers/TechTreeContainer';
-import UpgradesContainer from '../../components/containers/UpgradesContainer';
-import QuestsContainer from '../../components/containers/QuestsContainer';
+
 import PlayerDataContainer from '../../components/containers/PlayerDataContainer';
 import LevelCompleted from '../../components/level/LevelCompleted';
 // Context
@@ -21,17 +18,13 @@ import { ItemsDB } from '../../utils/data/ItemsDB';
 import { BuildingsDB } from '../../utils/data/BuildingsDB';
 import PhoneMenuContainer from '../../components/menus/PhoneMenuContainer';
 import CanvasContainer from '../../components/canvas/CanvasContainer';
+import SelectionsContainer from '../../components/containers/SelectionsContainer';
+import BuildingAndItemModals from '../../components/containers/BuildingAndItemModals';
 
 function GameMainPage() {
   const {
-    toggleAchievements,
-    toggleTechTree,
-    toggleUpgrades,
-    toggleQuests,
     toggleLevelCompletedFun,
     levelCompleted,
-    toggleBuildings,
-    toggleItems,
   } = useContext(ToggleContext);
 
   const {
@@ -88,7 +81,7 @@ function GameMainPage() {
             <div className='hidden lg:grid w-full border-green-950 border-solid border-2 bg-white relative mb-2'>
               <ScoresDisplay />
             </div>
-            <div className='blue__bg m-1'>
+            <section className='blue__bg m-1'>
               <div className='clicker__container outline outline-2 outline-green-950 mb-2 h-full'>
                 <div className='grid lg:hidden border-green-950 border-solid border-2 bg-white h-fit'>
                   <ScoresDisplay />
@@ -100,15 +93,13 @@ function GameMainPage() {
                 <InGameMenu />
                 <PhoneMenuContainer />
                 <AlgaeClicker />
-                {toggleAchievements && <AchievementsContainer />}
-                {toggleTechTree && <TechTreeContainer />}
-                {toggleUpgrades && <UpgradesContainer />}
-                {toggleQuests && <QuestsContainer />}
+                {/* Menus for right hand bar container */}
+                <SelectionsContainer />
+
                 {levelCompleted && <LevelCompleted />}
-                {toggleBuildings && <MenuContainer displayArray={BuildingsDB} />}
-                {toggleItems && <MenuContainer displayArray={ItemsDB} />}
+                <BuildingAndItemModals />
               </div>
-            </div>
+            </section>
             <section className='hidden lg:grid outline outline-2 outline-green-950 relative my-2'>
               <PlayerDataContainer />
             </section>
