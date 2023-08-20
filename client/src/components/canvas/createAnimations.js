@@ -1,9 +1,8 @@
 import { AlgaeObject } from '../algae/algaeObject';
 
-export const createAnimationsOnScreen = (totalAnimationsOnCanvas, algaeRef, numAnimations, canvasRef) => {
+export const createAnimationsOnScreen = (totalAnimationsOnCanvas, setTotalAnimationsOnCanvas, algaeRef, numAnimations, canvasRef) => {
     let arrayNum = totalAnimationsOnCanvas;
     let tempStore = algaeRef.current;
-    console.log('TempStore', tempStore);
 
     for (let i = 0; i < numAnimations; i++) {
       let random_x = Math.random() * canvasRef.current.width;
@@ -20,6 +19,6 @@ export const createAnimationsOnScreen = (totalAnimationsOnCanvas, algaeRef, numA
       arrayNum++;
       tempStore.push(animation);
     }
-
+    setTotalAnimationsOnCanvas(arrayNum)
     algaeRef.current = tempStore;
   };

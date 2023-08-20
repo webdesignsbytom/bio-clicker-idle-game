@@ -8,8 +8,8 @@ export class AlgaeObject {
     this.count = count;
     this.speed = speed;
     this.clicked = function (algaeRef) {
-        this.delete(algaeRef); // Remove enemy from array
-      };
+      this.delete(algaeRef); // Remove enemy from array
+    };
     this.dx = 1 * this.speed;
     this.dy = 1 * this.speed;
   }
@@ -26,6 +26,28 @@ export class AlgaeObject {
     context.arc(this.xpos, this.ypos, this.radius, Math.PI * 2, false);
     context.stroke();
     context.closePath();
+  }
+
+  // Split the algae into two smaller ones
+  split(algaeRef, totalAnimationsOnCanvas, setTotalAnimationsOnCanvas) {
+    // Reduce the radius of the current circle
+    let newId = totalAnimationsOnCanvas + 1;
+    this.radius /= 1.2;
+    const newAlgae = new AlgaeObject(
+      newId,
+      this.xpos + this.radius,
+      this.ypos,
+      this.radius,
+      this.colour,
+      newId,
+      this.speed
+    );
+
+    let newRef = algaeRef.current;
+    // Add the new algae objects to the array
+    newRef.push(newAlgae);
+    algaeRef.current = newRef;
+    setTotalAnimationsOnCanvas((prev) => prev + 1);
   }
 
   // Movement

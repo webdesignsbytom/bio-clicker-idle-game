@@ -33,6 +33,7 @@ function CanvasContainer() {
 
     createAnimationsOnScreen(
       totalAnimationsOnCanvas,
+      setTotalAnimationsOnCanvas,
       algaeRef,
       numAnimations,
       canvasRef
@@ -41,9 +42,29 @@ function CanvasContainer() {
     algaeRef.current.forEach((algae) => {
       algae.draw(context);
     });
-
+    console.log('OOOOOOOOOOOooo');
     updateSwarm();
   }, []);
+
+  const splitAlgaeAtRandom = () => {
+    let randomNum = Math.floor(Math.random() * 10) + 1;
+
+    if (randomNum > 8) {
+      let randomCountNum = Math.floor(Math.random() * 20) + 1;
+
+      algaeRef.current.forEach((algae) => {
+        if (algae.id === randomCountNum) {
+          algae.split(
+            algaeRef,
+            totalAnimationsOnCanvas,
+            setTotalAnimationsOnCanvas
+          );
+        }
+      });
+    }
+  };
+
+  splitAlgaeAtRandom();
 
   const updateSwarm = () => {
     const canvas = canvasRef.current;
@@ -59,17 +80,16 @@ function CanvasContainer() {
 
   const attackAlgae = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
-  
+
     algaeRef.current.forEach(function (algae) {
       const distanceSquared =
         Math.pow(offsetX - algae.xpos, 2) + Math.pow(offsetY - algae.ypos, 2);
-  
+
       if (distanceSquared < Math.pow(algae.radius, 2)) {
         algae.clicked(algaeRef);
       }
     });
   };
-  
 
   return (
     <canvas
