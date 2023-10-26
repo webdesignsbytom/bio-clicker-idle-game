@@ -20,6 +20,7 @@ model User {
   password       String
   role           Role      @default(USER)
   profile        Profile?
+  game           Game?
   createdEvents  Event[]   @relation("createdEvents")
   receivedEvents Event[]   @relation("receivedEvents")
   createdAt      DateTime  @default(now())
@@ -31,6 +32,44 @@ model Profile {
   username  String    @unique
   userId    String    @unique
   user      User      @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model Game {
+  id                      String     @id @default(uuid())
+  pointsPerSecond         Int        @default(0)
+  pointsPerClick          Int        @default(0)
+  totalTimesClicked       Int        @default(0)
+  totalScore              Int        @default(0)
+  fuelPerSecond           Int        @default(0)
+  wattsProduced           Int        @default(0)
+  currentLevel            Int        @default(1)
+  unlockedFuelProduction  Boolean    @default(false)
+  unlockedPowerProduction Boolean    @default(false)
+  gems                    Int        @default(0)
+  buildings               Building[]
+  items                   Item[]
+  userId                  String     @unique
+  user                    User       @relation(fields: [userId], references: [id])
+  createdAt               DateTime   @default(now())
+  updatedAt               DateTime?  @updatedAt
+}
+
+model Building {
+  id         String    @id @default(uuid())
+  buildingId String    @default("")
+  gameId     String
+  game       Game      @relation(fields: [gameId], references: [id])
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime? @updatedAt
+}
+
+model Item {
+  id        String    @id @default(uuid())
+  itemId    String    @default("")
+  gameId    String
+  game      Game      @relation(fields: [gameId], references: [id])
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
 }

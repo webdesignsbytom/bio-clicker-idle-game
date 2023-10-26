@@ -42,6 +42,7 @@ function CanvasContainer() {
     algaeRef.current.forEach((algae) => {
       algae.draw(context);
     });
+    
     console.log('OOOOOOOOOOOooo');
     updateSwarm();
   }, []);
