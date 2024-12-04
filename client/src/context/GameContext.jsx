@@ -59,12 +59,15 @@ const GameContextProvider = ({ children }) => {
   const [increaseConstant] = useState(1.1);
   const [currentLevel, setCurrentLevel] = useState({});
 
+  // Set the current level
   useEffect(() => {
     const currentLevel = playerCharacter.currentLevel;
     const levelIndex = currentLevel - 1;
     setCurrentLevel(LevelsDB.content[levelIndex]);
   }, [playerCharacter.currentLevel]);
 
+
+  // New game reset
   const resetPlayerStats = () => {
     let newLevel = playerCharacter.currentLevel + 1;
 

@@ -42,7 +42,7 @@ function CanvasContainer() {
     algaeRef.current.forEach((algae) => {
       algae.draw(context);
     });
-    
+
     console.log('OOOOOOOOOOOooo');
     updateSwarm();
   }, []);
@@ -81,7 +81,7 @@ function CanvasContainer() {
 
   const attackAlgae = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
-
+    console.log('AAAAAAAAAA');
     algaeRef.current.forEach(function (algae) {
       const distanceSquared =
         Math.pow(offsetX - algae.xpos, 2) + Math.pow(offsetY - algae.ypos, 2);
